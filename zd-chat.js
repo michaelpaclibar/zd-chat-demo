@@ -284,7 +284,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   T(), d.default = O;
 }]);
-const z = V.init({
+const z = V.default;
+z.init({
   integrationId: "63dd364c057947010e028fa1",
   canUserSeeConversationList: !0,
   delegate: {
@@ -297,6 +298,3 @@ const z = V.init({
   }
 }).then(function() {
 });
-export {
-  z as init
-};
