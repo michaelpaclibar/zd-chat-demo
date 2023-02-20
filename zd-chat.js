@@ -8,103 +8,103 @@
  * the terms above.
  * 
  */
-var G = function(a) {
-  var c = {};
-  function o(e) {
-    if (c[e])
-      return c[e].exports;
-    var r = c[e] = { i: e, l: !1, exports: {} };
-    return a[e].call(r.exports, r, r.exports, o), r.l = !0, r.exports;
+var et = function(n) {
+  var a = {};
+  function t(e) {
+    if (a[e])
+      return a[e].exports;
+    var r = a[e] = { i: e, l: !1, exports: {} };
+    return n[e].call(r.exports, r, r.exports, t), r.l = !0, r.exports;
   }
-  return o.m = a, o.c = c, o.d = function(e, r, d) {
-    o.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: d });
-  }, o.r = function(e) {
+  return t.m = n, t.c = a, t.d = function(e, r, c) {
+    t.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: c });
+  }, t.r = function(e) {
     typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 });
-  }, o.t = function(e, r) {
-    if (1 & r && (e = o(e)), 8 & r || 4 & r && typeof e == "object" && e && e.__esModule)
+  }, t.t = function(e, r) {
+    if (1 & r && (e = t(e)), 8 & r || 4 & r && typeof e == "object" && e && e.__esModule)
       return e;
-    var d = /* @__PURE__ */ Object.create(null);
-    if (o.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: e }), 2 & r && typeof e != "string")
-      for (var l in e)
-        o.d(d, l, function(h) {
-          return e[h];
-        }.bind(null, l));
-    return d;
-  }, o.n = function(e) {
+    var c = /* @__PURE__ */ Object.create(null);
+    if (t.r(c), Object.defineProperty(c, "default", { enumerable: !0, value: e }), 2 & r && typeof e != "string")
+      for (var u in e)
+        t.d(c, u, function(f) {
+          return e[f];
+        }.bind(null, u));
+    return c;
+  }, t.n = function(e) {
     var r = e && e.__esModule ? function() {
       return e.default;
     } : function() {
       return e;
     };
-    return o.d(r, "a", r), r;
-  }, o.o = function(e, r) {
+    return t.d(r, "a", r), r;
+  }, t.o = function(e, r) {
     return Object.prototype.hasOwnProperty.call(e, r);
-  }, o.p = "https://cdn.smooch.io/", o(o.s = 6);
-}([function(a, c, o) {
-  var e = o(3);
-  a.exports = new e();
-}, function(a, c) {
-  a.exports = { isFunction: function(o) {
-    return typeof o == "function";
-  }, isArray: function(o) {
-    return Object.prototype.toString.apply(o) === "[object Array]";
-  }, each: function(o, e) {
-    for (var r = 0, d = o.length; r < d && e(o[r], r) !== !1; r++)
+  }, t.p = "https://cdn.smooch.io/", t(t.s = 6);
+}([function(n, a, t) {
+  var e = t(3);
+  n.exports = new e();
+}, function(n, a) {
+  n.exports = { isFunction: function(t) {
+    return typeof t == "function";
+  }, isArray: function(t) {
+    return Object.prototype.toString.apply(t) === "[object Array]";
+  }, each: function(t, e) {
+    for (var r = 0, c = t.length; r < c && e(t[r], r) !== !1; r++)
       ;
   } };
-}, function(a, c, o) {
-  a.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
-}, function(a, c, o) {
-  var e = o(4), r = o(1), d = r.each, l = r.isFunction, h = r.isArray;
-  function g() {
+}, function(n, a, t) {
+  n.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
+}, function(n, a, t) {
+  var e = t(4), r = t(1), c = r.each, u = r.isFunction, f = r.isArray;
+  function m() {
     if (!window.matchMedia)
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
-  g.prototype = { constructor: g, register: function(f, p, y) {
-    var x = this.queries, q = y && this.browserIsIncapable;
-    return x[f] || (x[f] = new e(f, q)), l(p) && (p = { match: p }), h(p) || (p = [p]), d(p, function(v) {
-      l(v) && (v = { match: v }), x[f].addHandler(v);
+  m.prototype = { constructor: m, register: function(h, p, y) {
+    var x = this.queries, L = y && this.browserIsIncapable;
+    return x[h] || (x[h] = new e(h, L)), u(p) && (p = { match: p }), f(p) || (p = [p]), c(p, function(v) {
+      u(v) && (v = { match: v }), x[h].addHandler(v);
     }), this;
-  }, unregister: function(f, p) {
-    var y = this.queries[f];
-    return y && (p ? y.removeHandler(p) : (y.clear(), delete this.queries[f])), this;
-  } }, a.exports = g;
-}, function(a, c, o) {
-  var e = o(5), r = o(1).each;
-  function d(l, h) {
-    this.query = l, this.isUnconditional = h, this.handlers = [], this.mql = window.matchMedia(l);
-    var g = this;
-    this.listener = function(f) {
-      g.mql = f.currentTarget || f, g.assess();
+  }, unregister: function(h, p) {
+    var y = this.queries[h];
+    return y && (p ? y.removeHandler(p) : (y.clear(), delete this.queries[h])), this;
+  } }, n.exports = m;
+}, function(n, a, t) {
+  var e = t(5), r = t(1).each;
+  function c(u, f) {
+    this.query = u, this.isUnconditional = f, this.handlers = [], this.mql = window.matchMedia(u);
+    var m = this;
+    this.listener = function(h) {
+      m.mql = h.currentTarget || h, m.assess();
     }, this.mql.addListener(this.listener);
   }
-  d.prototype = { constuctor: d, addHandler: function(l) {
-    var h = new e(l);
-    this.handlers.push(h), this.matches() && h.on();
-  }, removeHandler: function(l) {
-    var h = this.handlers;
-    r(h, function(g, f) {
-      if (g.equals(l))
-        return g.destroy(), !h.splice(f, 1);
+  c.prototype = { constuctor: c, addHandler: function(u) {
+    var f = new e(u);
+    this.handlers.push(f), this.matches() && f.on();
+  }, removeHandler: function(u) {
+    var f = this.handlers;
+    r(f, function(m, h) {
+      if (m.equals(u))
+        return m.destroy(), !f.splice(h, 1);
     });
   }, matches: function() {
     return this.mql.matches || this.isUnconditional;
   }, clear: function() {
-    r(this.handlers, function(l) {
-      l.destroy();
+    r(this.handlers, function(u) {
+      u.destroy();
     }), this.mql.removeListener(this.listener), this.handlers.length = 0;
   }, assess: function() {
-    var l = this.matches() ? "on" : "off";
-    r(this.handlers, function(h) {
-      h[l]();
+    var u = this.matches() ? "on" : "off";
+    r(this.handlers, function(f) {
+      f[u]();
     });
-  } }, a.exports = d;
-}, function(a, c) {
-  function o(e) {
+  } }, n.exports = c;
+}, function(n, a) {
+  function t(e) {
     this.options = e, !e.deferSetup && this.setup();
   }
-  o.prototype = { constructor: o, setup: function() {
+  t.prototype = { constructor: t, setup: function() {
     this.options.setup && this.options.setup(), this.initialised = !0;
   }, on: function() {
     !this.initialised && this.setup(), this.options.match && this.options.match();
@@ -114,188 +114,187 @@ var G = function(a) {
     this.options.destroy ? this.options.destroy() : this.off();
   }, equals: function(e) {
     return this.options === e || this.options.match === e;
-  } }, a.exports = o;
-}, function(a, c, o) {
-  o.r(c);
-  var e = o(2), r = o.n(e);
-  function d(n) {
+  } }, n.exports = t;
+}, function(n, a, t) {
+  t.r(a);
+  var e = t(2), r = t.n(e);
+  function c(i) {
     document.readyState !== "complete" && document.readyState !== "loaded" && document.readyState !== "interactive" || !document.body ? document.addEventListener("DOMContentLoaded", function() {
-      n();
-    }) : n();
+      i();
+    }) : i();
   }
-  function l(n) {
-    var t = ["screen"];
-    return n.minHeight && t.push("(min-height: ".concat(n.minHeight, "px)")), n.maxHeight && t.push("(max-height: ".concat(n.maxHeight, "px)")), n.minWidth && t.push("(min-width: ".concat(n.minWidth, "px)")), n.maxWidth && t.push("(max-width: ".concat(n.maxWidth, "px)")), t.join(" and ");
+  function u(i) {
+    var o = ["screen"];
+    return i.minHeight && o.push("(min-height: ".concat(i.minHeight, "px)")), i.maxHeight && o.push("(max-height: ".concat(i.maxHeight, "px)")), i.minWidth && o.push("(min-width: ".concat(i.minWidth, "px)")), i.maxWidth && o.push("(max-width: ".concat(i.maxWidth, "px)")), o.join(" and ");
   }
-  var h = o(0), g = o.n(h), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, p = ["lg", "md", "sm", "xs"];
-  function y(n) {
-    for (var t = 0; t < p.length; t++) {
-      var s = p[t], i = f[s];
-      Object.prototype.toString.call(i) !== "[object Array]" && (i = [i]);
-      for (var m = 0; m < i.length; m++)
-        n({ rule: i[m], size: s });
+  var f = t(0), m = t.n(f), h = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, p = ["lg", "md", "sm", "xs"];
+  function y(i) {
+    for (var o = 0; o < p.length; o++) {
+      var l = p[o], s = h[l];
+      Object.prototype.toString.call(s) !== "[object Array]" && (s = [s]);
+      for (var g = 0; g < s.length; g++)
+        i({ rule: s[g], size: l });
     }
   }
   function x() {
-    return (x = Object.assign ? Object.assign.bind() : function(n) {
-      for (var t = 1; t < arguments.length; t++) {
-        var s = arguments[t];
-        for (var i in s)
-          Object.prototype.hasOwnProperty.call(s, i) && (n[i] = s[i]);
+    return (x = Object.assign ? Object.assign.bind() : function(i) {
+      for (var o = 1; o < arguments.length; o++) {
+        var l = arguments[o];
+        for (var s in l)
+          Object.prototype.hasOwnProperty.call(l, s) && (i[s] = l[s]);
       }
-      return n;
+      return i;
     }).apply(this, arguments);
   }
-  function q(n) {
-    return function(t) {
-      if (Array.isArray(t))
-        return v(t);
-    }(n) || function(t) {
-      if (typeof Symbol < "u" && t[Symbol.iterator] != null || t["@@iterator"] != null)
-        return Array.from(t);
-    }(n) || function(t, s) {
-      if (t) {
-        if (typeof t == "string")
-          return v(t, s);
-        var i = Object.prototype.toString.call(t).slice(8, -1);
-        if (i === "Object" && t.constructor && (i = t.constructor.name), i === "Map" || i === "Set")
-          return Array.from(t);
-        if (i === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(i))
-          return v(t, s);
+  function L(i) {
+    return function(o) {
+      if (Array.isArray(o))
+        return v(o);
+    }(i) || function(o) {
+      if (typeof Symbol < "u" && o[Symbol.iterator] != null || o["@@iterator"] != null)
+        return Array.from(o);
+    }(i) || function(o, l) {
+      if (o) {
+        if (typeof o == "string")
+          return v(o, l);
+        var s = Object.prototype.toString.call(o).slice(8, -1);
+        if (s === "Object" && o.constructor && (s = o.constructor.name), s === "Map" || s === "Set")
+          return Array.from(o);
+        if (s === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(s))
+          return v(o, l);
       }
-    }(n) || function() {
+    }(i) || function() {
       throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
     }();
   }
-  function v(n, t) {
-    (t == null || t > n.length) && (t = n.length);
-    for (var s = 0, i = new Array(t); s < t; s++)
-      i[s] = n[s];
-    return i;
+  function v(i, o) {
+    (o == null || o > i.length) && (o = i.length);
+    for (var l = 0, s = new Array(o); l < o; l++)
+      s[l] = i[l];
+    return s;
   }
-  var w, u, W, T, M, I = {}, S = [], b = [], L = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), F = /PhantomJS/.test(navigator.userAgent) && !0, _ = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
-  if (L) {
+  var b, d, W, T, A, _ = {}, S = [], w = [], k = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), K = /PhantomJS/.test(navigator.userAgent) && !0, I = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  if (k) {
     var j = document.createElement("a");
-    j.href = "https://smooch.io/live-web-chat/?utm_source=widget", j.text = "Powered by Zendesk Sunshine", d(function() {
+    j.href = "https://smooch.io/live-web-chat/?utm_source=widget", j.text = "Powered by Zendesk Sunshine", c(function() {
       document.body.appendChild(j);
     });
   }
-  function D() {
-    var n = document.createElement("link");
-    n.rel = "stylesheet", n.type = "text/css", n.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(n);
+  function V() {
+    var i = document.createElement("link");
+    i.rel = "stylesheet", i.type = "text/css", i.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(i);
   }
-  function Q(n) {
-    var t;
+  function X(i) {
+    var o;
     window.__onWebMessengerFrameReady__ = function() {
-    }, w = n, W || (t = u, y(function(B) {
-      var V = B.rule, X = B.size;
-      g.a.register(l(V), function() {
-        t.contentWindow.postMessage({ type: "sizeChange", value: X }, "".concat(location.protocol, "//").concat(location.host));
+    }, b = i, W || (o = d, y(function(z) {
+      var Y = z.rule, tt = z.size;
+      m.a.register(u(Y), function() {
+        o.contentWindow.postMessage({ type: "sizeChange", value: tt }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
-    for (var s = _[0], i = 0; i < _.length; s = _[++i])
-      I[s] = w[s];
-    if (b) {
-      for (var m = b[0], O = 0; O < b.length; m = b[++O]) {
-        var C;
-        (C = w).on.apply(C, q(m.args));
+    for (var l = I[0], s = 0; s < I.length; l = I[++s])
+      _[l] = b[l];
+    if (w) {
+      for (var g = w[0], C = 0; C < w.length; g = w[++C]) {
+        var O;
+        (O = b).on.apply(O, L(g.args));
       }
-      b = void 0;
+      w = void 0;
     }
-    if (M) {
-      var k, A = (k = w).init.apply(k, q(M));
-      M = void 0;
-      for (var H = S[0], E = 0; E < S.length; H = S[++E])
-        A = H.type === "then" ? A.then(H.next) : A.catch(H.next);
+    if (A) {
+      var J, B = (J = b).init.apply(J, L(A));
+      A = void 0;
+      for (var M = S[0], D = 0; D < S.length; M = S[++D])
+        B = M.type === "then" ? B.then(M.next) : B.catch(M.next);
       S = [];
     }
   }
-  var P = function(n) {
-    return n.contentWindow && n.contentWindow.document;
+  var U = function(i) {
+    return i.contentWindow && i.contentWindow.document;
   };
-  function z() {
-    if (!u) {
-      var n = null, t = !1;
-      (u = document.createElement("iframe")).id = "web-messenger-container", u.frameBorder = 0, u.allowFullscreen = !0, u.allowTransparency = !0, u.scrolling = "no", u.className = r.a.iframe;
-      var s = function() {
-        t = !0, clearInterval(n), delete u.onload;
-        var i = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, m = i ? 'nonce="'.concat(i, '"') : "", O = `
+  function G() {
+    if (!d) {
+      var i = null, o = !1;
+      (d = document.createElement("iframe")).id = "web-messenger-container", d.frameBorder = 0, d.allowFullscreen = !0, d.allowTransparency = !0, d.scrolling = "no", d.className = r.a.iframe;
+      var l = function() {
+        o = !0, clearInterval(i), delete d.onload;
+        var s = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, g = s ? 'nonce="'.concat(s, '"') : "", C = `
                     <!DOCTYPE html>
                     <html>
                         <head>
                             `.concat("", `
-                            <link rel="stylesheet" href="`).concat("https://cdn.smooch.io/frame.5.5.5.css", '" type="text/css" ').concat(m, ` />
-                            <script src="`).concat("https://cdn.smooch.io/frame.5.5.5.min.js", '" async crossorigin="anonymous" ').concat(m, `><\/script>
+                            <link rel="stylesheet" href="`).concat("https://cdn.smooch.io/frame.5.5.5.css", '" type="text/css" ').concat(g, ` />
+                            <script src="`).concat("https://cdn.smooch.io/frame.5.5.5.min.js", '" async crossorigin="anonymous" ').concat(g, `><\/script>
                         </head>
                         <body>
                             <div id="mount"></div>
                         </body>
                     </html>
                     `);
-        if ("srcdoc" in u)
-          u.srcdoc = O;
+        if ("srcdoc" in d)
+          d.srcdoc = C;
         else {
-          var C = P(u);
-          C.open(), C.write(O), C.close();
+          var O = U(d);
+          O.open(), O.write(C), O.close();
         }
       };
-      n = setInterval(function() {
-        var i = P(u);
-        t || !i || i.readyState !== "complete" && i.readyState !== "interactive" || s();
-      }, 1e3), u.onload = function() {
-        t || s();
+      i = setInterval(function() {
+        var s = U(d);
+        o || !s || s.readyState !== "complete" && s.readyState !== "interactive" || l();
+      }, 1e3), d.onload = function() {
+        o || l();
       };
     }
-    W ? T && (T.appendChild(u), T = void 0) : document.body.appendChild(u);
+    W ? T && (T.appendChild(d), T = void 0) : document.body.appendChild(d);
   }
-  var J = { VERSION: "5.5.5", on: function() {
-    b || (b = []);
-    for (var n = arguments.length, t = new Array(n), s = 0; s < n; s++)
-      t[s] = arguments[s];
-    b.push({ args: t });
+  var Z = { VERSION: "5.5.5", on: function() {
+    w || (w = []);
+    for (var i = arguments.length, o = new Array(i), l = 0; l < i; l++)
+      o[l] = arguments[l];
+    w.push({ args: o });
   }, init: function() {
-    for (var n = arguments.length, t = new Array(n), s = 0; s < n; s++)
-      t[s] = arguments[s];
-    M = t, W = t.length > 0 && !!t[0].embedded, L || F || d(function() {
-      D(), z();
+    for (var i = arguments.length, o = new Array(i), l = 0; l < i; l++)
+      o[l] = arguments[l];
+    A = o, W = o.length > 0 && !!o[0].embedded, k || K || c(function() {
+      V(), G();
     });
-    var i = { then: function(m) {
-      return S.push({ type: "then", next: m }), i;
-    }, catch: function(m) {
-      return S.push({ type: "catch", next: m }), i;
+    var s = { then: function(g) {
+      return S.push({ type: "then", next: g }), s;
+    }, catch: function(g) {
+      return S.push({ type: "catch", next: g }), s;
     } };
-    return i;
-  }, render: function(n) {
-    u ? n.appendChild(u) : T = n;
+    return s;
+  }, render: function(i) {
+    d ? i.appendChild(d) : T = i;
   }, destroy: function() {
-    w && (w.destroy(), u.remove ? u.remove() : u.parentNode.removeChild(u), y(function(n) {
-      var t = n.rule;
-      g.a.unregister(l(t));
-    }), R());
+    b && (b.destroy(), d.remove ? d.remove() : d.parentNode.removeChild(d), y(function(i) {
+      var o = i.rule;
+      m.a.unregister(u(o));
+    }), F());
   } };
-  function R() {
+  function F() {
     if (!document.getElementById("web-messenger-container")) {
-      w = void 0, u = void 0, window.__onWebMessengerFrameReady__ = Q;
-      for (var n = _[0], t = 0; t < _.length; n = _[++t])
-        I[n] && delete I[n];
-      x(I, J);
+      b = void 0, d = void 0, window.__onWebMessengerFrameReady__ = X;
+      for (var i = I[0], o = 0; o < I.length; i = I[++o])
+        _[i] && delete _[i];
+      x(_, Z);
     }
   }
-  R(), c.default = I;
+  F(), a.default = _;
 }]);
-const N = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", U = "https://dev.golinguist.com", Z = (a) => {
-  const c = new XMLHttpRequest(), o = {
+const Q = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", $ = "https://dev.golinguist.com", q = "en-us", nt = (n) => {
+  const a = new XMLHttpRequest(), t = {
     translationType: "machine",
-    text: a
+    text: n
   };
-  return c.open("POST", `${U}/linguistnow/resources/locale/detectLocale/`, !1), c.setRequestHeader("Authorization", `Basic ${N}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(o)), c.status === 200 ? JSON.parse(c.responseText).detectedLanguage : null;
-}, K = (a, c) => {
-  const o = {
-    sourceContent: a,
-    sourceLocale: c,
-    targetLocale: "en-us",
-    // We always translate back to english
+  return a.open("POST", `${$}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("Authorization", `Basic ${Q}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(t)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
+}, P = (n, a, t) => {
+  const e = {
+    sourceContent: n,
+    sourceLocale: a,
+    targetLocale: t,
     rnResponseProjectId: null,
     contentTypeName: "browser",
     translationType: "machine",
@@ -304,27 +303,89 @@ const N = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", U = "https://dev.golinguist.co
     threadTypeId: 15,
     translationIterationId: 1,
     userTypeId: 3
-  }, e = new XMLHttpRequest();
-  return e.open("POST", `${U}/linguistnow/resources/v1/translate/`, !1), e.setRequestHeader("Authorization", `Basic ${N}`), e.setRequestHeader("Content-Type", "application/json"), e.send(JSON.stringify(o)), e.status === 200 ? JSON.parse(e.responseText).translatedText : null;
-}, $ = () => G, Y = $(), ee = Y.default, te = "63dd364c057947010e028fa1";
-ee.init({
-  integrationId: te,
+  }, r = new XMLHttpRequest();
+  if (r.open("POST", `${$}/linguistnow/resources/v1/translate/`, !1), r.setRequestHeader("Authorization", `Basic ${Q}`), r.setRequestHeader("Content-Type", "application/json"), r.send(JSON.stringify(e)), r.status === 200) {
+    const c = JSON.parse(r.responseText);
+    return console.debug(`Running LIO Translate API: ${n}`), c.translatedText;
+  }
+  return null;
+}, ot = (n) => n.toLocaleLowerCase() !== q;
+var H = /* @__PURE__ */ ((n) => (n[n.translation = 0] = "translation", n[n.answerBot = 1] = "answerBot", n))(H || {});
+const R = (n, a) => {
+  switch (a) {
+    case 1:
+      return "answerBot:" + n;
+    case 0:
+      return "translation:" + n;
+    default:
+      throw Error("Invalid type");
+  }
+}, N = (n, a, t) => {
+  const e = localStorage.getItem(n);
+  if (e) {
+    const r = new Map(JSON.parse(e));
+    r.set(a, t), localStorage.setItem(n, JSON.stringify([...r]));
+  } else {
+    const r = /* @__PURE__ */ new Map();
+    r.set(a, t), localStorage.setItem(n, JSON.stringify([...r]));
+  }
+}, E = (n, a) => {
+  const t = localStorage.getItem(n);
+  if (t) {
+    const r = new Map(JSON.parse(t)).get(a);
+    return r !== null ? r : null;
+  }
+  return null;
+}, rt = () => et, it = rt(), at = it.default, st = "63dd364c057947010e028fa1", ct = () => {
+  if (typeof Intl < "u")
+    try {
+      return Intl.NumberFormat().resolvedOptions().locale.toLocaleLowerCase();
+    } catch {
+      return console.error("Cannot get locale from Intl"), null;
+    }
+  return null;
+}, lt = (n) => {
+  let a = nt(n);
+  return a || (console.debug("running fallback locale detection.. checking browser locale"), a = ct()), a;
+};
+at.init({
+  integrationId: st,
   canUserSeeConversationList: !1,
   delegate: {
-    beforeSend(a, c) {
-      const o = a.text, e = Z(o);
-      if (e != null) {
-        const r = K(o, e);
-        r != null && (a.text = r, c.conversation.metadata = {
-          original: o,
-          translation: r
-        }, localStorage.setItem(a.source.id, o));
+    beforeSend(n, a) {
+      if (n.type === "text") {
+        const t = n == null ? void 0 : n.text;
+        if (t !== null && t.length > 0) {
+          const e = lt(n.text);
+          if (e != null && ot(e)) {
+            localStorage.setItem("locale", e), console.debug(`Detected Locale: ${e}`);
+            const c = P(t, e, q);
+            c != null && (n.text = c, N(R(a.conversation.id, H.translation), c, t));
+          }
+        }
       }
-      return a;
+      return n;
     },
-    beforeDisplay(a) {
-      const c = localStorage.getItem(a.source.id);
-      return c && (a.text = c), a;
+    beforeDisplay(n, a) {
+      var r;
+      const t = n.text, e = ((r = n.source) == null ? void 0 : r.type) === "zd:answerBot";
+      if (n.type === "text")
+        if (e) {
+          const c = R(a.conversation.id, H.answerBot), u = localStorage.getItem("locale");
+          let f = E(c, t);
+          f ? n.text = f : u != null && (f = P(t, q, u), f && (N(c, t, f), n.text = f));
+          const m = n.actions;
+          if (m)
+            for (const h of m) {
+              let p = E(c, h.text);
+              p ? h.text = p : (p = P(h.text, q, u), p && (N(c, h.text, p), h.text = p));
+            }
+        } else {
+          const c = E(R(a.conversation.id, H.translation), n.text);
+          c && (n.text = c, console.debug(`Text Replaced: "${t}" with "${c}"`));
+        }
+      return n;
     }
   }
+  // webhook
 });
