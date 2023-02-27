@@ -16,20 +16,20 @@ var ot = function(e) {
     var r = a[n] = { i: n, l: !1, exports: {} };
     return e[n].call(r.exports, r, r.exports, t), r.l = !0, r.exports;
   }
-  return t.m = e, t.c = a, t.d = function(n, r, f) {
-    t.o(n, r) || Object.defineProperty(n, r, { enumerable: !0, get: f });
+  return t.m = e, t.c = a, t.d = function(n, r, d) {
+    t.o(n, r) || Object.defineProperty(n, r, { enumerable: !0, get: d });
   }, t.r = function(n) {
     typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(n, "__esModule", { value: !0 });
   }, t.t = function(n, r) {
     if (1 & r && (n = t(n)), 8 & r || 4 & r && typeof n == "object" && n && n.__esModule)
       return n;
-    var f = /* @__PURE__ */ Object.create(null);
-    if (t.r(f), Object.defineProperty(f, "default", { enumerable: !0, value: n }), 2 & r && typeof n != "string")
+    var d = /* @__PURE__ */ Object.create(null);
+    if (t.r(d), Object.defineProperty(d, "default", { enumerable: !0, value: n }), 2 & r && typeof n != "string")
       for (var p in n)
-        t.d(f, p, function(u) {
+        t.d(d, p, function(u) {
           return n[u];
         }.bind(null, p));
-    return f;
+    return d;
   }, t.n = function(n) {
     var r = n && n.__esModule ? function() {
       return n.default;
@@ -49,44 +49,44 @@ var ot = function(e) {
   }, isArray: function(t) {
     return Object.prototype.toString.apply(t) === "[object Array]";
   }, each: function(t, n) {
-    for (var r = 0, f = t.length; r < f && n(t[r], r) !== !1; r++)
+    for (var r = 0, d = t.length; r < d && n(t[r], r) !== !1; r++)
       ;
   } };
 }, function(e, a, t) {
   e.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
 }, function(e, a, t) {
-  var n = t(4), r = t(1), f = r.each, p = r.isFunction, u = r.isArray;
+  var n = t(4), r = t(1), d = r.each, p = r.isFunction, u = r.isArray;
   function l() {
     if (!window.matchMedia)
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
-  l.prototype = { constructor: l, register: function(d, m, g) {
+  l.prototype = { constructor: l, register: function(f, m, g) {
     var y = this.queries, A = g && this.browserIsIncapable;
-    return y[d] || (y[d] = new n(d, A)), p(m) && (m = { match: m }), u(m) || (m = [m]), f(m, function(w) {
-      p(w) && (w = { match: w }), y[d].addHandler(w);
+    return y[f] || (y[f] = new n(f, A)), p(m) && (m = { match: m }), u(m) || (m = [m]), d(m, function(w) {
+      p(w) && (w = { match: w }), y[f].addHandler(w);
     }), this;
-  }, unregister: function(d, m) {
-    var g = this.queries[d];
-    return g && (m ? g.removeHandler(m) : (g.clear(), delete this.queries[d])), this;
+  }, unregister: function(f, m) {
+    var g = this.queries[f];
+    return g && (m ? g.removeHandler(m) : (g.clear(), delete this.queries[f])), this;
   } }, e.exports = l;
 }, function(e, a, t) {
   var n = t(5), r = t(1).each;
-  function f(p, u) {
+  function d(p, u) {
     this.query = p, this.isUnconditional = u, this.handlers = [], this.mql = window.matchMedia(p);
     var l = this;
-    this.listener = function(d) {
-      l.mql = d.currentTarget || d, l.assess();
+    this.listener = function(f) {
+      l.mql = f.currentTarget || f, l.assess();
     }, this.mql.addListener(this.listener);
   }
-  f.prototype = { constuctor: f, addHandler: function(p) {
+  d.prototype = { constuctor: d, addHandler: function(p) {
     var u = new n(p);
     this.handlers.push(u), this.matches() && u.on();
   }, removeHandler: function(p) {
     var u = this.handlers;
-    r(u, function(l, d) {
+    r(u, function(l, f) {
       if (l.equals(p))
-        return l.destroy(), !u.splice(d, 1);
+        return l.destroy(), !u.splice(f, 1);
     });
   }, matches: function() {
     return this.mql.matches || this.isUnconditional;
@@ -99,7 +99,7 @@ var ot = function(e) {
     r(this.handlers, function(u) {
       u[p]();
     });
-  } }, e.exports = f;
+  } }, e.exports = d;
 }, function(e, a) {
   function t(n) {
     this.options = n, !n.deferSetup && this.setup();
@@ -118,7 +118,7 @@ var ot = function(e) {
 }, function(e, a, t) {
   t.r(a);
   var n = t(2), r = t.n(n);
-  function f(i) {
+  function d(i) {
     document.readyState !== "complete" && document.readyState !== "loaded" && document.readyState !== "interactive" || !document.body ? document.addEventListener("DOMContentLoaded", function() {
       i();
     }) : i();
@@ -127,10 +127,10 @@ var ot = function(e) {
     var o = ["screen"];
     return i.minHeight && o.push("(min-height: ".concat(i.minHeight, "px)")), i.maxHeight && o.push("(max-height: ".concat(i.maxHeight, "px)")), i.minWidth && o.push("(min-width: ".concat(i.minWidth, "px)")), i.maxWidth && o.push("(max-width: ".concat(i.maxWidth, "px)")), o.join(" and ");
   }
-  var u = t(0), l = t.n(u), d = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, m = ["lg", "md", "sm", "xs"];
+  var u = t(0), l = t.n(u), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, m = ["lg", "md", "sm", "xs"];
   function g(i) {
     for (var o = 0; o < m.length; o++) {
-      var c = m[o], s = d[c];
+      var c = m[o], s = f[c];
       Object.prototype.toString.call(s) !== "[object Array]" && (s = [s]);
       for (var v = 0; v < s.length; v++)
         i({ rule: s[v], size: c });
@@ -177,7 +177,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   var x, h, $, M, q, T = {}, O = [], b = [], E = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), X = /PhantomJS/.test(navigator.userAgent) && !0, S = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (E) {
     var B = document.createElement("a");
-    B.href = "https://smooch.io/live-web-chat/?utm_source=widget", B.text = "Powered by Zendesk Sunshine", f(function() {
+    B.href = "https://smooch.io/live-web-chat/?utm_source=widget", B.text = "Powered by Zendesk Sunshine", d(function() {
       document.body.appendChild(B);
     });
   }
@@ -257,7 +257,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, init: function() {
     for (var i = arguments.length, o = new Array(i), c = 0; c < i; c++)
       o[c] = arguments[c];
-    q = o, $ = o.length > 0 && !!o[0].embedded, E || X || f(function() {
+    q = o, $ = o.length > 0 && !!o[0].embedded, E || X || d(function() {
       Z(), Y();
     });
     var s = { then: function(v) {
@@ -305,8 +305,8 @@ const Q = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", K = "https://dev.golinguist.co
     userTypeId: 3
   }, r = new XMLHttpRequest();
   if (r.open("POST", `${K}/linguistnow/resources/v1/translate/`, !1), r.setRequestHeader("Authorization", `Basic ${Q}`), r.setRequestHeader("Content-Type", "application/json"), r.send(JSON.stringify(n)), r.status === 200) {
-    const f = JSON.parse(r.responseText);
-    return console.debug(`Running LIO Translate API: ${e}`), f.translatedText;
+    const d = JSON.parse(r.responseText);
+    return console.debug(`Running LIO Translate API: ${e}`), d.translatedText;
   }
   return null;
 }, V = (e) => e.toLocaleLowerCase() !== _;
@@ -361,21 +361,21 @@ st.init({
           const n = D(e.text);
           if (n != null && V(n)) {
             localStorage.setItem("user-locale", n), console.debug(`Detected User Locale: ${n}`);
-            const f = W(t, n, _);
-            f != null && (e.text = f, j(H(a.conversation.id, L.translation), f, t));
+            const d = W(t, n, _);
+            d != null && (e.text = d, j(H(a.conversation.id, L.translation), d, t));
           }
         }
       }
       return e;
     },
     beforeDisplay(e, a) {
-      var f, p;
-      const t = e.text, n = ((f = e.source) == null ? void 0 : f.type) === "zd:answerBot", r = ((p = e.source) == null ? void 0 : p.type) === "zd:agentWorkspace";
+      var d, p;
+      const t = e.text, n = ((d = e.source) == null ? void 0 : d.type) === "zd:answerBot", r = ((p = e.source) == null ? void 0 : p.type) === "zd:agentWorkspace";
       if (e.type === "text")
         if (n) {
           const u = H(a.conversation.id, L.answerBot), l = localStorage.getItem("user-locale");
-          let d = P(u, t);
-          d ? (e.text = d, console.debug(`Original Text: "${t}" Replaced with: "${d}"`)) : l != null && l !== _ && (d = W(t, _, l), d && (j(u, t, d), e.text = d, console.debug(`Original Text: "${t}" Replaced with: "${d}"`)));
+          let f = P(u, t);
+          f ? (e.text = f, console.debug(`Original Text: "${t}" Replaced with: "${f}"`)) : l != null && l !== _ && (f = W(t, _, l), f && (j(u, t, f), e.text = f, console.debug(`Original Text: "${t}" Replaced with: "${f}"`)));
           const m = e.actions;
           if (m)
             for (const g of m) {
@@ -388,8 +388,8 @@ st.init({
           if (l)
             e.text = l, console.debug(`Original Text: "${t}" Replaced with: "${l}"`);
           else {
-            const d = localStorage.getItem("user-locale"), m = D(e.text);
-            m != null && d !== d && (l = W(t, m, d), l && (j(u, t, l), e.text = l, console.debug(`Original Text: "${t}" Replaced with: "${l}"`)));
+            const f = localStorage.getItem("user-locale"), m = D(e.text);
+            m != null && f !== m && (l = W(t, m, f), l && (j(u, t, l), e.text = l, console.debug(`Original Text: "${t}" Replaced with: "${l}"`)));
           }
         } else {
           const u = P(H(a.conversation.id, L.translation), e.text);
