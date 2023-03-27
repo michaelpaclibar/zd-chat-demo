@@ -174,7 +174,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       s[c] = i[c];
     return s;
   }
-  var S, p, j, M, q, C = {}, I = [], x = [], $ = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), X = /PhantomJS/.test(navigator.userAgent) && !0, _ = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var S, p, j, M, q, T = {}, I = [], x = [], $ = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), X = /PhantomJS/.test(navigator.userAgent) && !0, _ = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if ($) {
     var B = document.createElement("a");
     B.href = "https://smooch.io/live-web-chat/?utm_source=widget", B.text = "Powered by Zendesk Sunshine", l(function() {
@@ -195,18 +195,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       });
     }));
     for (var c = _[0], s = 0; s < _.length; c = _[++s])
-      C[c] = S[c];
+      T[c] = S[c];
     if (x) {
-      for (var y = x[0], L = 0; L < x.length; y = x[++L]) {
-        var T;
-        (T = S).on.apply(T, O(y.args));
+      for (var y = x[0], C = 0; C < x.length; y = x[++C]) {
+        var L;
+        (L = S).on.apply(L, O(y.args));
       }
       x = void 0;
     }
     if (q) {
-      var J, P = (J = S).init.apply(J, O(q));
+      var F, P = (F = S).init.apply(F, O(q));
       q = void 0;
-      for (var W = I[0], z = 0; z < I.length; W = I[++z])
+      for (var W = I[0], J = 0; J < I.length; W = I[++J])
         P = W.type === "then" ? P.then(W.next) : P.catch(W.next);
       I = [];
     }
@@ -220,7 +220,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       (p = document.createElement("iframe")).id = "web-messenger-container", p.frameBorder = 0, p.allowFullscreen = !0, p.allowTransparency = !0, p.scrolling = "no", p.className = o.a.iframe;
       var c = function() {
         r = !0, clearInterval(i), delete p.onload;
-        var s = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, y = s ? 'nonce="'.concat(s, '"') : "", L = `
+        var s = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, y = s ? 'nonce="'.concat(s, '"') : "", C = `
                     <!DOCTYPE html>
                     <html>
                         <head>
@@ -234,10 +234,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     </html>
                     `);
         if ("srcdoc" in p)
-          p.srcdoc = L;
+          p.srcdoc = C;
         else {
-          var T = k(p);
-          T.open(), T.write(L), T.close();
+          var L = k(p);
+          L.open(), L.write(C), L.close();
         }
       };
       i = setInterval(function() {
@@ -272,24 +272,24 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     S && (S.destroy(), p.remove ? p.remove() : p.parentNode.removeChild(p), g(function(i) {
       var r = i.rule;
       u.a.unregister(m(r));
-    }), F());
+    }), z());
   } };
-  function F() {
+  function z() {
     if (!document.getElementById("web-messenger-container")) {
       S = void 0, p = void 0, window.__onWebMessengerFrameReady__ = Y;
       for (var i = _[0], r = 0; r < _.length; i = _[++r])
-        C[i] && delete C[i];
-      w(C, et);
+        T[i] && delete T[i];
+      w(T, et);
     }
   }
-  F(), a.default = C;
+  z(), a.default = T;
 }]);
-const K = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", Z = "https://dev.golinguist.com", R = "en-us", it = (t) => {
+const D = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", K = "https://dev.golinguist.com", R = "en-us", it = (t) => {
   const a = new XMLHttpRequest(), e = {
     translationType: "machine",
     text: t
   };
-  return a.open("POST", `${Z}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("Authorization", `Basic ${K}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(e)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
+  return a.open("POST", `${K}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("Authorization", `Basic ${D}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(e)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
 }, N = (t, a, e) => {
   const n = {
     sourceContent: t,
@@ -304,7 +304,7 @@ const K = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", Z = "https://dev.golinguist.co
     translationIterationId: 1,
     userTypeId: 3
   }, o = new XMLHttpRequest();
-  if (o.open("POST", `${Z}/linguistnow/resources/v1/translate/`, !1), o.setRequestHeader("Authorization", `Basic ${K}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200) {
+  if (o.open("POST", `${K}/linguistnow/resources/v1/translate/`, !1), o.setRequestHeader("Authorization", `Basic ${D}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200) {
     const l = JSON.parse(o.responseText);
     return console.debug(`Running LIO Translate API: ${t}`), l.translatedText;
   }
@@ -348,7 +348,7 @@ const H = (t, a) => {
       return console.error("Cannot get locale from Intl"), null;
     }
   return null;
-}, D = (t) => {
+}, Z = (t) => {
   let a = ut();
   return V(a) || (a = it(t)), a;
 }, A = (t, a, e) => {
@@ -360,7 +360,14 @@ const H = (t, a) => {
   return l != null && l !== R && (o = N(t, R, l), o) ? (E(n, t, o), o) : null;
 }, dt = (t) => {
   const a = t == null ? void 0 : t.toLocaleLowerCase().replace("_", "-").split("-");
-  return a ? a[0] : null;
+  return a ? ft(a[0]) : null;
+}, ft = (t) => {
+  switch (t) {
+    case "zh":
+      return "zh-hk";
+    default:
+      return t;
+  }
 };
 ct.init({
   integrationId: lt,
@@ -370,7 +377,7 @@ ct.init({
       if (t.type === "text") {
         const e = t == null ? void 0 : t.text;
         if (e !== null && e.length > 0) {
-          const n = D(t.text);
+          const n = Z(t.text);
           if (n != null && V(n)) {
             localStorage.setItem("user-locale", n), console.debug(`Detected User Locale: ${n}`);
             const l = N(e, n, R);
@@ -399,7 +406,7 @@ ct.init({
           if (u)
             t.text = u, console.debug(`Original Text: "${e}" Replaced with: "${u}"`);
           else {
-            const f = localStorage.getItem("user-locale"), h = D(t.text);
+            const f = localStorage.getItem("user-locale"), h = Z(t.text);
             h != null && f !== h && (u = N(e, h, f), u && (E(d, e, u), t.text = u, console.debug(`Original Text: "${e}" Replaced with: "${u}"`)));
           }
         } else {
