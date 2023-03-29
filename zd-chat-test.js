@@ -61,14 +61,14 @@ var rt = function(t) {
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
-  u.prototype = { constructor: u, register: function(f, p, g) {
+  u.prototype = { constructor: u, register: function(f, h, g) {
     var w = this.queries, S = g && this.browserIsIncapable;
-    return w[f] || (w[f] = new n(f, S)), m(p) && (p = { match: p }), d(p) || (p = [p]), l(p, function(v) {
+    return w[f] || (w[f] = new n(f, S)), m(h) && (h = { match: h }), d(h) || (h = [h]), l(h, function(v) {
       m(v) && (v = { match: v }), w[f].addHandler(v);
     }), this;
-  }, unregister: function(f, p) {
+  }, unregister: function(f, h) {
     var g = this.queries[f];
-    return g && (p ? g.removeHandler(p) : (g.clear(), delete this.queries[f])), this;
+    return g && (h ? g.removeHandler(h) : (g.clear(), delete this.queries[f])), this;
   } }, t.exports = u;
 }, function(t, i, e) {
   var n = e(5), o = e(1).each;
@@ -127,10 +127,10 @@ var rt = function(t) {
     var r = ["screen"];
     return a.minHeight && r.push("(min-height: ".concat(a.minHeight, "px)")), a.maxHeight && r.push("(max-height: ".concat(a.maxHeight, "px)")), a.minWidth && r.push("(min-width: ".concat(a.minWidth, "px)")), a.maxWidth && r.push("(max-width: ".concat(a.maxWidth, "px)")), r.join(" and ");
   }
-  var d = e(0), u = e.n(d), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, p = ["lg", "md", "sm", "xs"];
+  var d = e(0), u = e.n(d), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
   function g(a) {
-    for (var r = 0; r < p.length; r++) {
-      var c = p[r], s = f[c];
+    for (var r = 0; r < h.length; r++) {
+      var c = h[r], s = f[c];
       Object.prototype.toString.call(s) !== "[object Array]" && (s = [s]);
       for (var y = 0; y < s.length; y++)
         a({ rule: s[y], size: c });
@@ -174,53 +174,53 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       s[c] = a[c];
     return s;
   }
-  var O, h, P, R, A, C = {}, T = [], b = [], k = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), G = /PhantomJS/.test(navigator.userAgent) && !0, I = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
-  if (k) {
-    var W = document.createElement("a");
-    W.href = "https://smooch.io/live-web-chat/?utm_source=widget", W.text = "Powered by Zendesk Sunshine", l(function() {
-      document.body.appendChild(W);
+  var O, p, H, q, M, C = {}, T = [], x = [], $ = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), X = /PhantomJS/.test(navigator.userAgent) && !0, I = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  if ($) {
+    var P = document.createElement("a");
+    P.href = "https://smooch.io/live-web-chat/?utm_source=widget", P.text = "Powered by Zendesk Sunshine", l(function() {
+      document.body.appendChild(P);
     });
   }
-  function V() {
+  function G() {
     var a = document.createElement("link");
     a.rel = "stylesheet", a.type = "text/css", a.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(a);
   }
   function Y(a) {
     var r;
     window.__onWebMessengerFrameReady__ = function() {
-    }, O = a, P || (r = h, g(function(D) {
-      var nt = D.rule, ot = D.size;
+    }, O = a, H || (r = p, g(function(Q) {
+      var nt = Q.rule, ot = Q.size;
       u.a.register(m(nt), function() {
         r.contentWindow.postMessage({ type: "sizeChange", value: ot }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
     for (var c = I[0], s = 0; s < I.length; c = I[++s])
       C[c] = O[c];
-    if (b) {
-      for (var y = b[0], _ = 0; _ < b.length; y = b[++_]) {
-        var L;
-        (L = O).on.apply(L, S(y.args));
+    if (x) {
+      for (var y = x[0], L = 0; L < x.length; y = x[++L]) {
+        var _;
+        (_ = O).on.apply(_, S(y.args));
       }
-      b = void 0;
+      x = void 0;
     }
-    if (A) {
-      var J, B = (J = O).init.apply(J, S(A));
-      A = void 0;
-      for (var H = T[0], Z = 0; Z < T.length; H = T[++Z])
-        B = H.type === "then" ? B.then(H.next) : B.catch(H.next);
+    if (M) {
+      var F, B = (F = O).init.apply(F, S(M));
+      M = void 0;
+      for (var j = T[0], J = 0; J < T.length; j = T[++J])
+        B = j.type === "then" ? B.then(j.next) : B.catch(j.next);
       T = [];
     }
   }
-  var z = function(a) {
+  var k = function(a) {
     return a.contentWindow && a.contentWindow.document;
   };
   function tt() {
-    if (!h) {
+    if (!p) {
       var a = null, r = !1;
-      (h = document.createElement("iframe")).id = "web-messenger-container", h.frameBorder = 0, h.allowFullscreen = !0, h.allowTransparency = !0, h.scrolling = "no", h.className = o.a.iframe;
+      (p = document.createElement("iframe")).id = "web-messenger-container", p.frameBorder = 0, p.allowFullscreen = !0, p.allowTransparency = !0, p.scrolling = "no", p.className = o.a.iframe;
       var c = function() {
-        r = !0, clearInterval(a), delete h.onload;
-        var s = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, y = s ? 'nonce="'.concat(s, '"') : "", _ = `
+        r = !0, clearInterval(a), delete p.onload;
+        var s = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, y = s ? 'nonce="'.concat(s, '"') : "", L = `
                     <!DOCTYPE html>
                     <html>
                         <head>
@@ -233,32 +233,32 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         </body>
                     </html>
                     `);
-        if ("srcdoc" in h)
-          h.srcdoc = _;
+        if ("srcdoc" in p)
+          p.srcdoc = L;
         else {
-          var L = z(h);
-          L.open(), L.write(_), L.close();
+          var _ = k(p);
+          _.open(), _.write(L), _.close();
         }
       };
       a = setInterval(function() {
-        var s = z(h);
+        var s = k(p);
         r || !s || s.readyState !== "complete" && s.readyState !== "interactive" || c();
-      }, 1e3), h.onload = function() {
+      }, 1e3), p.onload = function() {
         r || c();
       };
     }
-    P ? R && (R.appendChild(h), R = void 0) : document.body.appendChild(h);
+    H ? q && (q.appendChild(p), q = void 0) : document.body.appendChild(p);
   }
   var et = { VERSION: "5.5.5", on: function() {
-    b || (b = []);
+    x || (x = []);
     for (var a = arguments.length, r = new Array(a), c = 0; c < a; c++)
       r[c] = arguments[c];
-    b.push({ args: r });
+    x.push({ args: r });
   }, init: function() {
     for (var a = arguments.length, r = new Array(a), c = 0; c < a; c++)
       r[c] = arguments[c];
-    A = r, P = r.length > 0 && !!r[0].embedded, k || G || l(function() {
-      V(), tt();
+    M = r, H = r.length > 0 && !!r[0].embedded, $ || X || l(function() {
+      G(), tt();
     });
     var s = { then: function(y) {
       return T.push({ type: "then", next: y }), s;
@@ -267,51 +267,36 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     } };
     return s;
   }, render: function(a) {
-    h ? a.appendChild(h) : R = a;
+    p ? a.appendChild(p) : q = a;
   }, destroy: function() {
-    O && (O.destroy(), h.remove ? h.remove() : h.parentNode.removeChild(h), g(function(a) {
+    O && (O.destroy(), p.remove ? p.remove() : p.parentNode.removeChild(p), g(function(a) {
       var r = a.rule;
       u.a.unregister(m(r));
-    }), F());
+    }), z());
   } };
-  function F() {
+  function z() {
     if (!document.getElementById("web-messenger-container")) {
-      O = void 0, h = void 0, window.__onWebMessengerFrameReady__ = Y;
+      O = void 0, p = void 0, window.__onWebMessengerFrameReady__ = Y;
       for (var a = I[0], r = 0; r < I.length; a = I[++r])
         C[a] && delete C[a];
       w(C, et);
     }
   }
-  F(), i.default = C;
+  z(), i.default = C;
 }]);
-const U = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", K = "https://dev.golinguist.com", j = "en-us", it = () => {
+const D = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", K = "https://dev.golinguist.com", W = "en-us", it = () => {
   const t = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ title: "Fetch POST Request Example" })
   };
   fetch("https://d3nielqn47.execute-api.us-east-1.amazonaws.com/dev/translate", t).then((i) => i.json()).then((i) => console.log("data", i));
-}, at = () => {
-  const t = new XMLHttpRequest(), i = {
-    sourceContent: "text",
-    sourceLocale: "sourceLocale",
-    targetLocale: "targetLocale",
-    rnResponseProjectId: null,
-    contentTypeName: "browser",
-    translationType: "machine",
-    incidentId: "ZD ChatBot Plugin",
-    textType: "text",
-    threadTypeId: 15,
-    translationIterationId: 1,
-    userTypeId: 3
-  };
-  return t.open("POST", "https://d3nielqn47.execute-api.us-east-1.amazonaws.com/dev/translate", !1), t.setRequestHeader("Authorization", `Basic ${U}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(i)), t.status === 200 && console.log("xmlHttpRequest", t), null;
-}, st = (t) => {
+}, at = (t) => {
   const i = new XMLHttpRequest(), e = {
     translationType: "machine",
     text: t
   };
-  return i.open("POST", `${K}/linguistnow/resources/locale/detectLocale/`, !1), i.setRequestHeader("Authorization", `Basic ${U}`), i.setRequestHeader("Content-Type", "application/json"), i.send(JSON.stringify(e)), i.status === 200 ? JSON.parse(i.responseText).detectedLanguage : null;
+  return i.open("POST", `${K}/linguistnow/resources/locale/detectLocale/`, !1), i.setRequestHeader("Authorization", `Basic ${D}`), i.setRequestHeader("Content-Type", "application/json"), i.send(JSON.stringify(e)), i.status === 200 ? JSON.parse(i.responseText).detectedLanguage : null;
 }, N = (t, i, e) => {
   const n = {
     sourceContent: t,
@@ -326,14 +311,14 @@ const U = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", K = "https://dev.golinguist.co
     translationIterationId: 1,
     userTypeId: 3
   }, o = new XMLHttpRequest();
-  if (o.open("POST", `${K}/linguistnow/resources/v1/translate/`, !1), o.setRequestHeader("Authorization", `Basic ${U}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200) {
+  if (o.open("POST", `${K}/linguistnow/resources/v1/translate/`, !1), o.setRequestHeader("Authorization", `Basic ${D}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200) {
     const l = JSON.parse(o.responseText);
     return console.debug(`Running LIO Translate API: ${t}`), l.translatedText;
   }
   return null;
-}, X = (t) => t.toLocaleLowerCase() !== j;
-var x = /* @__PURE__ */ ((t) => (t[t.translation = 0] = "translation", t[t.answerBot = 1] = "answerBot", t[t.agent = 2] = "agent", t[t.carousel = 3] = "carousel", t))(x || {});
-const M = (t, i) => {
+}, V = (t) => t.toLocaleLowerCase() !== W;
+var b = /* @__PURE__ */ ((t) => (t[t.translation = 0] = "translation", t[t.answerBot = 1] = "answerBot", t[t.agent = 2] = "agent", t[t.carousel = 3] = "carousel", t))(b || {});
+const R = (t, i) => {
   switch (i) {
     case 1:
       return "answerBot:" + t;
@@ -355,14 +340,14 @@ const M = (t, i) => {
     const o = /* @__PURE__ */ new Map();
     o.set(i, e), localStorage.setItem(t, JSON.stringify([...o]));
   }
-}, $ = (t, i) => {
+}, U = (t, i) => {
   const e = localStorage.getItem(t);
   if (e) {
     const o = new Map(JSON.parse(e)).get(i);
     return o !== null ? o : null;
   }
   return null;
-}, ct = () => rt, lt = ct(), ut = lt.default, dt = "63dd364c057947010e028fa1", ft = () => {
+}, st = () => rt, ct = st(), lt = ct.default, ut = "63dd364c057947010e028fa1", dt = () => {
   if (typeof Intl < "u")
     try {
       return Intl.NumberFormat().resolvedOptions().locale.toLocaleLowerCase();
@@ -370,17 +355,17 @@ const M = (t, i) => {
       return console.error("Cannot get locale from Intl"), null;
     }
   return null;
-}, Q = (t) => {
-  let i = ft();
-  return X(i) || (i = st(t)), i;
-}, q = (t, i, e) => {
-  const n = M(i, e);
-  let o = $(n, t);
+}, Z = (t) => {
+  let i = dt();
+  return V(i) || (i = at(t)), i;
+}, A = (t, i, e) => {
+  const n = R(i, e);
+  let o = U(n, t);
   if (o)
     return o;
   const l = localStorage.getItem("user-locale");
-  return l != null && l !== j && (o = N(t, j, l), o) ? (E(n, t, o), o) : null;
-}, pt = (t) => {
+  return l != null && l !== W && (o = N(t, W, l), o) ? (E(n, t, o), o) : null;
+}, ft = (t) => {
   const i = t == null ? void 0 : t.toLocaleLowerCase().replace("_", "-").split("-");
   return i ? ht(i[0]) : null;
 }, ht = (t) => {
@@ -391,19 +376,19 @@ const M = (t, i) => {
       return t;
   }
 };
-ut.init({
-  integrationId: dt,
+lt.init({
+  integrationId: ut,
   canUserSeeConversationList: !1,
   delegate: {
     beforeSend(t, i) {
       if (t.type === "text") {
         const e = t == null ? void 0 : t.text;
         if (e !== null && e.length > 0) {
-          const n = Q(t.text);
-          if (n != null && X(n)) {
+          const n = Z(t.text);
+          if (n != null && V(n)) {
             localStorage.setItem("user-locale", n), console.debug(`Detected User Locale: ${n}`);
-            const l = N(e, n, j);
-            l != null && (at(), it(), t.text = l, E(M(i.conversation.id, x.translation), l, e));
+            const l = N(e, n, W);
+            l != null && (it(), t.text = l, E(R(i.conversation.id, b.translation), l, e));
           }
         }
       }
@@ -414,38 +399,38 @@ ut.init({
       const e = t.text, n = ((l = t.source) == null ? void 0 : l.type) === "zd:answerBot", o = ((m = t.source) == null ? void 0 : m.type) === "zd:agentWorkspace";
       if (t.type === "text")
         if (n) {
-          let d = q(t.text, i.conversation.id, x.answerBot);
+          let d = A(t.text, i.conversation.id, b.answerBot);
           d && (t.text = d, console.debug(`Original Text: "${e}" Replaced with: "${d}"`));
           const u = t.actions;
           if (u)
             for (const f of u) {
-              let p = q(f.text, i.conversation.id, x.answerBot);
-              p && (f.text = p, console.debug(`Original Text: "${f.text}" Replaced with: "${p}"`));
+              let h = A(f.text, i.conversation.id, b.answerBot);
+              h && (f.text = h, console.debug(`Original Text: "${f.text}" Replaced with: "${h}"`));
             }
         } else if (o) {
-          const d = M(i.conversation.id, x.agent);
-          let u = $(d, e);
+          const d = R(i.conversation.id, b.agent);
+          let u = U(d, e);
           if (u)
             t.text = u, console.debug(`Original Text: "${e}" Replaced with: "${u}"`);
           else {
-            const f = localStorage.getItem("user-locale"), p = Q(t.text);
-            p != null && f !== p && (u = N(e, p, f), u && (E(d, e, u), t.text = u, console.debug(`Original Text: "${e}" Replaced with: "${u}"`)));
+            const f = localStorage.getItem("user-locale"), h = Z(t.text);
+            h != null && f !== h && (u = N(e, h, f), u && (E(d, e, u), t.text = u, console.debug(`Original Text: "${e}" Replaced with: "${u}"`)));
           }
         } else {
-          const d = $(M(i.conversation.id, x.translation), t.text);
+          const d = U(R(i.conversation.id, b.translation), t.text);
           d && (t.text = d, console.debug(`Original Text: "${e}" Replaced with: "${d}"`));
         }
       else if (t.type === "carousel" && n) {
         let d = t;
         for (const u of d.items) {
-          const f = q(u.title, i.conversation.id, x.carousel);
+          const f = A(u.title, i.conversation.id, b.carousel);
           f && (u.title = f);
-          const p = q(u.description, i.conversation.id, x.carousel);
-          p && (u.description = p);
+          const h = A(u.description, i.conversation.id, b.carousel);
+          h && (u.description = h);
           for (const g of u.actions) {
-            const w = q(g.text, i.conversation.id, x.carousel);
+            const w = A(g.text, i.conversation.id, b.carousel);
             w && (g.text = w);
-            const S = localStorage.getItem("user-locale"), v = pt(S);
+            const S = localStorage.getItem("user-locale"), v = ft(S);
             v && (g.uri = g.uri.replace("en-us", v));
           }
         }
