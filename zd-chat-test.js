@@ -174,7 +174,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       s[c] = i[c];
     return s;
   }
-  var S, h, W, A, M, C = {}, T = [], b = [], k = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), G = /PhantomJS/.test(navigator.userAgent) && !0, I = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var S, h, W, A, R, C = {}, T = [], b = [], k = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), G = /PhantomJS/.test(navigator.userAgent) && !0, I = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (k) {
     var P = document.createElement("a");
     P.href = "https://smooch.io/live-web-chat/?utm_source=widget", P.text = "Powered by Zendesk Sunshine", l(function() {
@@ -203,11 +203,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }
       b = void 0;
     }
-    if (M) {
-      var F, B = (F = S).init.apply(F, O(M));
-      M = void 0;
-      for (var R = T[0], Z = 0; Z < T.length; R = T[++Z])
-        B = R.type === "then" ? B.then(R.next) : B.catch(R.next);
+    if (R) {
+      var F, B = (F = S).init.apply(F, O(R));
+      R = void 0;
+      for (var M = T[0], Z = 0; Z < T.length; M = T[++Z])
+        B = M.type === "then" ? B.then(M.next) : B.catch(M.next);
       T = [];
     }
   }
@@ -257,7 +257,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, init: function() {
     for (var i = arguments.length, r = new Array(i), c = 0; c < i; c++)
       r[c] = arguments[c];
-    M = r, W = r.length > 0 && !!r[0].embedded, k || G || l(function() {
+    R = r, W = r.length > 0 && !!r[0].embedded, k || G || l(function() {
       V(), tt();
     });
     var s = { then: function(y) {
@@ -284,7 +284,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   J(), a.default = C;
 }]);
-const U = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", X = "https://dev.golinguist.com", j = "en-us", it = () => {
+const U = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", K = "https://dev.golinguist.com", j = "en-us", it = () => {
   const t = new XMLHttpRequest(), a = {
     sourceContent: "text",
     sourceLocale: "sourceLocale",
@@ -298,13 +298,13 @@ const U = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", X = "https://dev.golinguist.co
     translationIterationId: 1,
     userTypeId: 3
   };
-  return t.open("POST", "https://d3nielqn47.execute-api.us-east-1.amazonaws.com/dev/translate", !1), t.setRequestHeader("Authorization", `Basic ${U}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(a)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
+  return t.open("POST", "https://d3nielqn47.execute-api.us-east-1.amazonaws.com/dev/translate", !1), t.setRequestHeader("Authorization", `Basic ${U}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(a)), t.status === 200 ? JSON.parse(t.responseText) : null;
 }, at = (t) => {
   const a = new XMLHttpRequest(), e = {
     translationType: "machine",
     text: t
   };
-  return a.open("POST", `${X}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("Authorization", `Basic ${U}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(e)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
+  return a.open("POST", `${K}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("Authorization", `Basic ${U}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(e)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
 }, N = (t, a, e) => {
   const n = {
     sourceContent: t,
@@ -319,12 +319,12 @@ const U = "Ym9iYmllWkQ6I0Q4WmpHNzk3WWV5ayZmVQ==", X = "https://dev.golinguist.co
     translationIterationId: 1,
     userTypeId: 3
   }, o = new XMLHttpRequest();
-  if (o.open("POST", `${X}/linguistnow/resources/v1/translate/`, !1), o.setRequestHeader("Authorization", `Basic ${U}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200) {
+  if (o.open("POST", `${K}/linguistnow/resources/v1/translate/`, !1), o.setRequestHeader("Authorization", `Basic ${U}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200) {
     const l = JSON.parse(o.responseText);
     return console.debug(`Running LIO Translate API: ${t}`), l.translatedText;
   }
   return null;
-}, K = (t) => t.toLocaleLowerCase() !== j;
+}, X = (t) => t.toLocaleLowerCase() !== j;
 var x = /* @__PURE__ */ ((t) => (t[t.translation = 0] = "translation", t[t.answerBot = 1] = "answerBot", t[t.agent = 2] = "agent", t[t.carousel = 3] = "carousel", t))(x || {});
 const H = (t, a) => {
   switch (a) {
@@ -365,7 +365,7 @@ const H = (t, a) => {
   return null;
 }, Q = (t) => {
   let a = dt();
-  return K(a) || (a = at(t)), a;
+  return X(a) || (a = at(t)), a;
 }, q = (t, a, e) => {
   const n = H(a, e);
   let o = $(n, t);
@@ -393,7 +393,7 @@ lt.init({
         const e = t == null ? void 0 : t.text;
         if (e !== null && e.length > 0) {
           const n = Q(t.text);
-          if (n != null && K(n)) {
+          if (n != null && X(n)) {
             localStorage.setItem("user-locale", n), console.debug(`Detected User Locale: ${n}`);
             const l = N(e, n, j);
             l != null && (it(), t.text = l, E(H(a.conversation.id, x.translation), l, e));
