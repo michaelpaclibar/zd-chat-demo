@@ -369,7 +369,7 @@ const H = (r, o) => {
       return r;
   }
 }, ft = (r) => {
-  ct.init({
+  console.log("initChatBot: " + r), ct.init({
     integrationId: r,
     canUserSeeConversationList: !1,
     delegate: {
