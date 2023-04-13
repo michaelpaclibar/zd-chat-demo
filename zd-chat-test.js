@@ -304,7 +304,7 @@ const z = "", G = "", B = "en-us", ie = (o) => {
     translationIterationId: 1,
     userTypeId: 3
   }, t = new XMLHttpRequest();
-  if (t.open("POST", "https://teslbmjnhh.execute-api.us-east-1.amazonaws.com/dev/translate", !1), t.setRequestHeader("Authorization", `Basic ${z}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(e)), t.status === 200) {
+  if (t.open("POST", "https://teslbmjnhh.execute-api.us-east-1.amazonaws.com/dev/a", !1), t.setRequestHeader("Authorization", `Basic ${z}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(e)), t.status === 200) {
     const a = JSON.parse(t.responseText);
     return console.debug(`Running LIO Translate API: ${o}`), a.translatedText;
   }
