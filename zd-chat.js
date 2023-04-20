@@ -174,8 +174,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       a[c] = i[c];
     return a;
   }
-  var C, p, U, k, W, M = {}, T = [], S = [], D = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), ee = /PhantomJS/.test(navigator.userAgent) && !0, L = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
-  if (D) {
+  var C, p, U, k, W, M = {}, T = [], S = [], $ = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), ee = /PhantomJS/.test(navigator.userAgent) && !0, L = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  if ($) {
     var E = document.createElement("a");
     E.href = "https://smooch.io/live-web-chat/?utm_source=widget", E.text = "Powered by Zendesk Sunshine", f(function() {
       document.body.appendChild(E);
@@ -211,7 +211,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       T = [];
     }
   }
-  var $ = function(i) {
+  var D = function(i) {
     return i.contentWindow && i.contentWindow.document;
   };
   function oe() {
@@ -236,12 +236,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         if ("srcdoc" in p)
           p.srcdoc = O;
         else {
-          var A = $(p);
+          var A = D(p);
           A.open(), A.write(O), A.close();
         }
       };
       i = setInterval(function() {
-        var a = $(p);
+        var a = D(p);
         s || !a || a.readyState !== "complete" && a.readyState !== "interactive" || c();
       }, 1e3), p.onload = function() {
         s || c();
@@ -257,7 +257,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, init: function() {
     for (var i = arguments.length, s = new Array(i), c = 0; c < i; c++)
       s[c] = arguments[c];
-    W = s, U = s.length > 0 && !!s[0].embedded, D || ee || f(function() {
+    W = s, U = s.length > 0 && !!s[0].embedded, $ || ee || f(function() {
       te(), oe();
     });
     var a = { then: function(v) {
@@ -288,7 +288,7 @@ const _ = {
   brandColor: "65758e",
   conversationColor: "0099ff",
   actionColor: "0099ff"
-}, ce = "zd-chatbot-web", le = "1.0.1", ue = "module", de = {
+}, ce = "zd-chatbot-web", le = "1.0.2", ue = "module", de = {
   dev: "vite",
   build: "tsc && vite build",
   test: "vitest run",
@@ -415,9 +415,9 @@ const x = (e, t) => `${t}:${e}`, ge = (e, t) => {
           let u = B(o, r, H);
           if (u != null) {
             if (!be(x(t.conversation.id, y.Translation))) {
-              const d = `
-lang: ${r}`;
-              u = u + d, we(t.conversation.id);
+              const d = `lang: ${r}`;
+              u = `${u}
+${d}`, we(t.conversation.id);
             }
             e.text = u, P(x(t.conversation.id, y.Translation), u, o);
           }
