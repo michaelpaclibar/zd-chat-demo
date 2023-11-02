@@ -384,7 +384,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = () => {
   let e;
   try {
-    return e = window.getRequestToken ? window.getRequestToken() : void 0, e;
+    return e = window.getRequestToken ? window.getRequestToken : void 0, e;
   } catch (t) {
     return console.log(`Failed to retrieve token: ${t}`), "";
   }
