@@ -8,103 +8,103 @@
  * the terms above.
  * 
  */
-var he = function(e) {
-  var o = {};
-  function n(t) {
-    if (o[t])
-      return o[t].exports;
-    var r = o[t] = { i: t, l: !1, exports: {} };
-    return e[t].call(r.exports, r, r.exports, n), r.l = !0, r.exports;
+var xe = function(e) {
+  var t = {};
+  function r(n) {
+    if (t[n])
+      return t[n].exports;
+    var o = t[n] = { i: n, l: !1, exports: {} };
+    return e[n].call(o.exports, o, o.exports, r), o.l = !0, o.exports;
   }
-  return n.m = e, n.c = o, n.d = function(t, r, a) {
-    n.o(t, r) || Object.defineProperty(t, r, { enumerable: !0, get: a });
-  }, n.r = function(t) {
-    typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(t, "__esModule", { value: !0 });
-  }, n.t = function(t, r) {
-    if (1 & r && (t = n(t)), 8 & r || 4 & r && typeof t == "object" && t && t.__esModule)
-      return t;
-    var a = /* @__PURE__ */ Object.create(null);
-    if (n.r(a), Object.defineProperty(a, "default", { enumerable: !0, value: t }), 2 & r && typeof t != "string")
-      for (var d in t)
-        n.d(a, d, function(p) {
-          return t[p];
-        }.bind(null, d));
-    return a;
-  }, n.n = function(t) {
-    var r = t && t.__esModule ? function() {
-      return t.default;
+  return r.m = e, r.c = t, r.d = function(n, o, s) {
+    r.o(n, o) || Object.defineProperty(n, o, { enumerable: !0, get: s });
+  }, r.r = function(n) {
+    typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(n, "__esModule", { value: !0 });
+  }, r.t = function(n, o) {
+    if (1 & o && (n = r(n)), 8 & o || 4 & o && typeof n == "object" && n && n.__esModule)
+      return n;
+    var s = /* @__PURE__ */ Object.create(null);
+    if (r.r(s), Object.defineProperty(s, "default", { enumerable: !0, value: n }), 2 & o && typeof n != "string")
+      for (var c in n)
+        r.d(s, c, function(p) {
+          return n[p];
+        }.bind(null, c));
+    return s;
+  }, r.n = function(n) {
+    var o = n && n.__esModule ? function() {
+      return n.default;
     } : function() {
-      return t;
+      return n;
     };
-    return n.d(r, "a", r), r;
-  }, n.o = function(t, r) {
-    return Object.prototype.hasOwnProperty.call(t, r);
-  }, n.p = "https://cdn.smooch.io/", n(n.s = 6);
-}([function(e, o, n) {
-  var t = n(3);
-  e.exports = new t();
-}, function(e, o) {
-  e.exports = { isFunction: function(n) {
-    return typeof n == "function";
-  }, isArray: function(n) {
-    return Object.prototype.toString.apply(n) === "[object Array]";
-  }, each: function(n, t) {
-    for (var r = 0, a = n.length; r < a && t(n[r], r) !== !1; r++)
+    return r.d(o, "a", o), o;
+  }, r.o = function(n, o) {
+    return Object.prototype.hasOwnProperty.call(n, o);
+  }, r.p = "https://cdn.smooch.io/", r(r.s = 6);
+}([function(e, t, r) {
+  var n = r(3);
+  e.exports = new n();
+}, function(e, t) {
+  e.exports = { isFunction: function(r) {
+    return typeof r == "function";
+  }, isArray: function(r) {
+    return Object.prototype.toString.apply(r) === "[object Array]";
+  }, each: function(r, n) {
+    for (var o = 0, s = r.length; o < s && n(r[o], o) !== !1; o++)
       ;
   } };
-}, function(e, o, n) {
+}, function(e, t, r) {
   e.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
-}, function(e, o, n) {
-  var t = n(4), r = n(1), a = r.each, d = r.isFunction, p = r.isArray;
-  function f() {
+}, function(e, t, r) {
+  var n = r(4), o = r(1), s = o.each, c = o.isFunction, p = o.isArray;
+  function d() {
     if (!window.matchMedia)
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
-  f.prototype = { constructor: f, register: function(u, m, g) {
+  d.prototype = { constructor: d, register: function(f, h, g) {
     var v = this.queries, y = g && this.browserIsIncapable;
-    return v[u] || (v[u] = new t(u, y)), d(m) && (m = { match: m }), p(m) || (m = [m]), a(m, function(C) {
-      d(C) && (C = { match: C }), v[u].addHandler(C);
+    return v[f] || (v[f] = new n(f, y)), c(h) && (h = { match: h }), p(h) || (h = [h]), s(h, function(x) {
+      c(x) && (x = { match: x }), v[f].addHandler(x);
     }), this;
-  }, unregister: function(u, m) {
-    var g = this.queries[u];
-    return g && (m ? g.removeHandler(m) : (g.clear(), delete this.queries[u])), this;
-  } }, e.exports = f;
-}, function(e, o, n) {
-  var t = n(5), r = n(1).each;
-  function a(d, p) {
-    this.query = d, this.isUnconditional = p, this.handlers = [], this.mql = window.matchMedia(d);
-    var f = this;
-    this.listener = function(u) {
-      f.mql = u.currentTarget || u, f.assess();
+  }, unregister: function(f, h) {
+    var g = this.queries[f];
+    return g && (h ? g.removeHandler(h) : (g.clear(), delete this.queries[f])), this;
+  } }, e.exports = d;
+}, function(e, t, r) {
+  var n = r(5), o = r(1).each;
+  function s(c, p) {
+    this.query = c, this.isUnconditional = p, this.handlers = [], this.mql = window.matchMedia(c);
+    var d = this;
+    this.listener = function(f) {
+      d.mql = f.currentTarget || f, d.assess();
     }, this.mql.addListener(this.listener);
   }
-  a.prototype = { constuctor: a, addHandler: function(d) {
-    var p = new t(d);
+  s.prototype = { constuctor: s, addHandler: function(c) {
+    var p = new n(c);
     this.handlers.push(p), this.matches() && p.on();
-  }, removeHandler: function(d) {
+  }, removeHandler: function(c) {
     var p = this.handlers;
-    r(p, function(f, u) {
-      if (f.equals(d))
-        return f.destroy(), !p.splice(u, 1);
+    o(p, function(d, f) {
+      if (d.equals(c))
+        return d.destroy(), !p.splice(f, 1);
     });
   }, matches: function() {
     return this.mql.matches || this.isUnconditional;
   }, clear: function() {
-    r(this.handlers, function(d) {
-      d.destroy();
+    o(this.handlers, function(c) {
+      c.destroy();
     }), this.mql.removeListener(this.listener), this.handlers.length = 0;
   }, assess: function() {
-    var d = this.matches() ? "on" : "off";
-    r(this.handlers, function(p) {
-      p[d]();
+    var c = this.matches() ? "on" : "off";
+    o(this.handlers, function(p) {
+      p[c]();
     });
-  } }, e.exports = a;
-}, function(e, o) {
-  function n(t) {
-    this.options = t, !t.deferSetup && this.setup();
+  } }, e.exports = s;
+}, function(e, t) {
+  function r(n) {
+    this.options = n, !n.deferSetup && this.setup();
   }
-  n.prototype = { constructor: n, setup: function() {
+  r.prototype = { constructor: r, setup: function() {
     this.options.setup && this.options.setup(), this.initialised = !0;
   }, on: function() {
     !this.initialised && this.setup(), this.options.match && this.options.match();
@@ -112,115 +112,115 @@ var he = function(e) {
     this.options.unmatch && this.options.unmatch();
   }, destroy: function() {
     this.options.destroy ? this.options.destroy() : this.off();
-  }, equals: function(t) {
-    return this.options === t || this.options.match === t;
-  } }, e.exports = n;
-}, function(e, o, n) {
-  n.r(o);
-  var t = n(2), r = n.n(t);
-  function a(s) {
+  }, equals: function(n) {
+    return this.options === n || this.options.match === n;
+  } }, e.exports = r;
+}, function(e, t, r) {
+  r.r(t);
+  var n = r(2), o = r.n(n);
+  function s(i) {
     document.readyState !== "complete" && document.readyState !== "loaded" && document.readyState !== "interactive" || !document.body ? document.addEventListener("DOMContentLoaded", function() {
-      s();
-    }) : s();
+      i();
+    }) : i();
   }
-  function d(s) {
-    var i = ["screen"];
-    return s.minHeight && i.push("(min-height: ".concat(s.minHeight, "px)")), s.maxHeight && i.push("(max-height: ".concat(s.maxHeight, "px)")), s.minWidth && i.push("(min-width: ".concat(s.minWidth, "px)")), s.maxWidth && i.push("(max-width: ".concat(s.maxWidth, "px)")), i.join(" and ");
+  function c(i) {
+    var a = ["screen"];
+    return i.minHeight && a.push("(min-height: ".concat(i.minHeight, "px)")), i.maxHeight && a.push("(max-height: ".concat(i.maxHeight, "px)")), i.minWidth && a.push("(min-width: ".concat(i.minWidth, "px)")), i.maxWidth && a.push("(max-width: ".concat(i.maxWidth, "px)")), a.join(" and ");
   }
-  var p = n(0), f = n.n(p), u = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, m = ["lg", "md", "sm", "xs"];
-  function g(s) {
-    for (var i = 0; i < m.length; i++) {
-      var c = m[i], l = u[c];
+  var p = r(0), d = r.n(p), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
+  function g(i) {
+    for (var a = 0; a < h.length; a++) {
+      var u = h[a], l = f[u];
       Object.prototype.toString.call(l) !== "[object Array]" && (l = [l]);
       for (var b = 0; b < l.length; b++)
-        s({ rule: l[b], size: c });
+        i({ rule: l[b], size: u });
     }
   }
   function v() {
-    return (v = Object.assign ? Object.assign.bind() : function(s) {
-      for (var i = 1; i < arguments.length; i++) {
-        var c = arguments[i];
-        for (var l in c)
-          Object.prototype.hasOwnProperty.call(c, l) && (s[l] = c[l]);
+    return (v = Object.assign ? Object.assign.bind() : function(i) {
+      for (var a = 1; a < arguments.length; a++) {
+        var u = arguments[a];
+        for (var l in u)
+          Object.prototype.hasOwnProperty.call(u, l) && (i[l] = u[l]);
       }
-      return s;
+      return i;
     }).apply(this, arguments);
   }
-  function y(s) {
-    return function(i) {
-      if (Array.isArray(i))
-        return C(i);
-    }(s) || function(i) {
-      if (typeof Symbol < "u" && i[Symbol.iterator] != null || i["@@iterator"] != null)
-        return Array.from(i);
-    }(s) || function(i, c) {
-      if (i) {
-        if (typeof i == "string")
-          return C(i, c);
-        var l = Object.prototype.toString.call(i).slice(8, -1);
-        if (l === "Object" && i.constructor && (l = i.constructor.name), l === "Map" || l === "Set")
-          return Array.from(i);
+  function y(i) {
+    return function(a) {
+      if (Array.isArray(a))
+        return x(a);
+    }(i) || function(a) {
+      if (typeof Symbol < "u" && a[Symbol.iterator] != null || a["@@iterator"] != null)
+        return Array.from(a);
+    }(i) || function(a, u) {
+      if (a) {
+        if (typeof a == "string")
+          return x(a, u);
+        var l = Object.prototype.toString.call(a).slice(8, -1);
+        if (l === "Object" && a.constructor && (l = a.constructor.name), l === "Map" || l === "Set")
+          return Array.from(a);
         if (l === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(l))
-          return C(i, c);
+          return x(a, u);
       }
-    }(s) || function() {
+    }(i) || function() {
       throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
     }();
   }
-  function C(s, i) {
-    (i == null || i > s.length) && (i = s.length);
-    for (var c = 0, l = new Array(i); c < i; c++)
-      l[c] = s[c];
+  function x(i, a) {
+    (a == null || a > i.length) && (a = i.length);
+    for (var u = 0, l = new Array(a); u < a; u++)
+      l[u] = i[u];
     return l;
   }
-  var x, h, U, O, R, M = {}, _ = [], I = [], $ = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), le = /PhantomJS/.test(navigator.userAgent) && !0, T = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
-  if ($) {
-    var H = document.createElement("a");
-    H.href = "https://smooch.io/live-web-chat/?utm_source=widget", H.text = "Powered by Zendesk Sunshine", a(function() {
-      document.body.appendChild(H);
+  var S, m, N, O, H, R = {}, I = [], T = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  if (K) {
+    var U = document.createElement("a");
+    U.href = "https://smooch.io/live-web-chat/?utm_source=widget", U.text = "Powered by Zendesk Sunshine", s(function() {
+      document.body.appendChild(U);
     });
   }
-  function ce() {
-    var s = document.createElement("link");
-    s.rel = "stylesheet", s.type = "text/css", s.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(s);
+  function me() {
+    var i = document.createElement("link");
+    i.rel = "stylesheet", i.type = "text/css", i.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(i);
   }
-  function ue(s) {
-    var i;
+  function ge(i) {
+    var a;
     window.__onWebMessengerFrameReady__ = function() {
-    }, x = s, U || (i = h, g(function(X) {
-      var pe = X.rule, me = X.size;
-      f.a.register(d(pe), function() {
-        i.contentWindow.postMessage({ type: "sizeChange", value: me }, "".concat(location.protocol, "//").concat(location.host));
+    }, S = i, N || (a = m, g(function(G) {
+      var be = G.rule, we = G.size;
+      d.a.register(c(be), function() {
+        a.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
-    for (var c = T[0], l = 0; l < T.length; c = T[++l])
-      M[c] = x[c];
-    if (I) {
-      for (var b = I[0], q = 0; q < I.length; b = I[++q]) {
-        var L;
-        (L = x).on.apply(L, y(b.args));
+    for (var u = k[0], l = 0; l < k.length; u = k[++l])
+      R[u] = S[u];
+    if (T) {
+      for (var b = T[0], M = 0; M < T.length; b = T[++M]) {
+        var _;
+        (_ = S).on.apply(_, y(b.args));
       }
-      I = void 0;
+      T = void 0;
     }
-    if (R) {
-      var K, F = (K = x).init.apply(K, y(R));
-      R = void 0;
-      for (var N = _[0], J = 0; J < _.length; N = _[++J])
-        F = N.type === "then" ? F.then(N.next) : F.catch(N.next);
-      _ = [];
+    if (H) {
+      var J, j = (J = S).init.apply(J, y(H));
+      H = void 0;
+      for (var D = I[0], V = 0; V < I.length; D = I[++V])
+        j = D.type === "then" ? j.then(D.next) : j.catch(D.next);
+      I = [];
     }
   }
-  var z = function(s) {
-    return s.contentWindow && s.contentWindow.document;
+  var Z = function(i) {
+    return i.contentWindow && i.contentWindow.document;
   };
-  function de() {
-    if (!h) {
-      var s = null, i = !1;
-      (h = document.createElement("iframe")).id = "web-messenger-container", h.frameBorder = 0, h.allowFullscreen = !0, h.allowTransparency = !0, h.scrolling = "no", h.className = r.a.iframe;
-      var c = function() {
-        i = !0, clearInterval(s), delete h.onload;
-        var l = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, b = l ? 'nonce="'.concat(l, '"') : "", q = `
+  function ve() {
+    if (!m) {
+      var i = null, a = !1;
+      (m = document.createElement("iframe")).id = "web-messenger-container", m.frameBorder = 0, m.allowFullscreen = !0, m.allowTransparency = !0, m.scrolling = "no", m.className = o.a.iframe;
+      var u = function() {
+        a = !0, clearInterval(i), delete m.onload;
+        var l = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, b = l ? 'nonce="'.concat(l, '"') : "", M = `
                     <!DOCTYPE html>
                     <html>
                         <head>
@@ -233,67 +233,67 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         </body>
                     </html>
                     `);
-        if ("srcdoc" in h)
-          h.srcdoc = q;
+        if ("srcdoc" in m)
+          m.srcdoc = M;
         else {
-          var L = z(h);
-          L.open(), L.write(q), L.close();
+          var _ = Z(m);
+          _.open(), _.write(M), _.close();
         }
       };
-      s = setInterval(function() {
-        var l = z(h);
-        i || !l || l.readyState !== "complete" && l.readyState !== "interactive" || c();
-      }, 1e3), h.onload = function() {
-        i || c();
+      i = setInterval(function() {
+        var l = Z(m);
+        a || !l || l.readyState !== "complete" && l.readyState !== "interactive" || u();
+      }, 1e3), m.onload = function() {
+        a || u();
       };
     }
-    U ? O && (O.appendChild(h), O = void 0) : document.body.appendChild(h);
+    N ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
   }
-  var fe = { VERSION: "5.5.5", on: function() {
-    I || (I = []);
-    for (var s = arguments.length, i = new Array(s), c = 0; c < s; c++)
-      i[c] = arguments[c];
-    I.push({ args: i });
+  var ye = { VERSION: "5.5.5", on: function() {
+    T || (T = []);
+    for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
+      a[u] = arguments[u];
+    T.push({ args: a });
   }, init: function() {
-    for (var s = arguments.length, i = new Array(s), c = 0; c < s; c++)
-      i[c] = arguments[c];
-    R = i, U = i.length > 0 && !!i[0].embedded, $ || le || a(function() {
-      ce(), de();
+    for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
+      a[u] = arguments[u];
+    H = a, N = a.length > 0 && !!a[0].embedded, K || he || s(function() {
+      me(), ve();
     });
     var l = { then: function(b) {
-      return _.push({ type: "then", next: b }), l;
+      return I.push({ type: "then", next: b }), l;
     }, catch: function(b) {
-      return _.push({ type: "catch", next: b }), l;
+      return I.push({ type: "catch", next: b }), l;
     } };
     return l;
-  }, render: function(s) {
-    h ? s.appendChild(h) : O = s;
+  }, render: function(i) {
+    m ? i.appendChild(m) : O = i;
   }, destroy: function() {
-    x && (x.destroy(), h.remove ? h.remove() : h.parentNode.removeChild(h), g(function(s) {
-      var i = s.rule;
-      f.a.unregister(d(i));
-    }), Z());
+    S && (S.destroy(), m.remove ? m.remove() : m.parentNode.removeChild(m), g(function(i) {
+      var a = i.rule;
+      d.a.unregister(c(a));
+    }), X());
   } };
-  function Z() {
+  function X() {
     if (!document.getElementById("web-messenger-container")) {
-      x = void 0, h = void 0, window.__onWebMessengerFrameReady__ = ue;
-      for (var s = T[0], i = 0; i < T.length; s = T[++i])
-        M[s] && delete M[s];
-      v(M, fe);
+      S = void 0, m = void 0, window.__onWebMessengerFrameReady__ = ge;
+      for (var i = k[0], a = 0; a < k.length; i = k[++a])
+        R[i] && delete R[i];
+      v(R, ye);
     }
   }
-  Z(), o.default = M;
+  X(), t.default = R;
 }]);
 const A = {
   brandColor: "65758e",
   conversationColor: "0099ff",
   actionColor: "0099ff"
-}, ge = "zd-chatbot-web", ve = "1.0.10", ye = "module", be = {
+}, Se = "zd-chatbot-web", Ce = "1.0.10", Te = "module", Ie = {
   dev: "vite",
   build: "tsc && vite build",
   test: "vitest run",
   coverage: "vitest run --coverage"
-}, we = {
+}, ke = {
   "@types/node": "^18.13.0",
   "@types/smooch": "^5.3.3",
   "@vitest/coverage-c8": "^0.30.1",
@@ -301,82 +301,110 @@ const A = {
   typescript: "^4.9.3",
   vite: "^4.1.0",
   vitest: "^0.30.1"
-}, Ce = {
+}, _e = {
   smooch: "^5.3.3",
   terser: "^5.16.3",
   "vite-require": "^0.2.3"
-}, W = {
-  name: ge,
+}, $ = {
+  name: Se,
   private: !0,
-  version: ve,
-  type: ye,
-  scripts: be,
-  devDependencies: we,
-  dependencies: Ce
+  version: Ce,
+  type: Te,
+  scripts: Ie,
+  devDependencies: ke,
+  dependencies: _e
 };
 var w = /* @__PURE__ */ ((e) => (e.Translation = "translation", e.AnswerBot = "answerBot", e.Agent = "agent", e.Carousel = "carousel", e.Form = "form", e))(w || {});
-const S = (e, o) => `${o}:${e}`, xe = (e, o) => {
-  localStorage.setItem(e, JSON.stringify([...o]));
-}, ne = (e) => {
-  const o = localStorage.getItem(e);
-  return o ? new Map(JSON.parse(o)) : null;
-}, B = (e, o, n) => {
-  const t = S(
+const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
+  localStorage.setItem(e, JSON.stringify([...t]));
+}, oe = (e) => {
+  const t = localStorage.getItem(e);
+  return t ? new Map(JSON.parse(t)) : null;
+}, F = (e, t, r) => {
+  const n = C(
     e,
     "translation"
     /* Translation */
-  ), r = ne(t) ?? /* @__PURE__ */ new Map();
-  r.set(o, n), xe(t, r);
-}, D = (e, o) => {
-  const n = S(
+  ), o = oe(n) ?? /* @__PURE__ */ new Map();
+  o.set(t, r), Ae(n, o);
+}, P = (e, t) => {
+  const r = C(
     e,
     "translation"
     /* Translation */
-  ), t = ne(n);
-  return (t == null ? void 0 : t.get(o)) ?? null;
-}, Se = (e) => {
+  ), n = oe(r);
+  return (n == null ? void 0 : n.get(t)) ?? null;
+}, Le = (e) => {
   localStorage.setItem("user-locale", e);
-}, Ie = () => {
+}, qe = () => {
   const e = localStorage.getItem("user-locale");
   return e == null || e === "" ? null : e;
-}, G = (e) => {
-  const o = `disable-auto-translate:${e}`;
-  localStorage.setItem(o, "true");
 }, Q = (e) => {
-  const o = `disable-auto-translate:${e}`;
-  return localStorage.getItem(o) === "true";
-}, _e = (e) => {
-  const o = `is-locale-sent-to-server:${e}`;
-  return localStorage.getItem(o) === "true";
-}, Te = (e) => {
-  const o = `is-locale-sent-to-server:${e}`;
-  localStorage.setItem(o, "true");
-}, j = () => {
+  const t = `disable-auto-translate:${e}`;
+  localStorage.setItem(t, "true");
+}, Y = (e) => {
+  const t = `disable-auto-translate:${e}`;
+  return localStorage.getItem(t) === "true";
+}, Re = (e) => {
+  const t = `is-locale-sent-to-server:${e}`;
+  return localStorage.getItem(t) === "true";
+}, Me = (e) => {
+  const t = `is-locale-sent-to-server:${e}`;
+  localStorage.setItem(t, "true");
+}, E = () => {
   const e = localStorage.getItem("lio-api-key");
   return e ? e === "" ? null : e : null;
-}, Le = (e) => {
+}, W = () => {
+  const e = localStorage.getItem("lio-chatbot-token");
+  return e ? e === "" ? null : JSON.parse(e).access_token : null;
+}, re = () => {
+  const e = localStorage.getItem("lio-chatbot-token-expiration");
+  return e ? new Date(e) < new Date() : !0;
+}, se = (e, t = "") => {
+  t !== "" && localStorage.setItem("lio-access-token-request", t), localStorage.setItem("lio-chatbot-token", e);
+  const o = new Date().getTime() + 1 * 60 * 60 * 1e3, s = new Date(o);
+  localStorage.setItem("lio-chatbot-token-expiration", s.toISOString());
+}, Oe = (e) => {
   e !== "" && localStorage.setItem("lio-api-key", e);
-}, V = (e) => localStorage.setItem("lio-chatbot-disable-translate-feature", e ? "true" : "false"), Y = () => {
+}, q = (e) => localStorage.setItem("lio-chatbot-disable-translate-feature", e ? "true" : "false"), ee = () => {
   const e = localStorage.getItem("lio-chatbot-disable-translate-feature");
   return e && e === "true";
-}, Ae = () => {
+}, He = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request");
-}, oe = "https://dev-agw.golinguist.com", E = "en-us", re = (e) => {
-  const o = new XMLHttpRequest(), n = {
+}, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", De = "local.golinguist.com/read,local.golinguist.com/write", $e = (e, t) => {
+  const r = `${ae}/oauth2/token`, n = De.replace(",", " "), o = new XMLHttpRequest();
+  o.open("POST", `${r}`, !1), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  const s = `grant_type=client_credentials&client_id=${e}&client_secret=${t}&scope=${encodeURIComponent(n)}`;
+  o.send(s), o.status === 200 ? (se(o.responseText, s), q(!1)) : (console.error(o.responseText), q(!0));
+}, ie = () => {
+  const e = `${ae}/oauth2/token`, t = new XMLHttpRequest();
+  t.open("POST", `${e}`, !1), t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  const r = localStorage.getItem("lio-access-token-request");
+  r !== "" && (t.send(r), t.status === 200 ? (se(t.responseText), q(!1)) : (console.error(t.responseText), q(!0)));
+}, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = () => {
+  let e;
+  try {
+    return e = window.getRequestToken ? window.getRequestToken() : void 0, e;
+  } catch (t) {
+    return console.log(`Failed to retrieve token: ${t}`), "";
+  }
+}, ue = (e) => {
+  const t = new XMLHttpRequest(), r = {
     translationType: "machine",
     text: e
   };
   try {
-    const t = j();
-    return o.open("POST", `${oe}/linguistnow/resources/locale/detectLocale/`, !1), o.setRequestHeader("x-api-key", `${t}`), o.setRequestHeader("Content-Type", "application/json"), o.send(JSON.stringify(n)), o.status === 200 ? JSON.parse(o.responseText).detectedLanguage : null;
+    re() && ie();
+    const n = W(), o = E();
+    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("X-Request-ID", `${le()}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
   } catch {
     return null;
   }
-}, P = (e, o, n) => {
-  const t = {
+}, z = (e, t, r) => {
+  const n = {
     sourceContent: e,
-    sourceLocale: o,
-    targetLocale: n,
+    sourceLocale: t,
+    targetLocale: r,
     rnResponseProjectId: null,
     contentTypeName: "bot",
     translationType: "machine",
@@ -387,16 +415,17 @@ const S = (e, o) => `${o}:${e}`, xe = (e, o) => {
     userTypeId: 3
   };
   try {
-    const r = j(), a = new XMLHttpRequest(), d = `${oe}/linguistnow/resources/v1/translate/`;
-    if (a.open("POST", d, !1), a.setRequestHeader("x-api-key", `${r}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(t)), a.status === 200) {
-      const p = JSON.parse(a.responseText);
-      return console.debug(`Running LIO Translate API: ${e}`), p.translatedText;
+    re() && ie();
+    const o = W(), s = E(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
+    if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), c.setRequestHeader("X-Request-ID", `${le()}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
+      const d = JSON.parse(c.responseText);
+      return console.debug(`Running LIO Translate API: ${e}`), d.translatedText;
     }
     return null;
   } catch {
     return null;
   }
-}, ie = (e) => e.toLocaleLowerCase() !== E, se = () => {
+}, de = (e) => e.toLocaleLowerCase() !== B, fe = () => {
   if (typeof Intl < "u")
     try {
       return Intl.NumberFormat().resolvedOptions().locale.toLocaleLowerCase();
@@ -404,119 +433,119 @@ const S = (e, o) => `${o}:${e}`, xe = (e, o) => {
       return console.error("Cannot get locale from Intl"), null;
     }
   return null;
-}, ae = (e) => {
-  let o = se();
-  return ie(o) || (o = re(e)), o;
-}, ke = (e) => {
-  const o = e == null ? void 0 : e.toLocaleLowerCase().replace("_", "-").split("-");
-  if (o) {
-    const n = o[0];
-    switch (n) {
+}, pe = (e) => {
+  let t = fe();
+  return de(t) || (t = ue(e)), t;
+}, Ee = (e) => {
+  const t = e == null ? void 0 : e.toLocaleLowerCase().replace("_", "-").split("-");
+  if (t) {
+    const r = t[0];
+    switch (r) {
       case "zh":
         return "zh-hk";
       default:
-        return n;
+        return r;
     }
   }
   return null;
-}, k = (e, o, n) => {
-  const t = S(o, n);
-  let r = D(t, e);
-  if (r)
-    return r;
-  const a = localStorage.getItem("user-locale");
-  return a != null && a !== E && (r = P(e, E, a), r) ? (B(t, e, r), r) : null;
-}, ee = (e, o, n) => {
-  const t = S(e.source.id, w.Translation);
-  if (!_e(t)) {
-    const a = `lang: ${o}`;
-    n = `${n}
-${a}`, Te(t);
+}, L = (e, t, r) => {
+  const n = C(t, r);
+  let o = P(n, e);
+  if (o)
+    return o;
+  const s = localStorage.getItem("user-locale");
+  return s != null && s !== B && (o = z(e, B, s), o) ? (F(n, e, o), o) : null;
+}, te = (e, t, r) => {
+  const n = C(e.source.id, w.Translation);
+  if (!Re(n)) {
+    const s = `lang: ${t}`;
+    r = `${r}
+${s}`, Me(n);
   }
-  return n;
-}, te = (e, o, n) => {
-  let t = D(e, o);
-  if (t)
-    n.text = t;
+  return r;
+}, ne = (e, t, r) => {
+  let n = P(e, t);
+  if (n)
+    r.text = n;
   else {
-    const r = localStorage.getItem("user-locale"), a = ae(n.text);
-    a != null && r !== a && (t = P(o, a, r), t && (B(e, o, t), n.text = t));
+    const o = localStorage.getItem("user-locale"), s = pe(r.text);
+    s != null && o !== s && (n = z(t, s, o), n && (F(e, t, n), r.text = n));
   }
-}, Me = {
-  beforeSend(e, o) {
-    if (Y()) {
+}, Be = {
+  beforeSend(e, t) {
+    if (ee()) {
       if (e.type === "text") {
-        let r = se();
-        e.text = ee(e, r, e.text);
+        let o = fe();
+        e.text = te(e, o, e.text);
       }
       return e;
     }
-    const n = S(o.conversation.id, w.Agent), t = !Q(n);
-    if (e.type === "text" && t) {
-      const r = e == null ? void 0 : e.text;
-      if (r !== null && r.length > 0) {
-        let a = Ie();
-        if (a || (a = ae(e.text), Se(a)), a != null && ie(a)) {
-          let p = P(r, a, E);
-          p != null && (p = ee(e, a, p), e.text = p, B(S(o.conversation.id, w.Translation), p, r));
+    const r = C(t.conversation.id, w.Agent), n = !Y(r);
+    if (e.type === "text" && n) {
+      const o = e == null ? void 0 : e.text;
+      if (o !== null && o.length > 0) {
+        let s = qe();
+        if (s || (s = pe(e.text), Le(s)), s != null && de(s)) {
+          let p = z(o, s, B);
+          p != null && (p = te(e, s, p), e.text = p, F(C(t.conversation.id, w.Translation), p, o));
         }
       }
     }
-    return e.type === "formResponse" && t && e.fields.find((d) => d.name === "dataCapture.systemField.requester.email" && d.type === "email") && G(n), e;
+    return e.type === "formResponse" && n && e.fields.find((c) => c.name === "dataCapture.systemField.requester.email" && c.type === "email") && Q(r), e;
   },
-  beforeDisplay(e, o) {
-    var d, p;
-    if (Y())
+  beforeDisplay(e, t) {
+    var c, p;
+    if (ee())
       return e;
-    const n = e.text, t = ((d = e.source) == null ? void 0 : d.type) === "zd:answerBot", r = ((p = e.source) == null ? void 0 : p.type) === "zd:agentWorkspace", a = !Q(S(o.conversation.id, w.Agent));
+    const r = e.text, n = ((c = e.source) == null ? void 0 : c.type) === "zd:answerBot", o = ((p = e.source) == null ? void 0 : p.type) === "zd:agentWorkspace", s = !Y(C(t.conversation.id, w.Agent));
     switch (e.type) {
       case "text": {
-        if (t) {
-          let f = k(e.text, o.conversation.id, w.Agent);
-          f && (e.text = f);
-          const u = e.actions;
-          if (u)
-            for (const m of u) {
-              let g = k(m.text, o.conversation.id, w.AnswerBot);
-              g && (m.text = g);
+        if (n) {
+          let d = L(e.text, t.conversation.id, w.Agent);
+          d && (e.text = d);
+          const f = e.actions;
+          if (f)
+            for (const h of f) {
+              let g = L(h.text, t.conversation.id, w.AnswerBot);
+              g && (h.text = g);
             }
-        } else if (r) {
-          let f = !1, u = !1, m = !1;
-          const g = e.displayName === "Automated Response", v = S(o.conversation.id, w.Agent);
+        } else if (o) {
+          let d = !1, f = !1, h = !1;
+          const g = e.displayName === "Automated Response", v = C(t.conversation.id, w.Agent);
           let y = e;
-          !g && y.metadata != null && (f = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", u = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", m = u && f), g || m ? te(v, n, e) : a && (G(v), te(v, n, e));
+          !g && y.metadata != null && (d = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", f = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", h = f && d), g || h ? ne(v, r, e) : s && (Q(v), ne(v, r, e));
         } else {
-          const f = D(S(o.conversation.id, w.Translation), e.text);
-          f && (e.text = f);
+          const d = P(C(t.conversation.id, w.Translation), e.text);
+          d && (e.text = d);
         }
         return e;
       }
       case "carousel": {
-        if (t) {
-          let f = e;
-          for (const u of f.items) {
-            const m = k(u.title, o.conversation.id, w.Carousel);
-            m && (u.title = m);
-            const g = k(u.description, o.conversation.id, w.Carousel);
-            g && (u.description = g);
-            for (const v of u.actions) {
-              const y = k(v.text, o.conversation.id, w.Carousel);
+        if (n) {
+          let d = e;
+          for (const f of d.items) {
+            const h = L(f.title, t.conversation.id, w.Carousel);
+            h && (f.title = h);
+            const g = L(f.description, t.conversation.id, w.Carousel);
+            g && (f.description = g);
+            for (const v of f.actions) {
+              const y = L(v.text, t.conversation.id, w.Carousel);
               y && (v.text = y);
-              const C = localStorage.getItem("user-locale"), x = ke(C);
-              x && (v.uri = v.uri.replace("en-us", x));
+              const x = localStorage.getItem("user-locale"), S = Ee(x);
+              S && (v.uri = v.uri.replace("en-us", S));
             }
           }
-          return f;
+          return d;
         }
         return e;
       }
       case "form": {
-        if (t) {
-          const f = e;
-          if (f.fields.length > 0)
-            for (const u of f.fields) {
-              const m = k(u.label, o.conversation.id, w.Form);
-              m && (u.label = m);
+        if (n) {
+          const d = e;
+          if (d.fields.length > 0)
+            for (const f of d.fields) {
+              const h = L(f.label, t.conversation.id, w.Form);
+              h && (f.label = h);
             }
         }
         return e;
@@ -525,10 +554,10 @@ ${a}`, Te(t);
         return e;
     }
   }
-}, qe = () => he, Oe = qe(), Re = Oe.default, Ne = ({ integrationId: e, apiKey: o, chatbotOptions: n }) => {
-  const t = {
+}, Ne = () => xe, Ue = Ne(), je = Ue.default, Fe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
+  const s = {
     integrationId: e,
-    delegate: Me,
+    delegate: Be,
     canUserSeeConversationList: !1,
     imageUploadEnabled: !1,
     prechatCapture: {
@@ -549,8 +578,8 @@ ${a}`, Te(t);
       actionColor: A.actionColor
     }
   };
-  n && (t.soundNotificationEnabled = n.soundNotificationEnabled ?? !0, t.businessName = n.businessName ?? null, t.businessIconUrl = n.businessIconUrl ?? null, t.backgroundImageUrl = n.backgroundImageUrl ?? null, n.customColors && (t.customColors.brandColor = n.customColors.brandColor ?? A.brandColor, t.customColors.conversationColor = n.customColors.conversationColor ?? A.conversationColor, t.customColors.actionColor = n.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${W.version}`), Ae(), Le(o), j() === null || j() === "" ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${W.version}`), V(!0)) : re("hello") === null && (V(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${W.version}. Invalid api key`)), Re.init(t);
+  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), je.init(s);
 };
 export {
-  Ne as initLIOChatBot
+  Fe as initLIOChatBot
 };
