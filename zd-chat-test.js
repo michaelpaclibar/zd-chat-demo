@@ -371,7 +371,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   return e && e === "true";
 }, He = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request");
-}, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", De = "local.golinguist.com/read,local.golinguist.com/write", $e = (e, t) => {
+}, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", De = "http://local.golinguist.com/read,http://local.golinguist.com/write", $e = (e, t) => {
   const r = `${ae}/oauth2/token`, n = De.replace(",", " "), o = new XMLHttpRequest();
   o.open("POST", `${r}`, !1), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   const s = `grant_type=client_credentials&client_id=${e}&client_secret=${t}&scope=${encodeURIComponent(n)}`;
