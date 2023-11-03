@@ -389,16 +389,19 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     return console.log(`Failed to retrieve token: ${t}`), "";
   }
 }, ue = (e) => {
-  const t = new XMLHttpRequest(), r = {
+  const t = new XMLHttpRequest();
+  (async () => {
+    const n = await le();
+    t.setRequestHeader("X-Request-ID", `${n}`);
+  })();
+  const r = {
     translationType: "machine",
     text: e
   };
   try {
     re() && ie();
     const n = W(), o = E();
-    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), le().then((s) => {
-      t.setRequestHeader("X-Request-ID", `${s}`);
-    }), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
+    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
   } catch {
     return null;
   }
@@ -418,10 +421,13 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   };
   try {
     re() && ie();
-    const o = W(), s = E(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
-    if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), le().then((u) => {
+    const o = W(), s = E(), c = new XMLHttpRequest();
+    (async () => {
+      const u = await le();
       c.setRequestHeader("X-Request-ID", `${u}`);
-    }), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
+    })();
+    const p = `${ce}/linguistnow/resources/v1/translate/`;
+    if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
       const u = JSON.parse(c.responseText);
       return console.debug(`Running LIO Translate API: ${e}`), u.translatedText;
     }
