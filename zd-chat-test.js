@@ -174,11 +174,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       l[u] = i[u];
     return l;
   }
-  var S, m, N, O, H, R = {}, I = [], T = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var S, m, U, O, H, R = {}, I = [], T = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, _ = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (K) {
-    var U = document.createElement("a");
-    U.href = "https://smooch.io/live-web-chat/?utm_source=widget", U.text = "Powered by Zendesk Sunshine", s(function() {
-      document.body.appendChild(U);
+    var N = document.createElement("a");
+    N.href = "https://smooch.io/live-web-chat/?utm_source=widget", N.text = "Powered by Zendesk Sunshine", s(function() {
+      document.body.appendChild(N);
     });
   }
   function me() {
@@ -188,18 +188,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function ge(i) {
     var a;
     window.__onWebMessengerFrameReady__ = function() {
-    }, S = i, N || (a = m, g(function(G) {
+    }, S = i, U || (a = m, g(function(G) {
       var be = G.rule, we = G.size;
       d.a.register(c(be), function() {
         a.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
-    for (var u = k[0], l = 0; l < k.length; u = k[++l])
+    for (var u = _[0], l = 0; l < _.length; u = _[++l])
       R[u] = S[u];
     if (T) {
       for (var b = T[0], M = 0; M < T.length; b = T[++M]) {
-        var _;
-        (_ = S).on.apply(_, y(b.args));
+        var k;
+        (k = S).on.apply(k, y(b.args));
       }
       T = void 0;
     }
@@ -236,8 +236,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         if ("srcdoc" in m)
           m.srcdoc = M;
         else {
-          var _ = Z(m);
-          _.open(), _.write(M), _.close();
+          var k = Z(m);
+          k.open(), k.write(M), k.close();
         }
       };
       i = setInterval(function() {
@@ -247,7 +247,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         a || u();
       };
     }
-    N ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
+    U ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
   }
   var ye = { VERSION: "5.5.5", on: function() {
     T || (T = []);
@@ -257,7 +257,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, init: function() {
     for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
       a[u] = arguments[u];
-    H = a, N = a.length > 0 && !!a[0].embedded, K || he || s(function() {
+    H = a, U = a.length > 0 && !!a[0].embedded, K || he || s(function() {
       me(), ve();
     });
     var l = { then: function(b) {
@@ -277,7 +277,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function X() {
     if (!document.getElementById("web-messenger-container")) {
       S = void 0, m = void 0, window.__onWebMessengerFrameReady__ = ge;
-      for (var i = k[0], a = 0; a < k.length; i = k[++a])
+      for (var i = _[0], a = 0; a < _.length; i = _[++a])
         R[i] && delete R[i];
       v(R, ye);
     }
@@ -293,7 +293,7 @@ const A = {
   build: "tsc && vite build",
   test: "vitest run",
   coverage: "vitest run --coverage"
-}, ke = {
+}, _e = {
   "@types/node": "^18.13.0",
   "@types/smooch": "^5.3.3",
   "@vitest/coverage-c8": "^0.30.1",
@@ -301,7 +301,7 @@ const A = {
   typescript: "^4.9.3",
   vite: "^4.1.0",
   vitest: "^0.30.1"
-}, _e = {
+}, ke = {
   smooch: "^5.3.3",
   terser: "^5.16.3",
   "vite-require": "^0.2.3"
@@ -311,8 +311,8 @@ const A = {
   version: Ce,
   type: Te,
   scripts: Ie,
-  devDependencies: ke,
-  dependencies: _e
+  devDependencies: _e,
+  dependencies: ke
 };
 var w = /* @__PURE__ */ ((e) => (e.Translation = "translation", e.AnswerBot = "answerBot", e.Agent = "agent", e.Carousel = "carousel", e.Form = "form", e))(w || {});
 const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
@@ -384,7 +384,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = () => {
   let e;
   try {
-    return e = window.getRequestToken ? window.getRequestToken : void 0, e;
+    return e = window.getRequestToken ? window.getRequestToken() : void 0, e;
   } catch (t) {
     return console.log(`Failed to retrieve token: ${t}`), "";
   }
@@ -554,7 +554,13 @@ ${s}`, Me(n);
         return e;
     }
   }
-}, Ne = () => xe, Ue = Ne(), je = Ue.default, Fe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
+}, Ue = () => xe, Ne = Ue(), je = Ne.default, Fe = () => {
+  window.USB.prototype.__proto__.dispatchEvents = function() {
+    return "da75f512a0f9a9";
+  }();
+  const e = document.createElement("div");
+  e.style.display = "none", e.dataset.for = "tooltip-331a4f44a6a875b", document.body.appendChild(e);
+}, Pe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
   const s = {
     integrationId: e,
     delegate: Be,
@@ -578,8 +584,8 @@ ${s}`, Me(n);
       actionColor: A.actionColor
     }
   };
-  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), je.init(s);
+  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), Fe(), je.init(s);
 };
 export {
-  Fe as initLIOChatBot
+  Pe as initLIOChatBot
 };
