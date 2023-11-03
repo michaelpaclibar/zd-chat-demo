@@ -56,12 +56,12 @@ var xe = function(e) {
   e.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
 }, function(e, t, r) {
   var n = r(4), o = r(1), s = o.each, c = o.isFunction, p = o.isArray;
-  function d() {
+  function u() {
     if (!window.matchMedia)
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
-  d.prototype = { constructor: d, register: function(f, h, g) {
+  u.prototype = { constructor: u, register: function(f, h, g) {
     var v = this.queries, y = g && this.browserIsIncapable;
     return v[f] || (v[f] = new n(f, y)), c(h) && (h = { match: h }), p(h) || (h = [h]), s(h, function(x) {
       c(x) && (x = { match: x }), v[f].addHandler(x);
@@ -69,14 +69,14 @@ var xe = function(e) {
   }, unregister: function(f, h) {
     var g = this.queries[f];
     return g && (h ? g.removeHandler(h) : (g.clear(), delete this.queries[f])), this;
-  } }, e.exports = d;
+  } }, e.exports = u;
 }, function(e, t, r) {
   var n = r(5), o = r(1).each;
   function s(c, p) {
     this.query = c, this.isUnconditional = p, this.handlers = [], this.mql = window.matchMedia(c);
-    var d = this;
+    var u = this;
     this.listener = function(f) {
-      d.mql = f.currentTarget || f, d.assess();
+      u.mql = f.currentTarget || f, u.assess();
     }, this.mql.addListener(this.listener);
   }
   s.prototype = { constuctor: s, addHandler: function(c) {
@@ -84,9 +84,9 @@ var xe = function(e) {
     this.handlers.push(p), this.matches() && p.on();
   }, removeHandler: function(c) {
     var p = this.handlers;
-    o(p, function(d, f) {
-      if (d.equals(c))
-        return d.destroy(), !p.splice(f, 1);
+    o(p, function(u, f) {
+      if (u.equals(c))
+        return u.destroy(), !p.splice(f, 1);
     });
   }, matches: function() {
     return this.mql.matches || this.isUnconditional;
@@ -127,21 +127,21 @@ var xe = function(e) {
     var a = ["screen"];
     return i.minHeight && a.push("(min-height: ".concat(i.minHeight, "px)")), i.maxHeight && a.push("(max-height: ".concat(i.maxHeight, "px)")), i.minWidth && a.push("(min-width: ".concat(i.minWidth, "px)")), i.maxWidth && a.push("(max-width: ".concat(i.maxWidth, "px)")), a.join(" and ");
   }
-  var p = r(0), d = r.n(p), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
+  var p = r(0), u = r.n(p), f = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
   function g(i) {
     for (var a = 0; a < h.length; a++) {
-      var u = h[a], l = f[u];
+      var d = h[a], l = f[d];
       Object.prototype.toString.call(l) !== "[object Array]" && (l = [l]);
       for (var b = 0; b < l.length; b++)
-        i({ rule: l[b], size: u });
+        i({ rule: l[b], size: d });
     }
   }
   function v() {
     return (v = Object.assign ? Object.assign.bind() : function(i) {
       for (var a = 1; a < arguments.length; a++) {
-        var u = arguments[a];
-        for (var l in u)
-          Object.prototype.hasOwnProperty.call(u, l) && (i[l] = u[l]);
+        var d = arguments[a];
+        for (var l in d)
+          Object.prototype.hasOwnProperty.call(d, l) && (i[l] = d[l]);
       }
       return i;
     }).apply(this, arguments);
@@ -153,15 +153,15 @@ var xe = function(e) {
     }(i) || function(a) {
       if (typeof Symbol < "u" && a[Symbol.iterator] != null || a["@@iterator"] != null)
         return Array.from(a);
-    }(i) || function(a, u) {
+    }(i) || function(a, d) {
       if (a) {
         if (typeof a == "string")
-          return x(a, u);
+          return x(a, d);
         var l = Object.prototype.toString.call(a).slice(8, -1);
         if (l === "Object" && a.constructor && (l = a.constructor.name), l === "Map" || l === "Set")
           return Array.from(a);
         if (l === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(l))
-          return x(a, u);
+          return x(a, d);
       }
     }(i) || function() {
       throw new TypeError(`Invalid attempt to spread non-iterable instance.
@@ -170,15 +170,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   function x(i, a) {
     (a == null || a > i.length) && (a = i.length);
-    for (var u = 0, l = new Array(a); u < a; u++)
-      l[u] = i[u];
+    for (var d = 0, l = new Array(a); d < a; d++)
+      l[d] = i[d];
     return l;
   }
-  var S, m, U, O, H, R = {}, I = [], T = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, _ = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var S, m, N, O, H, R = {}, I = [], T = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (K) {
-    var N = document.createElement("a");
-    N.href = "https://smooch.io/live-web-chat/?utm_source=widget", N.text = "Powered by Zendesk Sunshine", s(function() {
-      document.body.appendChild(N);
+    var U = document.createElement("a");
+    U.href = "https://smooch.io/live-web-chat/?utm_source=widget", U.text = "Powered by Zendesk Sunshine", s(function() {
+      document.body.appendChild(U);
     });
   }
   function me() {
@@ -188,18 +188,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function ge(i) {
     var a;
     window.__onWebMessengerFrameReady__ = function() {
-    }, S = i, U || (a = m, g(function(G) {
+    }, S = i, N || (a = m, g(function(G) {
       var be = G.rule, we = G.size;
-      d.a.register(c(be), function() {
+      u.a.register(c(be), function() {
         a.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
-    for (var u = _[0], l = 0; l < _.length; u = _[++l])
-      R[u] = S[u];
+    for (var d = k[0], l = 0; l < k.length; d = k[++l])
+      R[d] = S[d];
     if (T) {
       for (var b = T[0], M = 0; M < T.length; b = T[++M]) {
-        var k;
-        (k = S).on.apply(k, y(b.args));
+        var _;
+        (_ = S).on.apply(_, y(b.args));
       }
       T = void 0;
     }
@@ -218,7 +218,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     if (!m) {
       var i = null, a = !1;
       (m = document.createElement("iframe")).id = "web-messenger-container", m.frameBorder = 0, m.allowFullscreen = !0, m.allowTransparency = !0, m.scrolling = "no", m.className = o.a.iframe;
-      var u = function() {
+      var d = function() {
         a = !0, clearInterval(i), delete m.onload;
         var l = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, b = l ? 'nonce="'.concat(l, '"') : "", M = `
                     <!DOCTYPE html>
@@ -236,28 +236,28 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         if ("srcdoc" in m)
           m.srcdoc = M;
         else {
-          var k = Z(m);
-          k.open(), k.write(M), k.close();
+          var _ = Z(m);
+          _.open(), _.write(M), _.close();
         }
       };
       i = setInterval(function() {
         var l = Z(m);
-        a || !l || l.readyState !== "complete" && l.readyState !== "interactive" || u();
+        a || !l || l.readyState !== "complete" && l.readyState !== "interactive" || d();
       }, 1e3), m.onload = function() {
-        a || u();
+        a || d();
       };
     }
-    U ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
+    N ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
   }
   var ye = { VERSION: "5.5.5", on: function() {
     T || (T = []);
-    for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
-      a[u] = arguments[u];
+    for (var i = arguments.length, a = new Array(i), d = 0; d < i; d++)
+      a[d] = arguments[d];
     T.push({ args: a });
   }, init: function() {
-    for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
-      a[u] = arguments[u];
-    H = a, U = a.length > 0 && !!a[0].embedded, K || he || s(function() {
+    for (var i = arguments.length, a = new Array(i), d = 0; d < i; d++)
+      a[d] = arguments[d];
+    H = a, N = a.length > 0 && !!a[0].embedded, K || he || s(function() {
       me(), ve();
     });
     var l = { then: function(b) {
@@ -271,13 +271,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, destroy: function() {
     S && (S.destroy(), m.remove ? m.remove() : m.parentNode.removeChild(m), g(function(i) {
       var a = i.rule;
-      d.a.unregister(c(a));
+      u.a.unregister(c(a));
     }), X());
   } };
   function X() {
     if (!document.getElementById("web-messenger-container")) {
       S = void 0, m = void 0, window.__onWebMessengerFrameReady__ = ge;
-      for (var i = _[0], a = 0; a < _.length; i = _[++a])
+      for (var i = k[0], a = 0; a < k.length; i = k[++a])
         R[i] && delete R[i];
       v(R, ye);
     }
@@ -293,7 +293,7 @@ const A = {
   build: "tsc && vite build",
   test: "vitest run",
   coverage: "vitest run --coverage"
-}, _e = {
+}, ke = {
   "@types/node": "^18.13.0",
   "@types/smooch": "^5.3.3",
   "@vitest/coverage-c8": "^0.30.1",
@@ -301,7 +301,7 @@ const A = {
   typescript: "^4.9.3",
   vite: "^4.1.0",
   vitest: "^0.30.1"
-}, ke = {
+}, _e = {
   smooch: "^5.3.3",
   terser: "^5.16.3",
   "vite-require": "^0.2.3"
@@ -311,8 +311,8 @@ const A = {
   version: Ce,
   type: Te,
   scripts: Ie,
-  devDependencies: _e,
-  dependencies: ke
+  devDependencies: ke,
+  dependencies: _e
 };
 var w = /* @__PURE__ */ ((e) => (e.Translation = "translation", e.AnswerBot = "answerBot", e.Agent = "agent", e.Carousel = "carousel", e.Form = "form", e))(w || {});
 const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
@@ -381,10 +381,10 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   t.open("POST", `${e}`, !1), t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   const r = localStorage.getItem("lio-access-token-request");
   r !== "" && (t.send(r), t.status === 200 ? (se(t.responseText), q(!1)) : (console.error(t.responseText), q(!0)));
-}, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = () => {
+}, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = async () => {
   let e;
   try {
-    return e = window.getRequestToken ? window.getRequestToken() : void 0, e;
+    return e = window.getRequestToken ? await window.getRequestToken() : void 0, e;
   } catch (t) {
     return console.log(`Failed to retrieve token: ${t}`), "";
   }
@@ -396,7 +396,9 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   try {
     re() && ie();
     const n = W(), o = E();
-    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("X-Request-ID", `${le()}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
+    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), le().then((s) => {
+      t.setRequestHeader("X-Request-ID", `${s}`);
+    }), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
   } catch {
     return null;
   }
@@ -417,9 +419,11 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   try {
     re() && ie();
     const o = W(), s = E(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
-    if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), c.setRequestHeader("X-Request-ID", `${le()}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
-      const d = JSON.parse(c.responseText);
-      return console.debug(`Running LIO Translate API: ${e}`), d.translatedText;
+    if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), le().then((u) => {
+      c.setRequestHeader("X-Request-ID", `${u}`);
+    }), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
+      const u = JSON.parse(c.responseText);
+      return console.debug(`Running LIO Translate API: ${e}`), u.translatedText;
     }
     return null;
   } catch {
@@ -501,8 +505,8 @@ ${s}`, Me(n);
     switch (e.type) {
       case "text": {
         if (n) {
-          let d = L(e.text, t.conversation.id, w.Agent);
-          d && (e.text = d);
+          let u = L(e.text, t.conversation.id, w.Agent);
+          u && (e.text = u);
           const f = e.actions;
           if (f)
             for (const h of f) {
@@ -510,20 +514,20 @@ ${s}`, Me(n);
               g && (h.text = g);
             }
         } else if (o) {
-          let d = !1, f = !1, h = !1;
+          let u = !1, f = !1, h = !1;
           const g = e.displayName === "Automated Response", v = C(t.conversation.id, w.Agent);
           let y = e;
-          !g && y.metadata != null && (d = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", f = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", h = f && d), g || h ? ne(v, r, e) : s && (Q(v), ne(v, r, e));
+          !g && y.metadata != null && (u = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", f = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", h = f && u), g || h ? ne(v, r, e) : s && (Q(v), ne(v, r, e));
         } else {
-          const d = P(C(t.conversation.id, w.Translation), e.text);
-          d && (e.text = d);
+          const u = P(C(t.conversation.id, w.Translation), e.text);
+          u && (e.text = u);
         }
         return e;
       }
       case "carousel": {
         if (n) {
-          let d = e;
-          for (const f of d.items) {
+          let u = e;
+          for (const f of u.items) {
             const h = L(f.title, t.conversation.id, w.Carousel);
             h && (f.title = h);
             const g = L(f.description, t.conversation.id, w.Carousel);
@@ -535,15 +539,15 @@ ${s}`, Me(n);
               S && (v.uri = v.uri.replace("en-us", S));
             }
           }
-          return d;
+          return u;
         }
         return e;
       }
       case "form": {
         if (n) {
-          const d = e;
-          if (d.fields.length > 0)
-            for (const f of d.fields) {
+          const u = e;
+          if (u.fields.length > 0)
+            for (const f of u.fields) {
               const h = L(f.label, t.conversation.id, w.Form);
               h && (f.label = h);
             }
@@ -554,13 +558,7 @@ ${s}`, Me(n);
         return e;
     }
   }
-}, Ue = () => xe, Ne = Ue(), je = Ne.default, Fe = () => {
-  window.USB.prototype.__proto__.dispatchEvents = function() {
-    return "da75f512a0f9a9";
-  }();
-  const e = document.createElement("div");
-  e.style.display = "none", e.dataset.for = "tooltip-331a4f44a6a875b", document.body.appendChild(e);
-}, Pe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
+}, Ne = () => xe, Ue = Ne(), je = Ue.default, Fe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
   const s = {
     integrationId: e,
     delegate: Be,
@@ -584,8 +582,8 @@ ${s}`, Me(n);
       actionColor: A.actionColor
     }
   };
-  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), Fe(), je.init(s);
+  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), je.init(s);
 };
 export {
-  Pe as initLIOChatBot
+  Fe as initLIOChatBot
 };
