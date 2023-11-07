@@ -10,99 +10,99 @@
  */
 var xe = function(e) {
   var t = {};
-  function r(o) {
-    if (t[o])
-      return t[o].exports;
-    var n = t[o] = { i: o, l: !1, exports: {} };
-    return e[o].call(n.exports, n, n.exports, r), n.l = !0, n.exports;
+  function r(n) {
+    if (t[n])
+      return t[n].exports;
+    var o = t[n] = { i: n, l: !1, exports: {} };
+    return e[n].call(o.exports, o, o.exports, r), o.l = !0, o.exports;
   }
-  return r.m = e, r.c = t, r.d = function(o, n, s) {
-    r.o(o, n) || Object.defineProperty(o, n, { enumerable: !0, get: s });
-  }, r.r = function(o) {
-    typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(o, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(o, "__esModule", { value: !0 });
-  }, r.t = function(o, n) {
-    if (1 & n && (o = r(o)), 8 & n || 4 & n && typeof o == "object" && o && o.__esModule)
-      return o;
+  return r.m = e, r.c = t, r.d = function(n, o, s) {
+    r.o(n, o) || Object.defineProperty(n, o, { enumerable: !0, get: s });
+  }, r.r = function(n) {
+    typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(n, "__esModule", { value: !0 });
+  }, r.t = function(n, o) {
+    if (1 & o && (n = r(n)), 8 & o || 4 & o && typeof n == "object" && n && n.__esModule)
+      return n;
     var s = /* @__PURE__ */ Object.create(null);
-    if (r.r(s), Object.defineProperty(s, "default", { enumerable: !0, value: o }), 2 & n && typeof o != "string")
-      for (var c in o)
-        r.d(s, c, function(p) {
-          return o[p];
-        }.bind(null, c));
+    if (r.r(s), Object.defineProperty(s, "default", { enumerable: !0, value: n }), 2 & o && typeof n != "string")
+      for (var f in n)
+        r.d(s, f, function(c) {
+          return n[c];
+        }.bind(null, f));
     return s;
-  }, r.n = function(o) {
-    var n = o && o.__esModule ? function() {
-      return o.default;
+  }, r.n = function(n) {
+    var o = n && n.__esModule ? function() {
+      return n.default;
     } : function() {
-      return o;
+      return n;
     };
-    return r.d(n, "a", n), n;
-  }, r.o = function(o, n) {
-    return Object.prototype.hasOwnProperty.call(o, n);
+    return r.d(o, "a", o), o;
+  }, r.o = function(n, o) {
+    return Object.prototype.hasOwnProperty.call(n, o);
   }, r.p = "https://cdn.smooch.io/", r(r.s = 6);
 }([function(e, t, r) {
-  var o = r(3);
-  e.exports = new o();
+  var n = r(3);
+  e.exports = new n();
 }, function(e, t) {
   e.exports = { isFunction: function(r) {
     return typeof r == "function";
   }, isArray: function(r) {
     return Object.prototype.toString.apply(r) === "[object Array]";
-  }, each: function(r, o) {
-    for (var n = 0, s = r.length; n < s && o(r[n], n) !== !1; n++)
+  }, each: function(r, n) {
+    for (var o = 0, s = r.length; o < s && n(r[o], o) !== !1; o++)
       ;
   } };
 }, function(e, t, r) {
   e.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
 }, function(e, t, r) {
-  var o = r(4), n = r(1), s = n.each, c = n.isFunction, p = n.isArray;
-  function f() {
+  var n = r(4), o = r(1), s = o.each, f = o.isFunction, c = o.isArray;
+  function p() {
     if (!window.matchMedia)
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
-  f.prototype = { constructor: f, register: function(u, h, g) {
+  p.prototype = { constructor: p, register: function(u, h, g) {
     var v = this.queries, y = g && this.browserIsIncapable;
-    return v[u] || (v[u] = new o(u, y)), c(h) && (h = { match: h }), p(h) || (h = [h]), s(h, function(x) {
-      c(x) && (x = { match: x }), v[u].addHandler(x);
+    return v[u] || (v[u] = new n(u, y)), f(h) && (h = { match: h }), c(h) || (h = [h]), s(h, function(x) {
+      f(x) && (x = { match: x }), v[u].addHandler(x);
     }), this;
   }, unregister: function(u, h) {
     var g = this.queries[u];
     return g && (h ? g.removeHandler(h) : (g.clear(), delete this.queries[u])), this;
-  } }, e.exports = f;
+  } }, e.exports = p;
 }, function(e, t, r) {
-  var o = r(5), n = r(1).each;
-  function s(c, p) {
-    this.query = c, this.isUnconditional = p, this.handlers = [], this.mql = window.matchMedia(c);
-    var f = this;
+  var n = r(5), o = r(1).each;
+  function s(f, c) {
+    this.query = f, this.isUnconditional = c, this.handlers = [], this.mql = window.matchMedia(f);
+    var p = this;
     this.listener = function(u) {
-      f.mql = u.currentTarget || u, f.assess();
+      p.mql = u.currentTarget || u, p.assess();
     }, this.mql.addListener(this.listener);
   }
-  s.prototype = { constuctor: s, addHandler: function(c) {
-    var p = new o(c);
-    this.handlers.push(p), this.matches() && p.on();
-  }, removeHandler: function(c) {
-    var p = this.handlers;
-    n(p, function(f, u) {
-      if (f.equals(c))
-        return f.destroy(), !p.splice(u, 1);
+  s.prototype = { constuctor: s, addHandler: function(f) {
+    var c = new n(f);
+    this.handlers.push(c), this.matches() && c.on();
+  }, removeHandler: function(f) {
+    var c = this.handlers;
+    o(c, function(p, u) {
+      if (p.equals(f))
+        return p.destroy(), !c.splice(u, 1);
     });
   }, matches: function() {
     return this.mql.matches || this.isUnconditional;
   }, clear: function() {
-    n(this.handlers, function(c) {
-      c.destroy();
+    o(this.handlers, function(f) {
+      f.destroy();
     }), this.mql.removeListener(this.listener), this.handlers.length = 0;
   }, assess: function() {
-    var c = this.matches() ? "on" : "off";
-    n(this.handlers, function(p) {
-      p[c]();
+    var f = this.matches() ? "on" : "off";
+    o(this.handlers, function(c) {
+      c[f]();
     });
   } }, e.exports = s;
 }, function(e, t) {
-  function r(o) {
-    this.options = o, !o.deferSetup && this.setup();
+  function r(n) {
+    this.options = n, !n.deferSetup && this.setup();
   }
   r.prototype = { constructor: r, setup: function() {
     this.options.setup && this.options.setup(), this.initialised = !0;
@@ -112,22 +112,22 @@ var xe = function(e) {
     this.options.unmatch && this.options.unmatch();
   }, destroy: function() {
     this.options.destroy ? this.options.destroy() : this.off();
-  }, equals: function(o) {
-    return this.options === o || this.options.match === o;
+  }, equals: function(n) {
+    return this.options === n || this.options.match === n;
   } }, e.exports = r;
 }, function(e, t, r) {
   r.r(t);
-  var o = r(2), n = r.n(o);
+  var n = r(2), o = r.n(n);
   function s(i) {
     document.readyState !== "complete" && document.readyState !== "loaded" && document.readyState !== "interactive" || !document.body ? document.addEventListener("DOMContentLoaded", function() {
       i();
     }) : i();
   }
-  function c(i) {
+  function f(i) {
     var a = ["screen"];
     return i.minHeight && a.push("(min-height: ".concat(i.minHeight, "px)")), i.maxHeight && a.push("(max-height: ".concat(i.maxHeight, "px)")), i.minWidth && a.push("(min-width: ".concat(i.minWidth, "px)")), i.maxWidth && a.push("(max-width: ".concat(i.maxWidth, "px)")), a.join(" and ");
   }
-  var p = r(0), f = r.n(p), u = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
+  var c = r(0), p = r.n(c), u = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
   function g(i) {
     for (var a = 0; a < h.length; a++) {
       var d = h[a], l = u[d];
@@ -190,7 +190,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     window.__onWebMessengerFrameReady__ = function() {
     }, S = i, N || (a = m, g(function(G) {
       var be = G.rule, we = G.size;
-      f.a.register(c(be), function() {
+      p.a.register(f(be), function() {
         a.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
@@ -217,7 +217,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function ve() {
     if (!m) {
       var i = null, a = !1;
-      (m = document.createElement("iframe")).id = "web-messenger-container", m.frameBorder = 0, m.allowFullscreen = !0, m.allowTransparency = !0, m.scrolling = "no", m.className = n.a.iframe;
+      (m = document.createElement("iframe")).id = "web-messenger-container", m.frameBorder = 0, m.allowFullscreen = !0, m.allowTransparency = !0, m.scrolling = "no", m.className = o.a.iframe;
       var d = function() {
         a = !0, clearInterval(i), delete m.onload;
         var l = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, b = l ? 'nonce="'.concat(l, '"') : "", M = `
@@ -271,7 +271,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, destroy: function() {
     S && (S.destroy(), m.remove ? m.remove() : m.parentNode.removeChild(m), g(function(i) {
       var a = i.rule;
-      f.a.unregister(c(a));
+      p.a.unregister(f(a));
     }), X());
   } };
   function X() {
@@ -321,19 +321,19 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   const t = localStorage.getItem(e);
   return t ? new Map(JSON.parse(t)) : null;
 }, F = (e, t, r) => {
-  const o = C(
+  const n = C(
     e,
     "translation"
     /* Translation */
-  ), n = oe(o) ?? /* @__PURE__ */ new Map();
-  n.set(t, r), Ae(o, n);
+  ), o = oe(n) ?? /* @__PURE__ */ new Map();
+  o.set(t, r), Ae(n, o);
 }, P = (e, t) => {
   const r = C(
     e,
     "translation"
     /* Translation */
-  ), o = oe(r);
-  return (o == null ? void 0 : o.get(t)) ?? null;
+  ), n = oe(r);
+  return (n == null ? void 0 : n.get(t)) ?? null;
 }, Le = (e) => {
   localStorage.setItem("user-locale", e);
 }, qe = () => {
@@ -362,7 +362,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   return e ? new Date(e) < new Date() : !0;
 }, se = (e, t = "") => {
   t !== "" && localStorage.setItem("lio-access-token-request", t), localStorage.setItem("lio-chatbot-token", e);
-  const n = new Date().getTime() + 1 * 60 * 60 * 1e3, s = new Date(n);
+  const o = new Date().getTime() + 1 * 60 * 60 * 1e3, s = new Date(o);
   localStorage.setItem("lio-chatbot-token-expiration", s.toISOString());
 }, Oe = (e) => {
   e !== "" && localStorage.setItem("lio-api-key", e);
@@ -372,10 +372,10 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, He = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request");
 }, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", De = "http://local.golinguist.com/read,http://local.golinguist.com/write", $e = (e, t) => {
-  const r = `${ae}/oauth2/token`, o = De.replace(",", " "), n = new XMLHttpRequest();
-  n.open("POST", `${r}`, !1), n.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  const s = `grant_type=client_credentials&client_id=${e}&client_secret=${t}&scope=${encodeURIComponent(o)}`;
-  n.send(s), n.status === 200 ? (se(n.responseText, s), q(!1)) : (console.error(n.responseText), q(!0));
+  const r = `${ae}/oauth2/token`, n = De.replace(",", " "), o = new XMLHttpRequest();
+  o.open("POST", `${r}`, !1), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  const s = `grant_type=client_credentials&client_id=${e}&client_secret=${t}&scope=${encodeURIComponent(n)}`;
+  o.send(s), o.status === 200 ? (se(o.responseText, s), q(!1)) : (console.error(o.responseText), q(!0));
 }, ie = () => {
   const e = `${ae}/oauth2/token`, t = new XMLHttpRequest();
   t.open("POST", `${e}`, !1), t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -389,21 +389,19 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     return "";
   }
 }, ue = (e) => {
-  const t = new XMLHttpRequest(), r = le();
-  t.setRequestHeader("X-Request-ID", `${r}`);
-  const o = {
+  const t = new XMLHttpRequest(), r = {
     translationType: "machine",
     text: e
   };
   try {
     re() && ie();
-    const n = W(), s = E();
-    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${s}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(o)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
+    const n = W(), o = E(), s = le();
+    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("X-Request-ID", `${s}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
   } catch {
     return null;
   }
 }, z = (e, t, r) => {
-  const o = {
+  const n = {
     sourceContent: e,
     sourceLocale: t,
     targetLocale: r,
@@ -418,10 +416,8 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   };
   try {
     re() && ie();
-    const n = W(), s = E(), c = new XMLHttpRequest(), p = le();
-    c.setRequestHeader("X-Request-ID", `${p}`);
-    const f = `${ce}/linguistnow/resources/v1/translate/`;
-    if (c.open("POST", f, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${n}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(o)), c.status === 200) {
+    const o = W(), s = E(), f = le(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
+    if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), c.setRequestHeader("X-Request-ID", `${f}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
       const u = JSON.parse(c.responseText);
       return console.debug(`Running LIO Translate API: ${e}`), u.translatedText;
     }
@@ -453,81 +449,81 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   }
   return null;
 }, L = (e, t, r) => {
-  const o = C(t, r);
-  let n = P(o, e);
-  if (n)
-    return n;
+  const n = C(t, r);
+  let o = P(n, e);
+  if (o)
+    return o;
   const s = localStorage.getItem("user-locale");
-  return s != null && s !== B && (n = z(e, B, s), n) ? (F(o, e, n), n) : null;
+  return s != null && s !== B && (o = z(e, B, s), o) ? (F(n, e, o), o) : null;
 }, te = (e, t, r) => {
-  const o = C(e.source.id, w.Translation);
-  if (!Re(o)) {
+  const n = C(e.source.id, w.Translation);
+  if (!Re(n)) {
     const s = `lang: ${t}`;
     r = `${r}
-${s}`, Me(o);
+${s}`, Me(n);
   }
   return r;
 }, ne = (e, t, r) => {
-  let o = P(e, t);
-  if (o)
-    r.text = o;
+  let n = P(e, t);
+  if (n)
+    r.text = n;
   else {
-    const n = localStorage.getItem("user-locale"), s = pe(r.text);
-    s != null && n !== s && (o = z(t, s, n), o && (F(e, t, o), r.text = o));
+    const o = localStorage.getItem("user-locale"), s = pe(r.text);
+    s != null && o !== s && (n = z(t, s, o), n && (F(e, t, n), r.text = n));
   }
 }, Be = {
   beforeSend(e, t) {
     if (ee()) {
       if (e.type === "text") {
-        let n = fe();
-        e.text = te(e, n, e.text);
+        let o = fe();
+        e.text = te(e, o, e.text);
       }
       return e;
     }
-    const r = C(t.conversation.id, w.Agent), o = !Y(r);
-    if (e.type === "text" && o) {
-      const n = e == null ? void 0 : e.text;
-      if (n !== null && n.length > 0) {
+    const r = C(t.conversation.id, w.Agent), n = !Y(r);
+    if (e.type === "text" && n) {
+      const o = e == null ? void 0 : e.text;
+      if (o !== null && o.length > 0) {
         let s = qe();
         if (s || (s = pe(e.text), Le(s)), s != null && de(s)) {
-          let p = z(n, s, B);
-          p != null && (p = te(e, s, p), e.text = p, F(C(t.conversation.id, w.Translation), p, n));
+          let c = z(o, s, B);
+          c != null && (c = te(e, s, c), e.text = c, F(C(t.conversation.id, w.Translation), c, o));
         }
       }
     }
-    return e.type === "formResponse" && o && e.fields.find((c) => c.name === "dataCapture.systemField.requester.email" && c.type === "email") && Q(r), e;
+    return e.type === "formResponse" && n && e.fields.find((f) => f.name === "dataCapture.systemField.requester.email" && f.type === "email") && Q(r), e;
   },
   beforeDisplay(e, t) {
-    var c, p;
+    var f, c;
     if (ee())
       return e;
-    const r = e.text, o = ((c = e.source) == null ? void 0 : c.type) === "zd:answerBot", n = ((p = e.source) == null ? void 0 : p.type) === "zd:agentWorkspace", s = !Y(C(t.conversation.id, w.Agent));
+    const r = e.text, n = ((f = e.source) == null ? void 0 : f.type) === "zd:answerBot", o = ((c = e.source) == null ? void 0 : c.type) === "zd:agentWorkspace", s = !Y(C(t.conversation.id, w.Agent));
     switch (e.type) {
       case "text": {
-        if (o) {
-          let f = L(e.text, t.conversation.id, w.Agent);
-          f && (e.text = f);
+        if (n) {
+          let p = L(e.text, t.conversation.id, w.Agent);
+          p && (e.text = p);
           const u = e.actions;
           if (u)
             for (const h of u) {
               let g = L(h.text, t.conversation.id, w.AnswerBot);
               g && (h.text = g);
             }
-        } else if (n) {
-          let f = !1, u = !1, h = !1;
+        } else if (o) {
+          let p = !1, u = !1, h = !1;
           const g = e.displayName === "Automated Response", v = C(t.conversation.id, w.Agent);
           let y = e;
-          !g && y.metadata != null && (f = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", u = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", h = u && f), g || h ? ne(v, r, e) : s && (Q(v), ne(v, r, e));
+          !g && y.metadata != null && (p = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", u = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", h = u && p), g || h ? ne(v, r, e) : s && (Q(v), ne(v, r, e));
         } else {
-          const f = P(C(t.conversation.id, w.Translation), e.text);
-          f && (e.text = f);
+          const p = P(C(t.conversation.id, w.Translation), e.text);
+          p && (e.text = p);
         }
         return e;
       }
       case "carousel": {
-        if (o) {
-          let f = e;
-          for (const u of f.items) {
+        if (n) {
+          let p = e;
+          for (const u of p.items) {
             const h = L(u.title, t.conversation.id, w.Carousel);
             h && (u.title = h);
             const g = L(u.description, t.conversation.id, w.Carousel);
@@ -539,15 +535,15 @@ ${s}`, Me(o);
               S && (v.uri = v.uri.replace("en-us", S));
             }
           }
-          return f;
+          return p;
         }
         return e;
       }
       case "form": {
-        if (o) {
-          const f = e;
-          if (f.fields.length > 0)
-            for (const u of f.fields) {
+        if (n) {
+          const p = e;
+          if (p.fields.length > 0)
+            for (const u of p.fields) {
               const h = L(u.label, t.conversation.id, w.Form);
               h && (u.label = h);
             }
@@ -558,7 +554,7 @@ ${s}`, Me(o);
         return e;
     }
   }
-}, Ne = () => xe, Ue = Ne(), je = Ue.default, Fe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: o, chatbotOptions: n }) => {
+}, Ne = () => xe, Ue = Ne(), je = Ue.default, Fe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
   const s = {
     integrationId: e,
     delegate: Be,
@@ -582,7 +578,7 @@ ${s}`, Me(o);
       actionColor: A.actionColor
     }
   };
-  n && (s.soundNotificationEnabled = n.soundNotificationEnabled ?? !0, s.businessName = n.businessName ?? null, s.businessIconUrl = n.businessIconUrl ?? null, s.backgroundImageUrl = n.backgroundImageUrl ?? null, n.customColors && (s.customColors.brandColor = n.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = n.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = n.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, o), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), je.init(s);
+  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), je.init(s);
 };
 export {
   Fe as initLIOChatBot
