@@ -174,7 +174,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       l[d] = i[d];
     return l;
   }
-  var S, m, N, O, H, R = {}, I = [], T = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var S, m, N, O, H, R = {}, T = [], I = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (K) {
     var U = document.createElement("a");
     U.href = "https://smooch.io/live-web-chat/?utm_source=widget", U.text = "Powered by Zendesk Sunshine", s(function() {
@@ -196,19 +196,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }));
     for (var d = k[0], l = 0; l < k.length; d = k[++l])
       R[d] = S[d];
-    if (T) {
-      for (var b = T[0], M = 0; M < T.length; b = T[++M]) {
+    if (I) {
+      for (var b = I[0], M = 0; M < I.length; b = I[++M]) {
         var _;
         (_ = S).on.apply(_, y(b.args));
       }
-      T = void 0;
+      I = void 0;
     }
     if (H) {
       var J, j = (J = S).init.apply(J, y(H));
       H = void 0;
-      for (var D = I[0], V = 0; V < I.length; D = I[++V])
+      for (var D = T[0], V = 0; V < T.length; D = T[++V])
         j = D.type === "then" ? j.then(D.next) : j.catch(D.next);
-      I = [];
+      T = [];
     }
   }
   var Z = function(i) {
@@ -250,10 +250,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     N ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
   }
   var ye = { VERSION: "5.5.5", on: function() {
-    T || (T = []);
+    I || (I = []);
     for (var i = arguments.length, a = new Array(i), d = 0; d < i; d++)
       a[d] = arguments[d];
-    T.push({ args: a });
+    I.push({ args: a });
   }, init: function() {
     for (var i = arguments.length, a = new Array(i), d = 0; d < i; d++)
       a[d] = arguments[d];
@@ -261,9 +261,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       me(), ve();
     });
     var l = { then: function(b) {
-      return I.push({ type: "then", next: b }), l;
+      return T.push({ type: "then", next: b }), l;
     }, catch: function(b) {
-      return I.push({ type: "catch", next: b }), l;
+      return T.push({ type: "catch", next: b }), l;
     } };
     return l;
   }, render: function(i) {
@@ -288,7 +288,7 @@ const A = {
   brandColor: "65758e",
   conversationColor: "0099ff",
   actionColor: "0099ff"
-}, Se = "zd-chatbot-web", Ce = "1.0.10", Te = "module", Ie = {
+}, Se = "zd-chatbot-web", Ce = "1.0.10", Ie = "module", Te = {
   dev: "vite",
   build: "tsc && vite build",
   test: "vitest run",
@@ -309,8 +309,8 @@ const A = {
   name: Se,
   private: !0,
   version: Ce,
-  type: Te,
-  scripts: Ie,
+  type: Ie,
+  scripts: Te,
   devDependencies: ke,
   dependencies: _e
 };
@@ -384,7 +384,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = () => {
   let e;
   try {
-    return e = window.getRequestToken ? window.getRequestToken() : void 0, e;
+    return e = window.initSync ? window.initSync() : void 0, e;
   } catch {
     return "";
   }
