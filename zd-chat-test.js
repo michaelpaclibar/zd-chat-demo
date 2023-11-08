@@ -11,52 +11,52 @@ var le = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : t
  */
 var Xs = function(s) {
   var a = {};
-  function u(l) {
-    if (a[l])
-      return a[l].exports;
-    var c = a[l] = { i: l, l: !1, exports: {} };
-    return s[l].call(c.exports, c, c.exports, u), c.l = !0, c.exports;
+  function u(c) {
+    if (a[c])
+      return a[c].exports;
+    var l = a[c] = { i: c, l: !1, exports: {} };
+    return s[c].call(l.exports, l, l.exports, u), l.l = !0, l.exports;
   }
-  return u.m = s, u.c = a, u.d = function(l, c, w) {
-    u.o(l, c) || Object.defineProperty(l, c, { enumerable: !0, get: w });
-  }, u.r = function(l) {
-    typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(l, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(l, "__esModule", { value: !0 });
-  }, u.t = function(l, c) {
-    if (1 & c && (l = u(l)), 8 & c || 4 & c && typeof l == "object" && l && l.__esModule)
-      return l;
+  return u.m = s, u.c = a, u.d = function(c, l, w) {
+    u.o(c, l) || Object.defineProperty(c, l, { enumerable: !0, get: w });
+  }, u.r = function(c) {
+    typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(c, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(c, "__esModule", { value: !0 });
+  }, u.t = function(c, l) {
+    if (1 & l && (c = u(c)), 8 & l || 4 & l && typeof c == "object" && c && c.__esModule)
+      return c;
     var w = /* @__PURE__ */ Object.create(null);
-    if (u.r(w), Object.defineProperty(w, "default", { enumerable: !0, value: l }), 2 & c && typeof l != "string")
-      for (var C in l)
-        u.d(w, C, function(g) {
-          return l[g];
-        }.bind(null, C));
+    if (u.r(w), Object.defineProperty(w, "default", { enumerable: !0, value: c }), 2 & l && typeof c != "string")
+      for (var x in c)
+        u.d(w, x, function(g) {
+          return c[g];
+        }.bind(null, x));
     return w;
-  }, u.n = function(l) {
-    var c = l && l.__esModule ? function() {
-      return l.default;
+  }, u.n = function(c) {
+    var l = c && c.__esModule ? function() {
+      return c.default;
     } : function() {
-      return l;
+      return c;
     };
-    return u.d(c, "a", c), c;
-  }, u.o = function(l, c) {
-    return Object.prototype.hasOwnProperty.call(l, c);
+    return u.d(l, "a", l), l;
+  }, u.o = function(c, l) {
+    return Object.prototype.hasOwnProperty.call(c, l);
   }, u.p = "https://cdn.smooch.io/", u(u.s = 6);
 }([function(s, a, u) {
-  var l = u(3);
-  s.exports = new l();
+  var c = u(3);
+  s.exports = new c();
 }, function(s, a) {
   s.exports = { isFunction: function(u) {
     return typeof u == "function";
   }, isArray: function(u) {
     return Object.prototype.toString.apply(u) === "[object Array]";
-  }, each: function(u, l) {
-    for (var c = 0, w = u.length; c < w && l(u[c], c) !== !1; c++)
+  }, each: function(u, c) {
+    for (var l = 0, w = u.length; l < w && c(u[l], l) !== !1; l++)
       ;
   } };
 }, function(s, a, u) {
   s.exports = { iframe: "_2ChX4GFAl1-UBiWknYZyEQ", displayButton: "avcHn2VQJenBvoR5hilPG", widgetClosed: "_3fQbteJd3oQu4il3LpMKkX", "iframe-button-close-lg": "_3FxKeTOOgcsFroUq6se9N7", "iframe-button-close-md": "_1GmqPtlICLsWVMg2Kpdx_0", "iframe-button-close-sm": "_36mHeCXpAKdhEsuuD5g8oV", "iframe-button-close-xs": "_1ZWQW0p6AI6UGwBFbdBf9M", displayTab: "_3dtqBiGeC8k3yop4A-9Lwm", widgetOpened: "_2TELtk5nDKlQudVSivRjpt", widgetEmbedded: "_24n-ftZlG3wDvoWFR8zUnn" };
 }, function(s, a, u) {
-  var l = u(4), c = u(1), w = c.each, C = c.isFunction, g = c.isArray;
+  var c = u(4), l = u(1), w = l.each, x = l.isFunction, g = l.isArray;
   function k() {
     if (!window.matchMedia)
       throw new Error("matchMedia not present, legacy browsers require a polyfill");
@@ -64,46 +64,46 @@ var Xs = function(s) {
   }
   k.prototype = { constructor: k, register: function(y, d, O) {
     var H = this.queries, D = O && this.browserIsIncapable;
-    return H[y] || (H[y] = new l(y, D)), C(d) && (d = { match: d }), g(d) || (d = [d]), w(d, function(Z) {
-      C(Z) && (Z = { match: Z }), H[y].addHandler(Z);
+    return H[y] || (H[y] = new c(y, D)), x(d) && (d = { match: d }), g(d) || (d = [d]), w(d, function(Z) {
+      x(Z) && (Z = { match: Z }), H[y].addHandler(Z);
     }), this;
   }, unregister: function(y, d) {
     var O = this.queries[y];
     return O && (d ? O.removeHandler(d) : (O.clear(), delete this.queries[y])), this;
   } }, s.exports = k;
 }, function(s, a, u) {
-  var l = u(5), c = u(1).each;
-  function w(C, g) {
-    this.query = C, this.isUnconditional = g, this.handlers = [], this.mql = window.matchMedia(C);
+  var c = u(5), l = u(1).each;
+  function w(x, g) {
+    this.query = x, this.isUnconditional = g, this.handlers = [], this.mql = window.matchMedia(x);
     var k = this;
     this.listener = function(y) {
       k.mql = y.currentTarget || y, k.assess();
     }, this.mql.addListener(this.listener);
   }
-  w.prototype = { constuctor: w, addHandler: function(C) {
-    var g = new l(C);
+  w.prototype = { constuctor: w, addHandler: function(x) {
+    var g = new c(x);
     this.handlers.push(g), this.matches() && g.on();
-  }, removeHandler: function(C) {
+  }, removeHandler: function(x) {
     var g = this.handlers;
-    c(g, function(k, y) {
-      if (k.equals(C))
+    l(g, function(k, y) {
+      if (k.equals(x))
         return k.destroy(), !g.splice(y, 1);
     });
   }, matches: function() {
     return this.mql.matches || this.isUnconditional;
   }, clear: function() {
-    c(this.handlers, function(C) {
-      C.destroy();
+    l(this.handlers, function(x) {
+      x.destroy();
     }), this.mql.removeListener(this.listener), this.handlers.length = 0;
   }, assess: function() {
-    var C = this.matches() ? "on" : "off";
-    c(this.handlers, function(g) {
-      g[C]();
+    var x = this.matches() ? "on" : "off";
+    l(this.handlers, function(g) {
+      g[x]();
     });
   } }, s.exports = w;
 }, function(s, a) {
-  function u(l) {
-    this.options = l, !l.deferSetup && this.setup();
+  function u(c) {
+    this.options = c, !c.deferSetup && this.setup();
   }
   u.prototype = { constructor: u, setup: function() {
     this.options.setup && this.options.setup(), this.initialised = !0;
@@ -113,18 +113,18 @@ var Xs = function(s) {
     this.options.unmatch && this.options.unmatch();
   }, destroy: function() {
     this.options.destroy ? this.options.destroy() : this.off();
-  }, equals: function(l) {
-    return this.options === l || this.options.match === l;
+  }, equals: function(c) {
+    return this.options === c || this.options.match === c;
   } }, s.exports = u;
 }, function(s, a, u) {
   u.r(a);
-  var l = u(2), c = u.n(l);
+  var c = u(2), l = u.n(c);
   function w(f) {
     document.readyState !== "complete" && document.readyState !== "loaded" && document.readyState !== "interactive" || !document.body ? document.addEventListener("DOMContentLoaded", function() {
       f();
     }) : f();
   }
-  function C(f) {
+  function x(f) {
     var h = ["screen"];
     return f.minHeight && h.push("(min-height: ".concat(f.minHeight, "px)")), f.maxHeight && h.push("(max-height: ".concat(f.maxHeight, "px)")), f.minWidth && h.push("(min-width: ".concat(f.minWidth, "px)")), f.maxWidth && h.push("(max-width: ".concat(f.maxWidth, "px)")), h.join(" and ");
   }
@@ -191,7 +191,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     window.__onWebMessengerFrameReady__ = function() {
     }, i = f, se || (h = B, O(function(te) {
       var fe = te.rule, He = te.size;
-      k.a.register(C(fe), function() {
+      k.a.register(x(fe), function() {
         h.contentWindow.postMessage({ type: "sizeChange", value: He }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
@@ -218,7 +218,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function we() {
     if (!B) {
       var f = null, h = !1;
-      (B = document.createElement("iframe")).id = "web-messenger-container", B.frameBorder = 0, B.allowFullscreen = !0, B.allowTransparency = !0, B.scrolling = "no", B.className = c.a.iframe;
+      (B = document.createElement("iframe")).id = "web-messenger-container", B.frameBorder = 0, B.allowFullscreen = !0, B.allowTransparency = !0, B.scrolling = "no", B.className = l.a.iframe;
       var b = function() {
         h = !0, clearInterval(f), delete B.onload;
         var m = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, q = m ? 'nonce="'.concat(m, '"') : "", ee = `
@@ -272,10 +272,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, destroy: function() {
     i && (i.destroy(), B.remove ? B.remove() : B.parentNode.removeChild(B), O(function(f) {
       var h = f.rule;
-      k.a.unregister(C(h));
-    }), x());
+      k.a.unregister(x(h));
+    }), C());
   } };
-  function x() {
+  function C() {
     if (!document.getElementById("web-messenger-container")) {
       i = void 0, B = void 0, window.__onWebMessengerFrameReady__ = Te;
       for (var f = X[0], h = 0; h < X.length; f = X[++h])
@@ -283,7 +283,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       H(L, z);
     }
   }
-  x(), a.default = L;
+  C(), a.default = L;
 }]);
 const ke = {
   brandColor: "65758e",
@@ -316,26 +316,26 @@ const ke = {
   devDependencies: ei,
   dependencies: ti
 };
-var W = /* @__PURE__ */ ((s) => (s.Translation = "translation", s.AnswerBot = "answerBot", s.Agent = "agent", s.Carousel = "carousel", s.Form = "form", s))(W || {});
+var $ = /* @__PURE__ */ ((s) => (s.Translation = "translation", s.AnswerBot = "answerBot", s.Agent = "agent", s.Carousel = "carousel", s.Form = "form", s))($ || {});
 const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
   localStorage.setItem(s, JSON.stringify([...a]));
 }, uo = (s) => {
   const a = localStorage.getItem(s);
   return a ? new Map(JSON.parse(a)) : null;
 }, ct = (s, a, u) => {
-  const l = ne(
+  const c = ne(
     s,
     "translation"
     /* Translation */
-  ), c = uo(l) ?? /* @__PURE__ */ new Map();
-  c.set(a, u), oi(l, c);
+  ), l = uo(c) ?? /* @__PURE__ */ new Map();
+  l.set(a, u), oi(c, l);
 }, ut = (s, a) => {
   const u = ne(
     s,
     "translation"
     /* Translation */
-  ), l = uo(u);
-  return (l == null ? void 0 : l.get(a)) ?? null;
+  ), c = uo(u);
+  return (c == null ? void 0 : c.get(a)) ?? null;
 }, ni = (s) => {
   localStorage.setItem("user-locale", s);
 }, si = () => {
@@ -364,14 +364,14 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
   return s ? new Date(s) < new Date() : !0;
 }, fo = (s, a = "") => {
   a !== "" && localStorage.setItem("lio-access-token-request", a), localStorage.setItem("lio-chatbot-token", s);
-  const c = new Date().getTime() + 1 * 60 * 60 * 1e3, w = new Date(c);
+  const l = new Date().getTime() + 1 * 60 * 60 * 1e3, w = new Date(l);
   localStorage.setItem("lio-chatbot-token-expiration", w.toISOString());
 }, ai = (s) => {
   s !== "" && localStorage.setItem("lio-api-key", s);
 }, Se = (s) => localStorage.setItem("lio-chatbot-disable-translate-feature", s ? "true" : "false"), ao = () => {
   const s = localStorage.getItem("lio-chatbot-disable-translate-feature");
   return s && s === "true";
-}, We = (s) => {
+}, $e = (s) => {
   let a = po();
   a == null && (a = new Array()), a.push(s), localStorage.setItem("lio-log-entries", JSON.stringify(a));
 }, po = () => {
@@ -380,10 +380,10 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
 }, li = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request"), localStorage.removeItem("lio-log-entries");
 }, ho = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", ci = "http://local.golinguist.com/read,http://local.golinguist.com/write", ui = (s, a) => {
-  const u = `${ho}/oauth2/token`, l = ci.replace(",", " "), c = new XMLHttpRequest();
-  c.open("POST", `${u}`, !1), c.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  const w = `grant_type=client_credentials&client_id=${s}&client_secret=${a}&scope=${encodeURIComponent(l)}`;
-  c.send(w), c.status === 200 ? (fo(c.responseText, w), Se(!1)) : (console.error(c.responseText), Se(!0));
+  const u = `${ho}/oauth2/token`, c = ci.replace(",", " "), l = new XMLHttpRequest();
+  l.open("POST", `${u}`, !1), l.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  const w = `grant_type=client_credentials&client_id=${s}&client_secret=${a}&scope=${encodeURIComponent(c)}`;
+  l.send(w), l.status === 200 ? (fo(l.responseText, w), Se(!1)) : (console.error(l.responseText), Se(!0));
 }, mo = () => {
   const s = `${ho}/oauth2/token`, a = new XMLHttpRequest();
   a.open("POST", `${s}`, !1), a.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -403,13 +403,13 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
   };
   try {
     wo() && mo();
-    const l = dt(), c = Ne(), w = bo();
-    return a.open("POST", `${go}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("x-api-key", `${c}`), a.setRequestHeader("Authorization", `Bearer ${l}`), a.setRequestHeader("X-Request-ID", `${w}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(u)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
+    const c = dt(), l = Ne(), w = bo();
+    return a.open("POST", `${go}/linguistnow/resources/locale/detectLocale/`, !1), a.setRequestHeader("x-api-key", `${l}`), a.setRequestHeader("Authorization", `Bearer ${c}`), a.setRequestHeader("X-Request-ID", `${w}`), a.setRequestHeader("Content-Type", "application/json"), a.send(JSON.stringify(u)), a.status === 200 ? JSON.parse(a.responseText).detectedLanguage : null;
   } catch {
     return null;
   }
 }, wt = (s, a, u) => {
-  const l = {
+  const c = {
     sourceContent: s,
     sourceLocale: a,
     targetLocale: u,
@@ -424,8 +424,8 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
   };
   try {
     wo() && mo();
-    const c = dt(), w = Ne(), C = bo(), g = new XMLHttpRequest(), k = `${go}/linguistnow/resources/v1/translate/`;
-    if (g.open("POST", k, !1), g.setRequestHeader("x-api-key", `${w}`), g.setRequestHeader("Authorization", `Bearer ${c}`), g.setRequestHeader("X-Request-ID", `${C}`), g.setRequestHeader("Content-Type", "application/json"), g.send(JSON.stringify(l)), g.status === 200) {
+    const l = dt(), w = Ne(), x = bo(), g = new XMLHttpRequest(), k = `${go}/linguistnow/resources/v1/translate/`;
+    if (g.open("POST", k, !1), g.setRequestHeader("x-api-key", `${w}`), g.setRequestHeader("Authorization", `Bearer ${l}`), g.setRequestHeader("X-Request-ID", `${x}`), g.setRequestHeader("Content-Type", "application/json"), g.send(JSON.stringify(c)), g.status === 200) {
       const y = JSON.parse(g.responseText);
       return console.debug(`Running LIO Translate API: ${s}`), y.translatedText;
     }
@@ -433,7 +433,7 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
   } catch {
     return null;
   }
-}, vo = (s) => s.toLocaleLowerCase() !== Ue, Co = () => {
+}, vo = (s) => s.toLocaleLowerCase() !== Ue, xo = () => {
   if (typeof Intl < "u")
     try {
       return Intl.NumberFormat().resolvedOptions().locale.toLocaleLowerCase();
@@ -441,8 +441,8 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
       return console.error("Cannot get locale from Intl"), null;
     }
   return null;
-}, xo = (s) => {
-  let a = Co();
+}, Co = (s) => {
+  let a = xo();
   return vo(a) || (a = yo(s)), a;
 }, di = (s) => {
   const a = s == null ? void 0 : s.toLocaleLowerCase().replace("_", "-").split("-");
@@ -457,87 +457,87 @@ const ne = (s, a) => `${a}:${s}`, oi = (s, a) => {
   }
   return null;
 }, Ae = (s, a, u) => {
-  const l = ne(a, u);
-  let c = ut(l, s);
-  if (c)
-    return c;
+  const c = ne(a, u);
+  let l = ut(c, s);
+  if (l)
+    return l;
   const w = localStorage.getItem("user-locale");
-  return w != null && w !== Ue && (c = wt(s, Ue, w), c) ? (ct(l, s, c), c) : null;
+  return w != null && w !== Ue && (l = wt(s, Ue, w), l) ? (ct(c, s, l), l) : null;
 }, lo = (s, a, u) => {
-  const l = ne(s.source.id, W.Translation);
-  if (!ii(l)) {
+  const c = ne(s.source.id, $.Translation);
+  if (!ii(c)) {
     const w = `lang: ${a}`;
     u = `${u}
-${w}`, ri(l);
+${w}`, ri(c);
   }
   return u;
 }, co = (s, a, u) => {
-  let l = ut(s, a);
-  if (l)
-    u.text = l;
+  let c = ut(s, a);
+  if (c)
+    u.text = c;
   else {
-    const c = localStorage.getItem("user-locale"), w = xo(u.text);
-    w != null && c !== w && (l = wt(a, w, c), l && (ct(s, a, l), u.text = l));
+    const l = localStorage.getItem("user-locale"), w = Co(u.text);
+    w != null && l !== w && (c = wt(a, w, l), c && (ct(s, a, c), u.text = c));
   }
 }, wi = {
   beforeSend(s, a) {
     if (ao()) {
       if (s.type === "text") {
-        let c = Co();
-        s.text = lo(s, c, s.text);
+        let l = xo();
+        s.text = lo(s, l, s.text);
       }
       return s;
     }
-    const u = ne(a.conversation.id, W.Agent), l = !ro(u);
-    if (s.type === "text" && l) {
-      const c = s == null ? void 0 : s.text;
-      if (c !== null && c.length > 0) {
+    const u = ne(a.conversation.id, $.Agent), c = !ro(u);
+    if (s.type === "text" && c) {
+      const l = s == null ? void 0 : s.text;
+      if (l !== null && l.length > 0) {
         let w = si();
-        if (w || (w = xo(s.text), ni(w)), w != null && vo(w)) {
-          let g = wt(c, w, Ue);
-          g != null && (g = lo(s, w, g), s.text = g, ct(ne(a.conversation.id, W.Translation), g, c));
+        if (w || (w = Co(s.text), ni(w)), w != null && vo(w)) {
+          let g = wt(l, w, Ue);
+          g != null && (g = lo(s, w, g), s.text = g, ct(ne(a.conversation.id, $.Translation), g, l));
         }
       }
     }
-    return s.type === "formResponse" && l && s.fields.find((C) => C.name === "dataCapture.systemField.requester.email" && C.type === "email") && io(u), s;
+    return s.type === "formResponse" && c && s.fields.find((x) => x.name === "dataCapture.systemField.requester.email" && x.type === "email") && io(u), s;
   },
   beforeDisplay(s, a) {
-    var C, g;
+    var x, g;
     if (ao())
       return s;
-    const u = s.text, l = ((C = s.source) == null ? void 0 : C.type) === "zd:answerBot", c = ((g = s.source) == null ? void 0 : g.type) === "zd:agentWorkspace", w = !ro(ne(a.conversation.id, W.Agent));
+    const u = s.text, c = ((x = s.source) == null ? void 0 : x.type) === "zd:answerBot", l = ((g = s.source) == null ? void 0 : g.type) === "zd:agentWorkspace", w = !ro(ne(a.conversation.id, $.Agent));
     switch (s.type) {
       case "text": {
-        if (l) {
-          let k = Ae(s.text, a.conversation.id, W.Agent);
+        if (c) {
+          let k = Ae(s.text, a.conversation.id, $.Agent);
           k && (s.text = k);
           const y = s.actions;
           if (y)
             for (const d of y) {
-              let O = Ae(d.text, a.conversation.id, W.AnswerBot);
+              let O = Ae(d.text, a.conversation.id, $.AnswerBot);
               O && (d.text = O);
             }
-        } else if (c) {
+        } else if (l) {
           let k = !1, y = !1, d = !1;
-          const O = s.displayName === "Automated Response", H = ne(a.conversation.id, W.Agent);
+          const O = s.displayName === "Automated Response", H = ne(a.conversation.id, $.Agent);
           let D = s;
           !O && D.metadata != null && (k = D.metadata["__zendesk_msg.source_type"] !== null && D.metadata["__zendesk_msg.source_type"] === "sunco_web", y = D.metadata["__zendesk_msg.agent.id"] !== null && D.metadata["__zendesk_msg.agent.id"] === "__trigger", d = y && k), O || d ? co(H, u, s) : w && (io(H), co(H, u, s));
         } else {
-          const k = ut(ne(a.conversation.id, W.Translation), s.text);
+          const k = ut(ne(a.conversation.id, $.Translation), s.text);
           k && (s.text = k);
         }
         return s;
       }
       case "carousel": {
-        if (l) {
+        if (c) {
           let k = s;
           for (const y of k.items) {
-            const d = Ae(y.title, a.conversation.id, W.Carousel);
+            const d = Ae(y.title, a.conversation.id, $.Carousel);
             d && (y.title = d);
-            const O = Ae(y.description, a.conversation.id, W.Carousel);
+            const O = Ae(y.description, a.conversation.id, $.Carousel);
             O && (y.description = O);
             for (const H of y.actions) {
-              const D = Ae(H.text, a.conversation.id, W.Carousel);
+              const D = Ae(H.text, a.conversation.id, $.Carousel);
               D && (H.text = D);
               const Z = localStorage.getItem("user-locale"), i = di(Z);
               i && (H.uri = H.uri.replace("en-us", i));
@@ -548,11 +548,11 @@ ${w}`, ri(l);
         return s;
       }
       case "form": {
-        if (l) {
+        if (c) {
           const k = s;
           if (k.fields.length > 0)
             for (const y of k.fields) {
-              const d = Ae(y.label, a.conversation.id, W.Form);
+              const d = Ae(y.label, a.conversation.id, $.Form);
               d && (y.label = d);
             }
         }
@@ -576,18 +576,18 @@ var lt = {}, fi = {
 * Released under the MIT License.
 */
 (function(s, a) {
-  (function(u, l) {
-    s.exports = l();
+  (function(u, c) {
+    s.exports = c();
   })(le, function() {
     function u(e, t) {
-      var o = c(e, t, "get");
+      var o = l(e, t, "get");
       return w(e, o);
     }
-    function l(e, t, o) {
-      var n = c(e, t, "set");
-      return C(e, n, o), o;
-    }
     function c(e, t, o) {
+      var n = l(e, t, "set");
+      return x(e, n, o), o;
+    }
+    function l(e, t, o) {
       if (!t.has(e))
         throw new TypeError("attempted to " + o + " private field on non-instance");
       return t.get(e);
@@ -595,7 +595,7 @@ var lt = {}, fi = {
     function w(e, t) {
       return t.get ? t.get.call(e) : t.value;
     }
-    function C(e, t, o) {
+    function x(e, t, o) {
       if (t.set)
         t.set.call(e, o);
       else {
@@ -639,7 +639,7 @@ var lt = {}, fi = {
     }, X = (e) => typeof e == "function" ? e() : e, ue = (e) => e && typeof e.toPromise == "function", de = (e) => ue(e) ? e.toPromise() : Promise.resolve(e), Te = (e) => e && Promise.resolve(e) === e, M = () => document.body.querySelector(".".concat(i.container)), we = (e) => {
       const t = M();
       return t ? t.querySelector(e) : null;
-    }, z = (e) => we(".".concat(e)), x = () => z(i.popup), f = () => z(i.icon), h = () => z(i["icon-content"]), b = () => z(i.title), m = () => z(i["html-container"]), q = () => z(i.image), ee = () => z(i["progress-steps"]), Y = () => z(i["validation-message"]), R = () => (
+    }, z = (e) => we(".".concat(e)), C = () => z(i.popup), f = () => z(i.icon), h = () => z(i["icon-content"]), b = () => z(i.title), m = () => z(i["html-container"]), q = () => z(i.image), ee = () => z(i["progress-steps"]), Y = () => z(i["validation-message"]), R = () => (
       /** @type {HTMLButtonElement} */
       we(".".concat(i.actions, " .").concat(i.confirm))
     ), J = () => (
@@ -664,19 +664,19 @@ var lt = {}, fi = {
   video[controls],
   summary
 `, Xe = () => {
-      const e = x();
+      const e = C();
       if (!e)
         return [];
       const t = e.querySelectorAll('[tabindex]:not([tabindex="-1"]):not([tabindex="0"])'), o = Array.from(t).sort((p, A) => {
         const T = parseInt(p.getAttribute("tabindex") || "0"), I = parseInt(A.getAttribute("tabindex") || "0");
         return T > I ? 1 : T < I ? -1 : 0;
       }), n = e.querySelectorAll(ko), r = Array.from(n).filter((p) => p.getAttribute("tabindex") !== "-1");
-      return [...new Set(o.concat(r))].filter((p) => $(p));
+      return [...new Set(o.concat(r))].filter((p) => W(p));
     }, Ye = () => oe(document.body, i.shown) && !oe(document.body, i["toast-shown"]) && !oe(document.body, i["no-backdrop"]), De = () => {
-      const e = x();
+      const e = C();
       return e ? oe(e, i.toast) : !1;
     }, Ao = () => {
-      const e = x();
+      const e = C();
       return e ? e.hasAttribute("data-loading") : !1;
     }, V = (e, t) => {
       if (e.textContent = "", t) {
@@ -769,13 +769,13 @@ var lt = {}, fi = {
     }, Be = function(e, t) {
       let o = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "flex";
       t ? j(e, o) : _(e);
-    }, $ = (e) => !!(e && (e.offsetWidth || e.offsetHeight || e.getClientRects().length)), To = () => !$(R()) && !$(N()) && !$(J()), mt = (e) => e.scrollHeight > e.clientHeight, gt = (e) => {
+    }, W = (e) => !!(e && (e.offsetWidth || e.offsetHeight || e.getClientRects().length)), To = () => !W(R()) && !W(N()) && !W(J()), mt = (e) => e.scrollHeight > e.clientHeight, gt = (e) => {
       const t = window.getComputedStyle(e), o = parseFloat(t.getPropertyValue("animation-duration") || "0"), n = parseFloat(t.getPropertyValue("transition-duration") || "0");
       return o > 0 || n > 0;
     }, Ge = function(e) {
       let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
       const o = je();
-      o && $(o) && (t && (o.style.transition = "none", o.style.width = "100%"), setTimeout(() => {
+      o && W(o) && (t && (o.style.transition = "none", o.style.width = "100%"), setTimeout(() => {
         o.style.transition = "width ".concat(e / 1e3, "s linear"), o.style.width = "0%";
       }, 10));
     }, Bo = () => {
@@ -819,25 +819,25 @@ var lt = {}, fi = {
      <div class="`).concat(i["timer-progress-bar"], `"></div>
    </div>
  </div>
-`).replace(/(^|\n)\s*/g, ""), Eo = () => {
+`).replace(/(^|\n)\s*/g, ""), Po = () => {
       const e = M();
       return e ? (e.remove(), G([document.documentElement, document.body], [i["no-backdrop"], i["toast-shown"], i["has-column"]]), !0) : !1;
     }, he = () => {
       d.currentInstance.resetValidationMessage();
-    }, Po = () => {
-      const e = x(), t = re(e, i.input), o = re(e, i.file), n = e.querySelector(".".concat(i.range, " input")), r = e.querySelector(".".concat(i.range, " output")), p = re(e, i.select), A = e.querySelector(".".concat(i.checkbox, " input")), T = re(e, i.textarea);
+    }, Eo = () => {
+      const e = C(), t = re(e, i.input), o = re(e, i.file), n = e.querySelector(".".concat(i.range, " input")), r = e.querySelector(".".concat(i.range, " output")), p = re(e, i.select), A = e.querySelector(".".concat(i.checkbox, " input")), T = re(e, i.textarea);
       t.oninput = he, o.onchange = he, p.onchange = he, A.onchange = he, T.oninput = he, n.oninput = () => {
         he(), r.value = n.value;
       }, n.onchange = () => {
         he(), r.value = n.value;
       };
     }, Lo = (e) => typeof e == "string" ? document.querySelector(e) : e, Oo = (e) => {
-      const t = x();
+      const t = C();
       t.setAttribute("role", e.toast ? "alert" : "dialog"), t.setAttribute("aria-live", e.toast ? "polite" : "assertive"), e.toast || t.setAttribute("aria-modal", "true");
     }, Mo = (e) => {
       window.getComputedStyle(e).direction === "rtl" && v(M(), i.rtl);
     }, Ho = (e) => {
-      const t = Eo();
+      const t = Po();
       if (bt()) {
         F("SweetAlert2 requires document to initialize");
         return;
@@ -845,7 +845,7 @@ var lt = {}, fi = {
       const o = document.createElement("div");
       o.className = i.container, t && v(o, i["no-transition"]), V(o, Io);
       const n = Lo(e.target);
-      n.appendChild(o), Oo(e), Mo(n), Po();
+      n.appendChild(o), Oo(e), Mo(n), Eo();
     }, Qe = (e, t) => {
       e instanceof HTMLElement ? t.appendChild(e) : typeof e == "object" ? jo(e, t) : e && V(t, e);
     }, jo = (e, t) => {
@@ -888,15 +888,15 @@ var lt = {}, fi = {
       o && (V(o, t.closeButtonHtml || ""), U(o, t, "closeButton"), Be(o, t.showCloseButton), o.setAttribute("aria-label", t.closeButtonAriaLabel || ""));
     }, Ro = (e, t) => {
       const o = M();
-      o && (Vo(o, t.backdrop), $o(o, t.position), Wo(o, t.grow), U(o, t, "container"));
+      o && (Vo(o, t.backdrop), Wo(o, t.position), $o(o, t.grow), U(o, t, "container"));
     };
     function Vo(e, t) {
       typeof t == "string" ? e.style.background = t : t || v([document.documentElement, document.body], i["no-backdrop"]);
     }
-    function $o(e, t) {
+    function Wo(e, t) {
       t && (t in i ? v(e, i[t]) : (L('The "position" parameter is not valid, defaulting to "center"'), v(e, i.center)));
     }
-    function Wo(e, t) {
+    function $o(e, t) {
       t && v(e, i["grow-".concat(t)]);
     }
     var S = {
@@ -904,7 +904,7 @@ var lt = {}, fi = {
       domCache: /* @__PURE__ */ new WeakMap()
     };
     const No = ["input", "file", "range", "select", "radio", "checkbox", "textarea"], Uo = (e, t) => {
-      const o = x();
+      const o = C();
       if (!o)
         return;
       const n = S.innerParams.get(e), r = !n || t.input !== n.input;
@@ -915,11 +915,11 @@ var lt = {}, fi = {
     }, Zo = (e) => {
       if (!e.input)
         return;
-      if (!E[e.input]) {
-        F("Unexpected type of input! Expected ".concat(Object.keys(E).join(" | "), ', got "').concat(e.input, '"'));
+      if (!P[e.input]) {
+        F("Unexpected type of input! Expected ".concat(Object.keys(P).join(" | "), ', got "').concat(e.input, '"'));
         return;
       }
-      const t = yt(e.input), o = E[e.input](t, e);
+      const t = yt(e.input), o = P[e.input](t, e);
       j(t), e.inputAutoFocus && setTimeout(() => {
         ft(o);
       });
@@ -929,7 +929,7 @@ var lt = {}, fi = {
         ["id", "type", "value", "style"].includes(o) || e.removeAttribute(o);
       }
     }, Xo = (e, t) => {
-      const o = qe(x(), e);
+      const o = qe(C(), e);
       if (o) {
         Ko(o);
         for (const n in t)
@@ -945,33 +945,33 @@ var lt = {}, fi = {
         const n = document.createElement("label"), r = i["input-label"];
         n.setAttribute("for", e.id), n.className = r, typeof o.customClass == "object" && v(n, o.customClass.inputLabel), n.innerText = o.inputLabel, t.insertAdjacentElement("beforebegin", n);
       }
-    }, yt = (e) => re(x(), i[e] || i.input), _e = (e, t) => {
+    }, yt = (e) => re(C(), i[e] || i.input), _e = (e, t) => {
       ["string", "number"].includes(typeof t) ? e.value = "".concat(t) : Te(t) || L('Unexpected type of inputValue! Expected "string", "number" or "Promise", got "'.concat(typeof t, '"'));
-    }, E = {};
-    E.text = E.email = E.password = E.number = E.tel = E.url = E.search = E.date = E["datetime-local"] = E.time = E.week = E.month = (e, t) => (_e(e, t.inputValue), Ie(e, e, t), tt(e, t), e.type = t.input, e), E.file = (e, t) => (Ie(e, e, t), tt(e, t), e), E.range = (e, t) => {
+    }, P = {};
+    P.text = P.email = P.password = P.number = P.tel = P.url = P.search = P.date = P["datetime-local"] = P.time = P.week = P.month = (e, t) => (_e(e, t.inputValue), Ie(e, e, t), tt(e, t), e.type = t.input, e), P.file = (e, t) => (Ie(e, e, t), tt(e, t), e), P.range = (e, t) => {
       const o = e.querySelector("input"), n = e.querySelector("output");
       return _e(o, t.inputValue), o.type = t.input, _e(n, t.inputValue), Ie(o, e, t), e;
-    }, E.select = (e, t) => {
+    }, P.select = (e, t) => {
       if (e.textContent = "", t.inputPlaceholder) {
         const o = document.createElement("option");
         V(o, t.inputPlaceholder), o.value = "", o.disabled = !0, o.selected = !0, e.appendChild(o);
       }
       return Ie(e, e, t), e;
-    }, E.radio = (e) => (e.textContent = "", e), E.checkbox = (e, t) => {
-      const o = qe(x(), "checkbox");
+    }, P.radio = (e) => (e.textContent = "", e), P.checkbox = (e, t) => {
+      const o = qe(C(), "checkbox");
       o.value = "1", o.checked = Boolean(t.inputValue);
       const n = e.querySelector("span");
       return V(n, t.inputPlaceholder), o;
-    }, E.textarea = (e, t) => {
+    }, P.textarea = (e, t) => {
       _e(e, t.inputValue), tt(e, t), Ie(e, e, t);
       const o = (n) => parseInt(window.getComputedStyle(n).marginLeft) + parseInt(window.getComputedStyle(n).marginRight);
       return setTimeout(() => {
         if ("MutationObserver" in window) {
-          const n = parseInt(window.getComputedStyle(x()).width), r = () => {
+          const n = parseInt(window.getComputedStyle(C()).width), r = () => {
             if (!document.body.contains(e))
               return;
             const p = e.offsetWidth + o(e);
-            p > n ? x().style.width = "".concat(p, "px") : pe(x(), "width", t.width);
+            p > n ? C().style.width = "".concat(p, "px") : pe(C(), "width", t.width);
           };
           new MutationObserver(r).observe(e, {
             attributes: !0,
@@ -990,7 +990,7 @@ var lt = {}, fi = {
       const o = S.innerParams.get(e), n = f();
       if (n) {
         if (o && t.icon === o.icon) {
-          Ct(n, t), vt(n, t);
+          xt(n, t), vt(n, t);
           return;
         }
         if (!t.icon && !t.iconHtml) {
@@ -1001,14 +1001,14 @@ var lt = {}, fi = {
           F('Unknown icon! Expected "success", "error", "warning", "info" or "question", got "'.concat(t.icon, '"')), _(n);
           return;
         }
-        j(n), Ct(n, t), vt(n, t), v(n, t.showClass && t.showClass.icon);
+        j(n), xt(n, t), vt(n, t), v(n, t.showClass && t.showClass.icon);
       }
     }, vt = (e, t) => {
       for (const [o, n] of Object.entries(se))
         t.icon !== o && G(e, n);
       v(e, t.icon && se[t.icon]), nn(e, t), en(), U(e, t, "icon");
     }, en = () => {
-      const e = x();
+      const e = C();
       if (!e)
         return;
       const t = window.getComputedStyle(e).getPropertyValue("background-color"), o = e.querySelectorAll("[class^=swal2-success-circular-line], .swal2-success-fix");
@@ -1024,11 +1024,11 @@ var lt = {}, fi = {
     <span class="swal2-x-mark-line-left"></span>
     <span class="swal2-x-mark-line-right"></span>
   </span>
-`, Ct = (e, t) => {
+`, xt = (e, t) => {
       if (!t.icon && !t.iconHtml)
         return;
       let o = e.innerHTML, n = "";
-      t.iconHtml ? n = xt(t.iconHtml) : t.icon === "success" ? (n = tn, o = o.replace(/ style=".*?"/g, "")) : t.icon === "error" ? n = on : t.icon && (n = xt({
+      t.iconHtml ? n = Ct(t.iconHtml) : t.icon === "success" ? (n = tn, o = o.replace(/ style=".*?"/g, "")) : t.icon === "error" ? n = on : t.icon && (n = Ct({
         question: "?",
         warning: "!",
         info: "i"
@@ -1040,7 +1040,7 @@ var lt = {}, fi = {
           ht(e, o, "backgroundColor", t.iconColor);
         ht(e, ".swal2-success-ring", "borderColor", t.iconColor);
       }
-    }, xt = (e) => '<div class="'.concat(i["icon-content"], '">').concat(e, "</div>"), sn = (e, t) => {
+    }, Ct = (e) => '<div class="'.concat(i["icon-content"], '">').concat(e, "</div>"), sn = (e, t) => {
       const o = q();
       if (o) {
         if (!t.imageUrl) {
@@ -1050,7 +1050,7 @@ var lt = {}, fi = {
         j(o, ""), o.setAttribute("src", t.imageUrl), o.setAttribute("alt", t.imageAlt || ""), pe(o, "width", t.imageWidth), pe(o, "height", t.imageHeight), o.className = i.image, U(o, t, "image");
       }
     }, rn = (e, t) => {
-      const o = M(), n = x();
+      const o = M(), n = C();
       if (!(!o || !n)) {
         if (t.toast) {
           pe(o, "width", t.width), n.style.width = "100%";
@@ -1062,7 +1062,7 @@ var lt = {}, fi = {
       }
     }, an = (e, t) => {
       const o = t.showClass || {};
-      e.className = "".concat(i.popup, " ").concat($(e) ? o.popup : ""), t.toast ? (v([document.documentElement, document.body], i["toast-shown"]), v(e, i.toast)) : v(e, i.modal), U(e, t, "popup"), typeof t.customClass == "string" && v(e, t.customClass), t.icon && v(e, i["icon-".concat(t.icon)]);
+      e.className = "".concat(i.popup, " ").concat(W(e) ? o.popup : ""), t.toast ? (v([document.documentElement, document.body], i["toast-shown"]), v(e, i.toast)) : v(e, i.modal), U(e, t, "popup"), typeof t.customClass == "string" && v(e, t.customClass), t.icon && v(e, i["icon-".concat(t.icon)]);
     }, ln = (e, t) => {
       const o = ee();
       if (!o)
@@ -1093,9 +1093,9 @@ var lt = {}, fi = {
       o && (Je(o), Be(o, t.title || t.titleText, "block"), t.title && Qe(t.title, o), t.titleText && (o.innerText = t.titleText), U(o, t, "title"));
     }, kt = (e, t) => {
       rn(e, t), Ro(e, t), ln(e, t), Qo(e, t), sn(e, t), dn(e, t), Fo(e, t), Jo(e, t), qo(e, t), Go(e, t);
-      const o = x();
+      const o = C();
       typeof t.didRender == "function" && o && t.didRender(o);
-    }, wn = () => $(x()), At = () => {
+    }, wn = () => W(C()), At = () => {
       var e;
       return (e = R()) === null || e === void 0 ? void 0 : e.click();
     }, fn = () => {
@@ -1115,7 +1115,7 @@ var lt = {}, fi = {
         capture: e.keydownListenerCapture
       }), e.keydownHandlerAdded = !1);
     }, hn = (e, t, o) => {
-      St(e), t.toast || (e.keydownHandler = (n) => gn(t, n, o), e.keydownTarget = t.keydownListenerCapture ? window : x(), e.keydownListenerCapture = t.keydownListenerCapture, e.keydownTarget.addEventListener("keydown", e.keydownHandler, {
+      St(e), t.toast || (e.keydownHandler = (n) => gn(t, n, o), e.keydownTarget = t.keydownListenerCapture ? window : C(), e.keydownListenerCapture = t.keydownListenerCapture, e.keydownTarget.addEventListener("keydown", e.keydownHandler, {
         capture: e.keydownListenerCapture
       }), e.keydownHandlerAdded = !0);
     }, ot = (e, t) => {
@@ -1125,13 +1125,13 @@ var lt = {}, fi = {
         e = e + t, e === n.length ? e = 0 : e === -1 && (e = n.length - 1), n[e].focus();
         return;
       }
-      (o = x()) === null || o === void 0 || o.focus();
+      (o = C()) === null || o === void 0 || o.focus();
     }, Tt = ["ArrowRight", "ArrowDown"], mn = ["ArrowLeft", "ArrowUp"], gn = (e, t, o) => {
-      e && (t.isComposing || t.keyCode === 229 || (e.stopKeydownPropagation && t.stopPropagation(), t.key === "Enter" ? bn(t, e) : t.key === "Tab" ? yn(t) : [...Tt, ...mn].includes(t.key) ? vn(t.key) : t.key === "Escape" && Cn(t, e, o)));
+      e && (t.isComposing || t.keyCode === 229 || (e.stopKeydownPropagation && t.stopPropagation(), t.key === "Enter" ? bn(t, e) : t.key === "Tab" ? yn(t) : [...Tt, ...mn].includes(t.key) ? vn(t.key) : t.key === "Escape" && xn(t, e, o)));
     }, bn = (e, t) => {
       if (!X(t.allowEnterKey))
         return;
-      const o = qe(x(), t.input);
+      const o = qe(C(), t.input);
       if (e.target && o && e.target instanceof HTMLElement && e.target.outerHTML === o.outerHTML) {
         if (["textarea", "file"].includes(t.input))
           return;
@@ -1159,19 +1159,19 @@ var lt = {}, fi = {
         for (let I = 0; I < t.children.length; I++) {
           if (T = T[A], !T)
             return;
-          if (T instanceof HTMLButtonElement && $(T))
+          if (T instanceof HTMLButtonElement && W(T))
             break;
         }
         T instanceof HTMLButtonElement && T.focus();
       }
-    }, Cn = (e, t, o) => {
+    }, xn = (e, t, o) => {
       X(t.allowEscapeKey) && (e.preventDefault(), o(be.esc));
     };
-    var Ee = {
+    var Pe = {
       swalPromiseResolve: /* @__PURE__ */ new WeakMap(),
       swalPromiseReject: /* @__PURE__ */ new WeakMap()
     };
-    const xn = () => {
+    const Cn = () => {
       Array.from(document.body.children).forEach((t) => {
         t === M() || t.contains(M()) || (t.hasAttribute("aria-hidden") && t.setAttribute("data-previous-aria-hidden", t.getAttribute("aria-hidden") || ""), t.setAttribute("aria-hidden", "true"));
       });
@@ -1205,19 +1205,19 @@ var lt = {}, fi = {
         const e = parseInt(document.body.style.top, 10);
         G(document.body, i.iosfix), document.body.style.top = "", document.body.scrollTop = e * -1;
       }
-    }, En = () => {
+    }, Pn = () => {
       const e = document.createElement("div");
       e.className = i["scrollbar-measure"], document.body.appendChild(e);
       const t = e.getBoundingClientRect().width - e.clientWidth;
       return document.body.removeChild(e), t;
     };
     let ye = null;
-    const Pn = (e) => {
-      ye === null && (document.body.scrollHeight > window.innerHeight || e === "scroll") && (ye = parseInt(window.getComputedStyle(document.body).getPropertyValue("padding-right")), document.body.style.paddingRight = "".concat(ye + En(), "px"));
+    const En = (e) => {
+      ye === null && (document.body.scrollHeight > window.innerHeight || e === "scroll") && (ye = parseInt(window.getComputedStyle(document.body).getPropertyValue("padding-right")), document.body.style.paddingRight = "".concat(ye + Pn(), "px"));
     }, Ln = () => {
       ye !== null && (document.body.style.paddingRight = "".concat(ye, "px"), ye = null);
     };
-    function Et(e, t, o, n) {
+    function Pt(e, t, o, n) {
       De() ? Lt(e, n) : (H(o).then(() => Lt(e, n)), St(d)), It ? (t.setAttribute("style", "display:none !important"), t.removeAttribute("class"), t.innerHTML = "") : t.remove(), Ye() && (Ln(), In(), Bt()), On();
     }
     function On() {
@@ -1225,11 +1225,11 @@ var lt = {}, fi = {
     }
     function ae(e) {
       e = Hn(e);
-      const t = Ee.swalPromiseResolve.get(this), o = Mn(this);
-      this.isAwaitingPromise ? e.isDismissed || (Pe(this), t(e)) : o && t(e);
+      const t = Pe.swalPromiseResolve.get(this), o = Mn(this);
+      this.isAwaitingPromise ? e.isDismissed || (Ee(this), t(e)) : o && t(e);
     }
     const Mn = (e) => {
-      const t = x();
+      const t = C();
       if (!t)
         return !1;
       const o = S.innerParams.get(e);
@@ -1239,11 +1239,11 @@ var lt = {}, fi = {
       const n = M();
       return G(n, o.showClass.backdrop), v(n, o.hideClass.backdrop), jn(e, t, o), !0;
     };
-    function Pt(e) {
-      const t = Ee.swalPromiseReject.get(this);
-      Pe(this), t && t(e);
+    function Et(e) {
+      const t = Pe.swalPromiseReject.get(this);
+      Ee(this), t && t(e);
     }
-    const Pe = (e) => {
+    const Ee = (e) => {
       e.isAwaitingPromise && (delete e.isAwaitingPromise, S.innerParams.get(e) || e._destroy());
     }, Hn = (e) => typeof e > "u" ? {
       isConfirmed: !1,
@@ -1255,9 +1255,9 @@ var lt = {}, fi = {
       isDismissed: !1
     }, e), jn = (e, t, o) => {
       const n = M(), r = me && gt(t);
-      typeof o.willClose == "function" && o.willClose(t), r ? Dn(e, t, n, o.returnFocus, o.didClose) : Et(e, n, o.returnFocus, o.didClose);
+      typeof o.willClose == "function" && o.willClose(t), r ? Dn(e, t, n, o.returnFocus, o.didClose) : Pt(e, n, o.returnFocus, o.didClose);
     }, Dn = (e, t, o, n, r) => {
-      me && (d.swalCloseEventFinishedCallback = Et.bind(null, e, o, n, r), t.addEventListener(me, function(p) {
+      me && (d.swalCloseEventFinishedCallback = Pt.bind(null, e, o, n, r), t.addEventListener(me, function(p) {
         p.target === t && (d.swalCloseEventFinishedCallback(), delete d.swalCloseEventFinishedCallback);
       }));
     }, Lt = (e, t) => {
@@ -1265,16 +1265,16 @@ var lt = {}, fi = {
         typeof t == "function" && t.bind(e.params)(), e._destroy && e._destroy();
       });
     }, ve = (e) => {
-      let t = x();
-      if (t || new $e(), t = x(), !t)
+      let t = C();
+      if (t || new We(), t = C(), !t)
         return;
       const o = te();
       De() ? _(f()) : qn(t, e), j(o), t.setAttribute("data-loading", "true"), t.setAttribute("aria-busy", "true"), t.focus();
     }, qn = (e, t) => {
       const o = fe(), n = te();
-      !o || !n || (!t && $(R()) && (t = R()), j(o), t && (_(t), n.setAttribute("data-button-to-replace", t.className), o.insertBefore(n, t)), v([e, o], i.loading));
+      !o || !n || (!t && W(R()) && (t = R()), j(o), t && (_(t), n.setAttribute("data-button-to-replace", t.className), o.insertBefore(n, t)), v([e, o], i.loading));
     }, _n = (e, t) => {
-      t.input === "select" || t.input === "radio" ? $n(e, t) : ["text", "email", "number", "tel", "textarea"].some((o) => o === t.input) && (ue(t.inputValue) || Te(t.inputValue)) && (ve(R()), Wn(e, t));
+      t.input === "select" || t.input === "radio" ? Wn(e, t) : ["text", "email", "number", "tel", "textarea"].some((o) => o === t.input) && (ue(t.inputValue) || Te(t.inputValue)) && (ve(R()), $n(e, t));
     }, zn = (e, t) => {
       const o = e.getInput();
       if (!o)
@@ -1289,8 +1289,8 @@ var lt = {}, fi = {
         default:
           return t.inputAutoTrim ? o.value.trim() : o.value;
       }
-    }, Fn = (e) => e.checked ? 1 : 0, Rn = (e) => e.checked ? e.value : null, Vn = (e) => e.files && e.files.length ? e.getAttribute("multiple") !== null ? e.files : e.files[0] : null, $n = (e, t) => {
-      const o = x();
+    }, Fn = (e) => e.checked ? 1 : 0, Rn = (e) => e.checked ? e.value : null, Vn = (e) => e.files && e.files.length ? e.getAttribute("multiple") !== null ? e.files : e.files[0] : null, Wn = (e, t) => {
+      const o = C();
       if (!o)
         return;
       const n = (r) => {
@@ -1299,7 +1299,7 @@ var lt = {}, fi = {
       ue(t.inputOptions) || Te(t.inputOptions) ? (ve(R()), de(t.inputOptions).then((r) => {
         e.hideLoading(), n(r);
       })) : typeof t.inputOptions == "object" ? n(t.inputOptions) : F("Unexpected type of inputOptions! Expected object, Map or Promise, got ".concat(typeof t.inputOptions));
-    }, Wn = (e, t) => {
+    }, $n = (e, t) => {
       const o = e.getInput();
       o && (_(o), de(t.inputValue).then((n) => {
         o.value = t.input === "number" ? "".concat(parseFloat(n) || 0) : "".concat(n), j(o), o.focus(), e.hideLoading();
@@ -1319,7 +1319,7 @@ var lt = {}, fi = {
         const A = p[0], T = p[1];
         if (Array.isArray(T)) {
           const I = document.createElement("optgroup");
-          I.label = A, I.disabled = !1, n.appendChild(I), T.forEach((xe) => r(I, xe[1], xe[0]));
+          I.label = A, I.disabled = !1, n.appendChild(I), T.forEach((Ce) => r(I, Ce[1], Ce[0]));
         } else
           r(n, T, A);
       }), n.focus();
@@ -1329,10 +1329,10 @@ var lt = {}, fi = {
       if (!n)
         return;
       t.forEach((p) => {
-        const A = p[0], T = p[1], I = document.createElement("input"), xe = document.createElement("label");
+        const A = p[0], T = p[1], I = document.createElement("input"), Ce = document.createElement("label");
         I.type = "radio", I.name = i.radio, I.value = A, Ot(A, o.inputValue) && (I.checked = !0);
         const at = document.createElement("span");
-        V(at, T), at.className = i.label, xe.appendChild(I), xe.appendChild(at), n.appendChild(xe);
+        V(at, T), at.className = i.label, Ce.appendChild(I), Ce.appendChild(at), n.appendChild(Ce);
       });
       const r = n.querySelectorAll("input");
       r.length && r[0].focus();
@@ -1370,7 +1370,7 @@ var lt = {}, fi = {
     }, nt = (e, t) => {
       const o = S.innerParams.get(e || void 0);
       o.showLoaderOnDeny && ve(N()), o.preDeny ? (e.isAwaitingPromise = !0, Promise.resolve().then(() => de(o.preDeny(t, o.validationMessage))).then((r) => {
-        r === !1 ? (e.hideLoading(), Pe(e)) : e.close({
+        r === !1 ? (e.hideLoading(), Ee(e)) : e.close({
           isDenied: !0,
           value: typeof r > "u" ? t : r
         });
@@ -1388,7 +1388,7 @@ var lt = {}, fi = {
     }, st = (e, t) => {
       const o = S.innerParams.get(e || void 0);
       o.showLoaderOnConfirm && ve(), o.preConfirm ? (e.resetValidationMessage(), e.isAwaitingPromise = !0, Promise.resolve().then(() => de(o.preConfirm(t, o.validationMessage))).then((r) => {
-        $(Y()) || r === !1 ? (e.hideLoading(), Pe(e)) : Ht(e, typeof r > "u" ? t : r);
+        W(Y()) || r === !1 ? (e.hideLoading(), Ee(e)) : Ht(e, typeof r > "u" ? t : r);
       }).catch((r) => jt(e || void 0, r))) : Ht(e, t);
     };
     function Fe() {
@@ -1413,7 +1413,7 @@ var lt = {}, fi = {
       });
     }
     function _t(e, t) {
-      const o = x();
+      const o = C();
       if (!(!o || !e))
         if (e.type === "radio") {
           const n = o.querySelectorAll('[name="'.concat(i.radio, '"]'));
@@ -1434,19 +1434,19 @@ var lt = {}, fi = {
     function Vt() {
       _t(this.getInput(), !0);
     }
-    function $t(e) {
+    function Wt(e) {
       const t = S.domCache.get(this), o = S.innerParams.get(this);
       V(t.validationMessage, e), t.validationMessage.className = i["validation-message"], o.customClass && o.customClass.validationMessage && v(t.validationMessage, o.customClass.validationMessage), j(t.validationMessage);
       const n = this.getInput();
       n && (n.setAttribute("aria-invalid", "true"), n.setAttribute("aria-describedby", i["validation-message"]), ft(n), v(n, i.inputerror));
     }
-    function Wt() {
+    function $t() {
       const e = S.domCache.get(this);
       e.validationMessage && _(e.validationMessage);
       const t = this.getInput();
       t && (t.removeAttribute("aria-invalid"), t.removeAttribute("aria-describedby"), G(t, i.inputerror));
     }
-    const Ce = {
+    const xe = {
       title: "",
       titleText: "",
       text: "",
@@ -1535,7 +1535,7 @@ var lt = {}, fi = {
       didClose: void 0,
       didDestroy: void 0,
       scrollbarPadding: !0
-    }, Gn = ["allowEscapeKey", "allowOutsideClick", "background", "buttonsStyling", "cancelButtonAriaLabel", "cancelButtonColor", "cancelButtonText", "closeButtonAriaLabel", "closeButtonHtml", "color", "confirmButtonAriaLabel", "confirmButtonColor", "confirmButtonText", "currentProgressStep", "customClass", "denyButtonAriaLabel", "denyButtonColor", "denyButtonText", "didClose", "didDestroy", "footer", "hideClass", "html", "icon", "iconColor", "iconHtml", "imageAlt", "imageHeight", "imageUrl", "imageWidth", "preConfirm", "preDeny", "progressSteps", "returnFocus", "reverseButtons", "showCancelButton", "showCloseButton", "showConfirmButton", "showDenyButton", "text", "title", "titleText", "willClose"], Qn = {}, es = ["allowOutsideClick", "allowEnterKey", "backdrop", "focusConfirm", "focusDeny", "focusCancel", "returnFocus", "heightAuto", "keydownListenerCapture"], Nt = (e) => Object.prototype.hasOwnProperty.call(Ce, e), Ut = (e) => Gn.indexOf(e) !== -1, Zt = (e) => Qn[e], ts = (e) => {
+    }, Gn = ["allowEscapeKey", "allowOutsideClick", "background", "buttonsStyling", "cancelButtonAriaLabel", "cancelButtonColor", "cancelButtonText", "closeButtonAriaLabel", "closeButtonHtml", "color", "confirmButtonAriaLabel", "confirmButtonColor", "confirmButtonText", "currentProgressStep", "customClass", "denyButtonAriaLabel", "denyButtonColor", "denyButtonText", "didClose", "didDestroy", "footer", "hideClass", "html", "icon", "iconColor", "iconHtml", "imageAlt", "imageHeight", "imageUrl", "imageWidth", "preConfirm", "preDeny", "progressSteps", "returnFocus", "reverseButtons", "showCancelButton", "showCloseButton", "showConfirmButton", "showDenyButton", "text", "title", "titleText", "willClose"], Qn = {}, es = ["allowOutsideClick", "allowEnterKey", "backdrop", "focusConfirm", "focusDeny", "focusCancel", "returnFocus", "heightAuto", "keydownListenerCapture"], Nt = (e) => Object.prototype.hasOwnProperty.call(xe, e), Ut = (e) => Gn.indexOf(e) !== -1, Zt = (e) => Qn[e], ts = (e) => {
       Nt(e) || L('Unknown parameter "'.concat(e, '"'));
     }, os = (e) => {
       es.includes(e) && L('The parameter "'.concat(e, '" is incompatible with toasts'));
@@ -1548,7 +1548,7 @@ var lt = {}, fi = {
         ts(t), e.toast && os(t), ns(t);
     };
     function Kt(e) {
-      const t = x(), o = S.innerParams.get(this);
+      const t = C(), o = S.innerParams.get(this);
       if (!t || oe(t, o.hideClass.popup)) {
         L("You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameter or show a new popup.");
         return;
@@ -1579,7 +1579,7 @@ var lt = {}, fi = {
     const rs = (e) => {
       Yt(e), delete e.params, delete d.keydownHandler, delete d.keydownTarget, delete d.currentInstance;
     }, Yt = (e) => {
-      e.isAwaitingPromise ? (it(S, e), e.isAwaitingPromise = !0) : (it(Ee, e), it(S, e), delete e.isAwaitingPromise, delete e.disableButtons, delete e.enableButtons, delete e.getInput, delete e.disableInput, delete e.enableInput, delete e.hideLoading, delete e.disableLoading, delete e.showValidationMessage, delete e.resetValidationMessage, delete e.close, delete e.closePopup, delete e.closeModal, delete e.closeToast, delete e.rejectPromise, delete e.update, delete e._destroy);
+      e.isAwaitingPromise ? (it(S, e), e.isAwaitingPromise = !0) : (it(Pe, e), it(S, e), delete e.isAwaitingPromise, delete e.disableButtons, delete e.enableButtons, delete e.getInput, delete e.disableInput, delete e.enableInput, delete e.hideLoading, delete e.disableLoading, delete e.showValidationMessage, delete e.resetValidationMessage, delete e.close, delete e.closePopup, delete e.closeModal, delete e.closeToast, delete e.rejectPromise, delete e.update, delete e._destroy);
     }, it = (e, t) => {
       for (const o in e)
         e[o].delete(t);
@@ -1597,11 +1597,11 @@ var lt = {}, fi = {
       enableButtons: zt,
       enableInput: Rt,
       getInput: Dt,
-      handleAwaitingPromise: Pe,
+      handleAwaitingPromise: Ee,
       hideLoading: Fe,
-      rejectPromise: Pt,
-      resetValidationMessage: Wt,
-      showValidationMessage: $t,
+      rejectPromise: Et,
+      resetValidationMessage: $t,
+      showValidationMessage: Wt,
       update: Kt
     });
     const ls = (e, t, o) => {
@@ -1671,10 +1671,10 @@ var lt = {}, fi = {
         const t = d.timeout.increase(e);
         return Ge(t, !0), t;
       }
-    }, Cs = () => !!(d.timeout && d.timeout.isRunning());
+    }, xs = () => !!(d.timeout && d.timeout.isRunning());
     let eo = !1;
     const rt = {};
-    function xs() {
+    function Cs() {
       let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "data-swal-template";
       rt[e] = this, eo || (document.body.addEventListener("click", ks), eo = !0);
     }
@@ -1693,7 +1693,7 @@ var lt = {}, fi = {
     var As = /* @__PURE__ */ Object.freeze({
       __proto__: null,
       argsToParams: hs,
-      bindClickHandler: xs,
+      bindClickHandler: Cs,
       clickCancel: pn,
       clickConfirm: At,
       clickDeny: fn,
@@ -1713,7 +1713,7 @@ var lt = {}, fi = {
       getImage: q,
       getInputLabel: Me,
       getLoader: te,
-      getPopup: x,
+      getPopup: C,
       getProgressSteps: ee,
       getTimerLeft: bs,
       getTimerProgressBar: je,
@@ -1722,7 +1722,7 @@ var lt = {}, fi = {
       increaseTimer: vs,
       isDeprecatedParameter: Zt,
       isLoading: Ao,
-      isTimerRunning: Cs,
+      isTimerRunning: xs,
       isUpdatableParameter: Ut,
       isValidParameter: Nt,
       isVisible: wn,
@@ -1778,13 +1778,13 @@ var lt = {}, fi = {
       if (!t)
         return {};
       const o = t.content;
-      return Hs(o), Object.assign(Bs(o), Is(o), Es(o), Ps(o), Ls(o), Os(o), Ms(o, to));
+      return Hs(o), Object.assign(Bs(o), Is(o), Ps(o), Es(o), Ls(o), Os(o), Ms(o, to));
     }, Bs = (e) => {
       const t = {};
       return Array.from(e.querySelectorAll("swal-param")).forEach((n) => {
         ge(n, ["name", "value"]);
         const r = n.getAttribute("name"), p = n.getAttribute("value");
-        typeof Ce[r] == "boolean" ? t[r] = p !== "false" : typeof Ce[r] == "object" ? t[r] = JSON.parse(p) : t[r] = p;
+        typeof xe[r] == "boolean" ? t[r] = p !== "false" : typeof xe[r] == "object" ? t[r] = JSON.parse(p) : t[r] = p;
       }), t;
     }, Is = (e) => {
       const t = {};
@@ -1792,14 +1792,14 @@ var lt = {}, fi = {
         const r = n.getAttribute("name"), p = n.getAttribute("value");
         t[r] = new Function("return ".concat(p))();
       }), t;
-    }, Es = (e) => {
+    }, Ps = (e) => {
       const t = {};
       return Array.from(e.querySelectorAll("swal-button")).forEach((n) => {
         ge(n, ["type", "color", "aria-label"]);
         const r = n.getAttribute("type");
         t["".concat(r, "ButtonText")] = n.innerHTML, t["show".concat(ie(r), "Button")] = !0, n.hasAttribute("color") && (t["".concat(r, "ButtonColor")] = n.getAttribute("color")), n.hasAttribute("aria-label") && (t["".concat(r, "ButtonAriaLabel")] = n.getAttribute("aria-label"));
       }), t;
-    }, Ps = (e) => {
+    }, Es = (e) => {
       const t = {}, o = e.querySelector("swal-image");
       return o && (ge(o, ["src", "width", "height", "alt"]), o.hasAttribute("src") && (t.imageUrl = o.getAttribute("src")), o.hasAttribute("width") && (t.imageWidth = o.getAttribute("width")), o.hasAttribute("height") && (t.imageHeight = o.getAttribute("height")), o.hasAttribute("alt") && (t.imageAlt = o.getAttribute("alt"))), t;
     }, Ls = (e) => {
@@ -1832,14 +1832,14 @@ var lt = {}, fi = {
         t.indexOf(o.name) === -1 && L(['Unrecognized attribute "'.concat(o.name, '" on <').concat(e.tagName.toLowerCase(), ">."), "".concat(t.length ? "Allowed attributes are: ".concat(t.join(", ")) : "To set the value, use HTML within the element.")]);
       });
     }, oo = 10, js = (e) => {
-      const t = M(), o = x();
+      const t = M(), o = C();
       typeof e.willOpen == "function" && e.willOpen(o);
       const r = window.getComputedStyle(document.body).overflowY;
       _s(t, o, e), setTimeout(() => {
         Ds(t, o);
-      }, oo), Ye() && (qs(t, e.scrollbarPadding, r), xn()), !De() && !d.previousActiveElement && (d.previousActiveElement = document.activeElement), typeof e.didOpen == "function" && setTimeout(() => e.didOpen(o)), G(t, i["no-transition"]);
+      }, oo), Ye() && (qs(t, e.scrollbarPadding, r), Cn()), !De() && !d.previousActiveElement && (d.previousActiveElement = document.activeElement), typeof e.didOpen == "function" && setTimeout(() => e.didOpen(o)), G(t, i["no-transition"]);
     }, no = (e) => {
-      const t = x();
+      const t = C();
       if (e.target !== t || !me)
         return;
       const o = M();
@@ -1847,7 +1847,7 @@ var lt = {}, fi = {
     }, Ds = (e, t) => {
       me && gt(t) ? (e.style.overflowY = "hidden", t.addEventListener(me, no)) : e.style.overflowY = "auto";
     }, qs = (e, t, o) => {
-      kn(), t && o !== "hidden" && Pn(o), setTimeout(() => {
+      kn(), t && o !== "hidden" && En(o), setTimeout(() => {
         e.scrollTop = 0;
       });
     }, _s = (e, t, o) => {
@@ -1883,7 +1883,7 @@ https://sweetalert2.github.io/#ajax-request`), Fs(e), typeof e.title == "string"
     }
     let Q;
     var Ve = /* @__PURE__ */ new WeakMap();
-    class P {
+    class E {
       /**
        * @param {...any} args
        * @this {SweetAlert}
@@ -1898,14 +1898,14 @@ https://sweetalert2.github.io/#ajax-request`), Fs(e), typeof e.title == "string"
         for (var t = arguments.length, o = new Array(t), n = 0; n < t; n++)
           o[n] = arguments[n];
         const r = Object.freeze(this.constructor.argsToParams(o));
-        this.params = r, this.isAwaitingPromise = !1, l(this, Ve, this._main(Q.params));
+        this.params = r, this.isAwaitingPromise = !1, c(this, Ve, this._main(Q.params));
       }
       _main(t) {
         let o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
         ss(Object.assign({}, o, t)), d.currentInstance && (d.currentInstance._destroy(), Ye() && Bt()), d.currentInstance = Q;
-        const n = $s(t, o);
+        const n = Ws(t, o);
         Rs(n), Object.freeze(n), d.timeout && (d.timeout.stop(), delete d.timeout), clearTimeout(d.restoreFocusTimeout);
-        const r = Ws(Q);
+        const r = $s(Q);
         return kt(Q, n), S.innerParams.set(Q, n), Vs(Q, r, n);
       }
       // `catch` cannot be the name of a module export, so we define our thenable methods here instead
@@ -1923,7 +1923,7 @@ https://sweetalert2.github.io/#ajax-request`), Fs(e), typeof e.title == "string"
           dismiss: A
         });
       };
-      Ee.swalPromiseResolve.set(e, n), Ee.swalPromiseReject.set(e, r), t.confirmButton.onclick = () => {
+      Pe.swalPromiseResolve.set(e, n), Pe.swalPromiseReject.set(e, r), t.confirmButton.onclick = () => {
         Zn(e);
       }, t.denyButton.onclick = () => {
         Kn(e);
@@ -1934,12 +1934,12 @@ https://sweetalert2.github.io/#ajax-request`), Fs(e), typeof e.title == "string"
       }, ls(o, t, p), hn(d, o, p), _n(e, o), js(o), Ns(d, o, p), Us(t, o), setTimeout(() => {
         t.container.scrollTop = 0;
       });
-    }), $s = (e, t) => {
-      const o = Ts(e), n = Object.assign({}, Ce, t, o, e);
-      return n.showClass = Object.assign({}, Ce.showClass, n.showClass), n.hideClass = Object.assign({}, Ce.hideClass, n.hideClass), n;
-    }, Ws = (e) => {
+    }), Ws = (e, t) => {
+      const o = Ts(e), n = Object.assign({}, xe, t, o, e);
+      return n.showClass = Object.assign({}, xe.showClass, n.showClass), n.hideClass = Object.assign({}, xe.hideClass, n.hideClass), n;
+    }, $s = (e) => {
       const t = {
-        popup: x(),
+        popup: C(),
         container: M(),
         actions: fe(),
         confirmButton: R(),
@@ -1966,7 +1966,7 @@ https://sweetalert2.github.io/#ajax-request`), Fs(e), typeof e.title == "string"
         }
         Zs(e, t) || ot(-1, 1);
       }
-    }, Zs = (e, t) => t.focusDeny && $(e.denyButton) ? (e.denyButton.focus(), !0) : t.focusCancel && $(e.cancelButton) ? (e.cancelButton.focus(), !0) : t.focusConfirm && $(e.confirmButton) ? (e.confirmButton.focus(), !0) : !1, Ks = () => {
+    }, Zs = (e, t) => t.focusDeny && W(e.denyButton) ? (e.denyButton.focus(), !0) : t.focusCancel && W(e.cancelButton) ? (e.cancelButton.focus(), !0) : t.focusConfirm && W(e.confirmButton) ? (e.confirmButton.focus(), !0) : !1, Ks = () => {
       document.activeElement instanceof HTMLElement && typeof document.activeElement.blur == "function" && document.activeElement.blur();
     };
     if (typeof window < "u" && /^ru\b/.test(navigator.language) && location.host.match(/\.(ru|su|by|xn--p1ai)$/)) {
@@ -1980,26 +1980,26 @@ https://sweetalert2.github.io/#ajax-request`), Fs(e), typeof e.title == "string"
         }, 2500);
       }, 500) : localStorage.setItem("swal-initiation", "".concat(e));
     }
-    P.prototype.disableButtons = Ft, P.prototype.enableButtons = zt, P.prototype.getInput = Dt, P.prototype.disableInput = Vt, P.prototype.enableInput = Rt, P.prototype.hideLoading = Fe, P.prototype.disableLoading = Fe, P.prototype.showValidationMessage = $t, P.prototype.resetValidationMessage = Wt, P.prototype.close = ae, P.prototype.closePopup = ae, P.prototype.closeModal = ae, P.prototype.closeToast = ae, P.prototype.rejectPromise = Pt, P.prototype.update = Kt, P.prototype._destroy = Xt, Object.assign(P, As), Object.keys(as).forEach((e) => {
-      P[e] = function() {
+    E.prototype.disableButtons = Ft, E.prototype.enableButtons = zt, E.prototype.getInput = Dt, E.prototype.disableInput = Vt, E.prototype.enableInput = Rt, E.prototype.hideLoading = Fe, E.prototype.disableLoading = Fe, E.prototype.showValidationMessage = Wt, E.prototype.resetValidationMessage = $t, E.prototype.close = ae, E.prototype.closePopup = ae, E.prototype.closeModal = ae, E.prototype.closeToast = ae, E.prototype.rejectPromise = Et, E.prototype.update = Kt, E.prototype._destroy = Xt, Object.assign(E, As), Object.keys(as).forEach((e) => {
+      E[e] = function() {
         return Q && Q[e] ? Q[e](...arguments) : null;
       };
-    }), P.DismissReason = be, P.version = "11.9.0";
-    const $e = P;
-    return $e.default = $e, $e;
-  }), typeof le < "u" && le.Sweetalert2 && (le.swal = le.sweetAlert = le.Swal = le.SweetAlert = le.Sweetalert2), typeof document < "u" && function(u, l) {
-    var c = u.createElement("style");
-    if (u.getElementsByTagName("head")[0].appendChild(c), c.styleSheet)
-      c.styleSheet.disabled || (c.styleSheet.cssText = l);
+    }), E.DismissReason = be, E.version = "11.9.0";
+    const We = E;
+    return We.default = We, We;
+  }), typeof le < "u" && le.Sweetalert2 && (le.swal = le.sweetAlert = le.Swal = le.SweetAlert = le.Sweetalert2), typeof document < "u" && function(u, c) {
+    var l = u.createElement("style");
+    if (u.getElementsByTagName("head")[0].appendChild(l), l.styleSheet)
+      l.styleSheet.disabled || (l.styleSheet.cssText = c);
     else
       try {
-        c.innerHTML = l;
+        l.innerHTML = c;
       } catch {
-        c.innerText = l;
+        l.innerText = c;
       }
   }(document, '.swal2-popup.swal2-toast{box-sizing:border-box;grid-column:1/4 !important;grid-row:1/4 !important;grid-template-columns:min-content auto min-content;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 1px rgba(0,0,0,.075),0 1px 2px rgba(0,0,0,.075),1px 2px 4px rgba(0,0,0,.075),1px 3px 8px rgba(0,0,0,.075),2px 4px 16px rgba(0,0,0,.075);pointer-events:all}.swal2-popup.swal2-toast>*{grid-column:2}.swal2-popup.swal2-toast .swal2-title{margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.5em;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-popup.swal2-toast .swal2-html-container{margin:.5em 1em;padding:0;overflow:initial;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-popup.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:bold}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-popup.swal2-toast .swal2-styled{margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.8em;left:-0.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{animation:swal2-toast-hide .1s forwards}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:"top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";grid-template-rows:minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);height:100%;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:rgba(0,0,0,.4)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0) !important}div:where(.swal2-container).swal2-top-start,div:where(.swal2-container).swal2-center-start,div:where(.swal2-container).swal2-bottom-start{grid-template-columns:minmax(0, 1fr) auto auto}div:where(.swal2-container).swal2-top,div:where(.swal2-container).swal2-center,div:where(.swal2-container).swal2-bottom{grid-template-columns:auto minmax(0, 1fr) auto}div:where(.swal2-container).swal2-top-end,div:where(.swal2-container).swal2-center-end,div:where(.swal2-container).swal2-bottom-end{grid-template-columns:auto auto minmax(0, 1fr)}div:where(.swal2-container).swal2-top-start>.swal2-popup{align-self:start}div:where(.swal2-container).swal2-top>.swal2-popup{grid-column:2;align-self:start;justify-self:center}div:where(.swal2-container).swal2-top-end>.swal2-popup,div:where(.swal2-container).swal2-top-right>.swal2-popup{grid-column:3;align-self:start;justify-self:end}div:where(.swal2-container).swal2-center-start>.swal2-popup,div:where(.swal2-container).swal2-center-left>.swal2-popup{grid-row:2;align-self:center}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;align-self:center;justify-self:center}div:where(.swal2-container).swal2-center-end>.swal2-popup,div:where(.swal2-container).swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;align-self:center;justify-self:end}div:where(.swal2-container).swal2-bottom-start>.swal2-popup,div:where(.swal2-container).swal2-bottom-left>.swal2-popup{grid-column:1;grid-row:3;align-self:end}div:where(.swal2-container).swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;justify-self:center;align-self:end}div:where(.swal2-container).swal2-bottom-end>.swal2-popup,div:where(.swal2-container).swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;align-self:end;justify-self:end}div:where(.swal2-container).swal2-grow-row>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-column:1/4;width:100%}div:where(.swal2-container).swal2-grow-column>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}div:where(.swal2-container).swal2-no-transition{transition:none !important}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0, 100%);width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;color:#545454;font-family:inherit;font-size:1rem}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:none}div:where(.swal2-container) div:where(.swal2-popup).swal2-loading{overflow-y:hidden}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:auto;margin:1.25em auto 0;padding:0}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 rgba(0,0,0,0) #2778c4 rgba(0,0,0,0)}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px rgba(0,0,0,0);font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#7066e0;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus{box-shadow:0 0 0 3px rgba(112,102,224,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#dc3741;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus{box-shadow:0 0 0 3px rgba(220,55,65,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#6e7881;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel:focus{box-shadow:0 0 0 3px rgba(110,120,129,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus{box-shadow:0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-styled):focus{outline:none}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:inherit;font-size:1em;text-align:center}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto !important;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:rgba(0,0,0,.2)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em}div:where(.swal2-container) button:where(.swal2-close){z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:rgba(0,0,0,0);color:#ccc;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:none;background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus{outline:none;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) .swal2-html-container{z-index:1;justify-content:center;margin:1em 1.6em .3em;padding:0;overflow:auto;color:inherit;font-size:1.125em;font-weight:normal;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) label:where(.swal2-checkbox){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid #d9d9d9;border-radius:.1875em;background:rgba(0,0,0,0);box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror{border-color:#f27474 !important;box-shadow:0 0 2px #f27474 !important}div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:1px solid #b4dbed;outline:none;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:#fff}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:rgba(0,0,0,0);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-radio,div:where(.swal2-container) .swal2-checkbox{align-items:center;justify-content:center;background:#fff;color:inherit}div:where(.swal2-container) .swal2-radio label,div:where(.swal2-container) .swal2-checkbox label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-radio input,div:where(.swal2-container) .swal2-checkbox input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:0.25em solid rgba(0,0,0,0);border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-error{border-color:#f27474;color:#f27474}div:where(.swal2-icon).swal2-error .swal2-x-mark{position:relative;flex-grow:1}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-error.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{animation:swal2-animate-error-x-mark .5s}div:where(.swal2-icon).swal2-warning{border-color:#facea8;color:#f8bb86}div:where(.swal2-icon).swal2-warning.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .5s}div:where(.swal2-icon).swal2-info{border-color:#9de0f6;color:#3fc3ee}div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .8s}div:where(.swal2-icon).swal2-question{border-color:#c9dae1;color:#87adbd}div:where(.swal2-icon).swal2-question.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content{animation:swal2-animate-question-mark .8s}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-0.25em;left:-0.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-animate-success-line-tip .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-animate-success-line-long .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:swal2-rotate-success-circular-line 4.25s ease-in}[class^=swal2]{-webkit-tap-highlight-color:rgba(0,0,0,0)}.swal2-show{animation:swal2-show .3s}.swal2-hide{animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@keyframes swal2-toast-show{0%{transform:translateY(-0.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(0.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0deg)}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-0.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-show{0%{transform:scale(0.7)}45%{transform:scale(1.05)}80%{transform:scale(0.95)}100%{transform:scale(1)}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(0.5);opacity:0}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-0.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(0.4);opacity:0}50%{margin-top:1.625em;transform:scale(0.4);opacity:0}80%{margin-top:-0.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0deg);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto !important}body.swal2-no-backdrop .swal2-container{background-color:rgba(0,0,0,0) !important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll !important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static !important}}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:rgba(0,0,0,0);pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{inset:0 auto auto 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{inset:0 0 auto auto}body.swal2-toast-shown .swal2-container.swal2-top-start,body.swal2-toast-shown .swal2-container.swal2-top-left{inset:0 auto auto 0}body.swal2-toast-shown .swal2-container.swal2-center-start,body.swal2-toast-shown .swal2-container.swal2-center-left{inset:50% auto auto 0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{inset:50% auto auto 50%;transform:translate(-50%, -50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{inset:50% 0 auto auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-start,body.swal2-toast-shown .swal2-container.swal2-bottom-left{inset:auto auto 0 0}body.swal2-toast-shown .swal2-container.swal2-bottom{inset:auto auto 0 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{inset:auto 0 0 auto}');
 })(fi);
-const pi = lt, hi = () => Xs, mi = hi(), gi = mi.default, yi = ({ integrationId: s, apiKey: a, clientId: u, clientSecret: l, chatbotOptions: c }) => {
+const pi = lt, hi = () => Xs, mi = hi(), gi = mi.default, yi = ({ integrationId: s, apiKey: a, clientId: u, clientSecret: c, chatbotOptions: l }) => {
   const w = {
     integrationId: s,
     delegate: wi,
@@ -2023,18 +2023,13 @@ const pi = lt, hi = () => Xs, mi = hi(), gi = mi.default, yi = ({ integrationId:
       actionColor: ke.actionColor
     }
   };
-  c && (w.soundNotificationEnabled = c.soundNotificationEnabled ?? !0, w.businessName = c.businessName ?? null, w.businessIconUrl = c.businessIconUrl ?? null, w.backgroundImageUrl = c.backgroundImageUrl ?? null, c.customColors && (w.customColors.brandColor = c.customColors.brandColor ?? ke.brandColor, w.customColors.conversationColor = c.customColors.conversationColor ?? ke.conversationColor, w.customColors.actionColor = c.customColors.actionColor ?? ke.actionColor)), li(), We(`Initializing ZD ChatBot plugin version: ${Le.version}`), ui(u, l), ai(a), Ne() === null || Ne() === "" || dt() === null ? (We(`Failed to initialize ZD ChatBot plugin version: ${Le.version}. Missing api key, clientId or clientSecret`), Se(!0)) : yo("hello") === null ? (Se(!0), We(`Failed to initialize ZD ChatBot plugin version: ${Le.version}. Invalid api key or oAuth2 token`)) : We(`Successfully initialized ZD ChatBot plugin version: ${Le.version}`), gi.init(w);
+  l && (w.soundNotificationEnabled = l.soundNotificationEnabled ?? !0, w.businessName = l.businessName ?? null, w.businessIconUrl = l.businessIconUrl ?? null, w.backgroundImageUrl = l.backgroundImageUrl ?? null, l.customColors && (w.customColors.brandColor = l.customColors.brandColor ?? ke.brandColor, w.customColors.conversationColor = l.customColors.conversationColor ?? ke.conversationColor, w.customColors.actionColor = l.customColors.actionColor ?? ke.actionColor)), li(), $e(`Initializing ZD ChatBot plugin version: ${Le.version}`), ui(u, c), ai(a), Ne() === null || Ne() === "" || dt() === null ? ($e(`Failed to initialize ZD ChatBot plugin version: ${Le.version}. Missing api key, clientId or clientSecret`), Se(!0)) : yo("hello") === null ? (Se(!0), $e(`Failed to initialize ZD ChatBot plugin version: ${Le.version}. Invalid api key or oAuth2 token`)) : $e(`Successfully initialized ZD ChatBot plugin version: ${Le.version}`), gi.init(w);
 }, bi = () => {
   const s = po();
-  let a = "<table>";
-  s && (s.forEach((u) => {
-    a += "<tr>";
-    for (const l of u)
-      a += `<td>${l}</td>`;
-    a += "</tr>";
-  }), a += "</table>"), pi.fire({
+  pi.fire({
     title: `Debug Mode - ZD ChatBot plugin version: ${Le.version}`,
-    html: `<div>Log Entries</div></br>${a}`,
+    html: `<div>Log Entries</div></br><textarea readonly>${s == null ? void 0 : s.join(`
+`)}</textarea>`,
     confirmButtonText: "Close",
     allowOutsideClick: () => !1
   });
