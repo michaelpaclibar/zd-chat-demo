@@ -8,7 +8,7 @@
  * the terms above.
  * 
  */
-var Se = function(e) {
+var xe = function(e) {
   var t = {};
   function o(n) {
     if (t[n])
@@ -174,24 +174,24 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       l[u] = i[u];
     return l;
   }
-  var C, m, $, O, H, M = {}, T = [], I = [], X = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var C, m, $, O, D, M = {}, T = [], I = [], X = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), me = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (X) {
     var N = document.createElement("a");
     N.href = "https://smooch.io/live-web-chat/?utm_source=widget", N.text = "Powered by Zendesk Sunshine", s(function() {
       document.body.appendChild(N);
     });
   }
-  function me() {
+  function ge() {
     var i = document.createElement("link");
     i.rel = "stylesheet", i.type = "text/css", i.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(i);
   }
-  function ge(i) {
+  function ve(i) {
     var a;
     window.__onWebMessengerFrameReady__ = function() {
     }, C = i, $ || (a = m, g(function(Q) {
-      var be = Q.rule, we = Q.size;
-      p.a.register(d(be), function() {
-        a.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
+      var we = Q.rule, Se = Q.size;
+      p.a.register(d(we), function() {
+        a.contentWindow.postMessage({ type: "sizeChange", value: Se }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
     for (var u = k[0], l = 0; l < k.length; u = k[++l])
@@ -203,18 +203,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }
       I = void 0;
     }
-    if (H) {
-      var J, j = (J = C).init.apply(J, b(H));
-      H = void 0;
-      for (var D = T[0], G = 0; G < T.length; D = T[++G])
-        j = D.type === "then" ? j.then(D.next) : j.catch(D.next);
+    if (D) {
+      var J, j = (J = C).init.apply(J, b(D));
+      D = void 0;
+      for (var H = T[0], G = 0; G < T.length; H = T[++G])
+        j = H.type === "then" ? j.then(H.next) : j.catch(H.next);
       T = [];
     }
   }
   var Z = function(i) {
     return i.contentWindow && i.contentWindow.document;
   };
-  function ve() {
+  function ye() {
     if (!m) {
       var i = null, a = !1;
       (m = document.createElement("iframe")).id = "web-messenger-container", m.frameBorder = 0, m.allowFullscreen = !0, m.allowTransparency = !0, m.scrolling = "no", m.className = r.a.iframe;
@@ -249,7 +249,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     $ ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
   }
-  var ye = { VERSION: "5.5.5", on: function() {
+  var be = { VERSION: "5.5.5", on: function() {
     I || (I = []);
     for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
       a[u] = arguments[u];
@@ -257,8 +257,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, init: function() {
     for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
       a[u] = arguments[u];
-    H = a, $ = a.length > 0 && !!a[0].embedded, X || he || s(function() {
-      me(), ve();
+    D = a, $ = a.length > 0 && !!a[0].embedded, X || me || s(function() {
+      ge(), ye();
     });
     var l = { then: function(w) {
       return T.push({ type: "then", next: w }), l;
@@ -276,10 +276,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   } };
   function V() {
     if (!document.getElementById("web-messenger-container")) {
-      C = void 0, m = void 0, window.__onWebMessengerFrameReady__ = ge;
+      C = void 0, m = void 0, window.__onWebMessengerFrameReady__ = ve;
       for (var i = k[0], a = 0; a < k.length; i = k[++a])
         M[i] && delete M[i];
-      v(M, ye);
+      v(M, be);
     }
   }
   V(), t.default = M;
@@ -288,12 +288,12 @@ const A = {
   brandColor: "65758e",
   conversationColor: "0099ff",
   actionColor: "0099ff"
-}, xe = "zd-chatbot-web", Ce = "1.0.11", Ie = "module", Te = {
+}, Ce = "zd-chatbot-web", Ie = "1.0.11", Te = "module", ke = {
   dev: "vite",
   build: "tsc && vite build",
   test: "vitest run",
   coverage: "vitest run --coverage"
-}, ke = {
+}, _e = {
   "@types/node": "^18.13.0",
   "@types/smooch": "^5.3.3",
   "@vitest/coverage-c8": "^0.30.1",
@@ -301,21 +301,21 @@ const A = {
   typescript: "^4.9.3",
   vite: "^4.1.0",
   vitest: "^0.30.1"
-}, _e = {
+}, Ae = {
   smooch: "^5.3.3",
   terser: "^5.16.3",
   "vite-require": "^0.2.3"
 }, F = {
-  name: xe,
+  name: Ce,
   private: !0,
-  version: Ce,
-  type: Ie,
-  scripts: Te,
-  devDependencies: ke,
-  dependencies: _e
+  version: Ie,
+  type: Te,
+  scripts: ke,
+  devDependencies: _e,
+  dependencies: Ae
 };
 var y = /* @__PURE__ */ ((e) => (e.Translation = "translation", e.AnswerBot = "answerBot", e.Agent = "agent", e.Carousel = "carousel", e.Form = "form", e))(y || {});
-const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
+const S = (e, t) => `${t}:${e}`, Le = (e, t) => {
   localStorage.setItem(e, JSON.stringify([...t]));
 }, B = (e) => {
   const t = localStorage.getItem(e);
@@ -326,7 +326,7 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     "translation"
     /* Translation */
   ), r = B(n) ?? /* @__PURE__ */ new Map();
-  r.set(t, o), Ae(n, r);
+  r.set(t, o), Le(n, r);
 }, P = (e, t) => {
   const o = S(
     e,
@@ -334,9 +334,9 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     /* Translation */
   ), n = B(o);
   return (n == null ? void 0 : n.get(t)) ?? null;
-}, Le = (e) => {
+}, qe = (e) => {
   localStorage.setItem("user-locale", e);
-}, qe = () => {
+}, Me = () => {
   const e = localStorage.getItem("user-locale");
   return e == null || e === "" ? null : e;
 }, Y = (e) => {
@@ -345,10 +345,10 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, ee = (e) => {
   const t = `disable-auto-translate:${e}`;
   return localStorage.getItem(t) === "true";
-}, Me = (e) => {
+}, Re = (e) => {
   const t = `is-locale-sent-to-server:${e}`;
   return localStorage.getItem(t) === "true";
-}, Re = (e) => {
+}, Oe = (e) => {
   const t = `is-locale-sent-to-server:${e}`;
   localStorage.setItem(t, "true");
 }, E = () => {
@@ -357,46 +357,48 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, z = () => {
   const e = localStorage.getItem("lio-chatbot-token");
   return e ? e === "" ? null : JSON.parse(e).access_token : null;
-}, re = () => {
+}, se = () => {
   const e = localStorage.getItem("lio-chatbot-token-expiration");
   return e ? new Date(e) < new Date() : !0;
-}, se = (e, t = "") => {
+}, ae = (e, t = "") => {
   t !== "" && localStorage.setItem("lio-access-token-request", t), localStorage.setItem("lio-chatbot-token", e);
   const r = new Date().getTime() + 1 * 60 * 60 * 1e3, s = new Date(r);
   localStorage.setItem("lio-chatbot-token-expiration", s.toISOString());
-}, Oe = (e) => {
+}, De = (e) => {
   e !== "" && localStorage.setItem("lio-api-key", e);
 }, q = (e) => localStorage.setItem("lio-chatbot-disable-translate-feature", e ? "true" : "false"), te = () => {
   const e = localStorage.getItem("lio-chatbot-disable-translate-feature");
   return e && e === "true";
-}, He = () => localStorage.getItem("lio-debug-conversationId"), De = () => {
+}, He = () => localStorage.getItem("lio-debug-conversationId"), ne = (e) => {
+  localStorage.setItem("lio-debug-conversationId", e);
+}, Be = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request"), localStorage.removeItem("lio-debug-conversationId");
-}, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", Be = "http://local.golinguist.com/read,http://local.golinguist.com/write", Ee = (e, t) => {
-  const o = `${ae}/oauth2/token`, n = Be.replace(",", " "), r = new XMLHttpRequest();
+}, ie = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", Ee = "http://local.golinguist.com/read,http://local.golinguist.com/write", Ue = (e, t) => {
+  const o = `${ie}/oauth2/token`, n = Ee.replace(",", " "), r = new XMLHttpRequest();
   r.open("POST", `${o}`, !1), r.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   const s = `grant_type=client_credentials&client_id=${e}&client_secret=${t}&scope=${encodeURIComponent(n)}`;
-  r.send(s), r.status === 200 ? (se(r.responseText, s), q(!1)) : (console.error(r.responseText), q(!0));
-}, ie = () => {
-  const e = `${ae}/oauth2/token`, t = new XMLHttpRequest();
+  r.send(s), r.status === 200 ? (ae(r.responseText, s), q(!1)) : (console.error(r.responseText), q(!0));
+}, ce = () => {
+  const e = `${ie}/oauth2/token`, t = new XMLHttpRequest();
   t.open("POST", `${e}`, !1), t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   const o = localStorage.getItem("lio-access-token-request");
-  o !== "" && (t.send(o), t.status === 200 ? (se(t.responseText), q(!1)) : (console.error(t.responseText), q(!0)));
-}, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", U = "en-us", le = () => {
+  o !== "" && (t.send(o), t.status === 200 ? (ae(t.responseText), q(!1)) : (console.error(t.responseText), q(!0)));
+}, le = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", U = "en-us", ue = () => {
   let e;
   try {
     return e = window.initSync ? window.initSync() : void 0, e;
   } catch {
     return "";
   }
-}, ue = (e) => {
+}, de = (e) => {
   const t = new XMLHttpRequest(), o = {
     translationType: "machine",
     text: e
   };
   try {
-    re() && ie();
-    const n = z(), r = E(), s = le();
-    return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${r}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("X-Request-ID", `${s}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(o)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
+    se() && ce();
+    const n = z(), r = E(), s = ue();
+    return t.open("POST", `${le}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${r}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("X-Request-ID", `${s}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(o)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
   } catch {
     return null;
   }
@@ -415,13 +417,13 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     userTypeId: 3
   };
   try {
-    re() && ie();
-    const r = z(), s = E(), d = le(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
+    se() && ce();
+    const r = z(), s = E(), d = ue(), c = new XMLHttpRequest(), p = `${le}/linguistnow/resources/v1/translate/`;
     return c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${r}`), c.setRequestHeader("X-Request-ID", `${d}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200 ? JSON.parse(c.responseText).translatedText : null;
   } catch {
     return null;
   }
-}, de = (e) => e.toLocaleLowerCase() !== U, fe = () => {
+}, fe = (e) => e.toLocaleLowerCase() !== U, pe = () => {
   if (typeof Intl < "u")
     try {
       return Intl.NumberFormat().resolvedOptions().locale.toLocaleLowerCase();
@@ -429,10 +431,10 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
       return console.error("Cannot get locale from Intl"), null;
     }
   return null;
-}, pe = (e) => {
-  let t = fe();
-  return de(t) || (t = ue(e)), t;
-}, Ue = (e) => {
+}, he = (e) => {
+  let t = pe();
+  return fe(t) || (t = de(e)), t;
+}, $e = (e) => {
   const t = e == null ? void 0 : e.toLocaleLowerCase().replace("_", "-").split("-");
   if (t) {
     const o = t[0];
@@ -451,28 +453,28 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     return r;
   const s = localStorage.getItem("user-locale");
   return s != null && s !== U && (r = K(e, U, s), r) ? (W(n, e, r), r) : null;
-}, ne = (e, t, o) => {
+}, oe = (e, t, o) => {
   const n = S(e.source.id, y.Translation);
-  if (!Me(n)) {
+  if (!Re(n)) {
     const s = `lang: ${t}`;
     o = `${o}
-${s}`, Re(n);
+${s}`, Oe(n);
   }
   return o;
-}, oe = (e, t, o) => {
+}, re = (e, t, o) => {
   let n = P(e, t);
   if (n)
     o.text = n;
   else {
-    const r = localStorage.getItem("user-locale"), s = pe(o.text);
+    const r = localStorage.getItem("user-locale"), s = he(o.text);
     s != null && r !== s && (n = K(t, s, r), n && (W(e, t, n), o.text = n));
   }
-}, $e = {
+}, Ne = {
   beforeSend(e, t) {
-    if (te()) {
+    if (ne(t.conversation.id), te()) {
       if (e.type === "text") {
-        let r = fe();
-        e.text = ne(e, r, e.text);
+        let r = pe();
+        e.text = oe(e, r, e.text);
       }
       return e;
     }
@@ -480,10 +482,10 @@ ${s}`, Re(n);
     if (e.type === "text" && n) {
       const r = e == null ? void 0 : e.text;
       if (r !== null && r.length > 0) {
-        let s = qe();
-        if (s || (s = pe(e.text), Le(s)), s != null && de(s)) {
+        let s = Me();
+        if (s || (s = he(e.text), qe(s)), s != null && fe(s)) {
           let c = K(r, s, U);
-          c != null && (c = ne(e, s, c), e.text = c, W(S(t.conversation.id, y.Translation), c, r));
+          c != null && (c = oe(e, s, c), e.text = c, W(S(t.conversation.id, y.Translation), c, r));
         }
       }
     }
@@ -491,7 +493,7 @@ ${s}`, Re(n);
   },
   beforeDisplay(e, t) {
     var d, c;
-    if (te())
+    if (ne(t.conversation.id), te())
       return e;
     const o = e.text, n = ((d = e.source) == null ? void 0 : d.type) === "zd:answerBot", r = ((c = e.source) == null ? void 0 : c.type) === "zd:agentWorkspace", s = !ee(S(t.conversation.id, y.Agent));
     switch (e.type) {
@@ -509,7 +511,7 @@ ${s}`, Re(n);
           let p = !1, f = !1, h = !1;
           const g = e.displayName === "Automated Response", v = S(t.conversation.id, y.Agent);
           let b = e;
-          !g && b.metadata != null && (p = b.metadata["__zendesk_msg.source_type"] !== null && b.metadata["__zendesk_msg.source_type"] === "sunco_web", f = b.metadata["__zendesk_msg.agent.id"] !== null && b.metadata["__zendesk_msg.agent.id"] === "__trigger", h = f && p), g || h ? oe(v, o, e) : s && (Y(v), oe(v, o, e));
+          !g && b.metadata != null && (p = b.metadata["__zendesk_msg.source_type"] !== null && b.metadata["__zendesk_msg.source_type"] === "sunco_web", f = b.metadata["__zendesk_msg.agent.id"] !== null && b.metadata["__zendesk_msg.agent.id"] === "__trigger", h = f && p), g || h ? re(v, o, e) : s && (Y(v), re(v, o, e));
         } else {
           const p = P(S(t.conversation.id, y.Translation), e.text);
           p && (e.text = p);
@@ -527,7 +529,7 @@ ${s}`, Re(n);
             for (const v of f.actions) {
               const b = L(v.text, t.conversation.id, y.Carousel);
               b && (v.text = b);
-              const x = localStorage.getItem("user-locale"), C = Ue(x);
+              const x = localStorage.getItem("user-locale"), C = $e(x);
               C && (v.uri = v.uri.replace("en-us", C));
             }
           }
@@ -550,10 +552,10 @@ ${s}`, Re(n);
         return e;
     }
   }
-}, Ne = () => Se, je = Ne(), Fe = je.default, Pe = ({ integrationId: e, apiKey: t, clientId: o, clientSecret: n, chatbotOptions: r }) => {
+}, je = () => xe, Fe = je(), We = Fe.default, ze = ({ integrationId: e, apiKey: t, clientId: o, clientSecret: n, chatbotOptions: r }) => {
   const s = {
     integrationId: e,
-    delegate: $e,
+    delegate: Ne,
     canUserSeeConversationList: !1,
     imageUploadEnabled: !1,
     prechatCapture: {
@@ -574,8 +576,8 @@ ${s}`, Re(n);
       actionColor: A.actionColor
     }
   };
-  r && (s.soundNotificationEnabled = r.soundNotificationEnabled ?? !0, s.businessName = r.businessName ?? null, s.businessIconUrl = r.businessIconUrl ?? null, s.backgroundImageUrl = r.backgroundImageUrl ?? null, r.customColors && (s.customColors.brandColor = r.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = r.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = r.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${F.version}`), De(), Ee(o, n), Oe(t), E() === null || E() === "" || z() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Missing api key, clientId or clientSecret`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Invalid api key or oAuth2 token`)), Fe.init(s);
-}, We = () => {
+  r && (s.soundNotificationEnabled = r.soundNotificationEnabled ?? !0, s.businessName = r.businessName ?? null, s.businessIconUrl = r.businessIconUrl ?? null, s.backgroundImageUrl = r.backgroundImageUrl ?? null, r.customColors && (s.customColors.brandColor = r.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = r.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = r.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${F.version}`), Be(), Ue(o, n), De(t), E() === null || E() === "" || z() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Missing api key, clientId or clientSecret`), q(!0)) : de("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Invalid api key or oAuth2 token`)), We.init(s);
+}, Pe = () => {
   const e = He();
   if (e) {
     const t = B(S(e, y.Agent));
@@ -588,8 +590,8 @@ ${s}`, Re(n);
         console.debug(n);
   }
 };
-window.debugModeViewLogs = We;
+window.debugModeViewLogs = Pe;
 export {
-  We as debugModeViewLogs,
-  Pe as initLIOChatBot
+  Pe as debugModeViewLogs,
+  ze as initLIOChatBot
 };
