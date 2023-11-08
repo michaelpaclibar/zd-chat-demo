@@ -62,9 +62,9 @@ var xe = function(e) {
     this.queries = {}, this.browserIsIncapable = !window.matchMedia("only all").matches;
   }
   p.prototype = { constructor: p, register: function(u, h, g) {
-    var v = this.queries, y = g && this.browserIsIncapable;
-    return v[u] || (v[u] = new n(u, y)), f(h) && (h = { match: h }), c(h) || (h = [h]), s(h, function(x) {
-      f(x) && (x = { match: x }), v[u].addHandler(x);
+    var y = this.queries, v = g && this.browserIsIncapable;
+    return y[u] || (y[u] = new n(u, v)), f(h) && (h = { match: h }), c(h) || (h = [h]), s(h, function(x) {
+      f(x) && (x = { match: x }), y[u].addHandler(x);
     }), this;
   }, unregister: function(u, h) {
     var g = this.queries[u];
@@ -118,63 +118,63 @@ var xe = function(e) {
 }, function(e, t, r) {
   r.r(t);
   var n = r(2), o = r.n(n);
-  function s(i) {
+  function s(a) {
     document.readyState !== "complete" && document.readyState !== "loaded" && document.readyState !== "interactive" || !document.body ? document.addEventListener("DOMContentLoaded", function() {
-      i();
-    }) : i();
+      a();
+    }) : a();
   }
-  function f(i) {
-    var a = ["screen"];
-    return i.minHeight && a.push("(min-height: ".concat(i.minHeight, "px)")), i.maxHeight && a.push("(max-height: ".concat(i.maxHeight, "px)")), i.minWidth && a.push("(min-width: ".concat(i.minWidth, "px)")), i.maxWidth && a.push("(max-width: ".concat(i.maxWidth, "px)")), a.join(" and ");
+  function f(a) {
+    var i = ["screen"];
+    return a.minHeight && i.push("(min-height: ".concat(a.minHeight, "px)")), a.maxHeight && i.push("(max-height: ".concat(a.maxHeight, "px)")), a.minWidth && i.push("(min-width: ".concat(a.minWidth, "px)")), a.maxWidth && i.push("(max-width: ".concat(a.maxWidth, "px)")), i.join(" and ");
   }
   var c = r(0), p = r.n(c), u = { lg: { minHeight: 668, minWidth: 1200 }, md: [{ minHeight: 508, minWidth: 768, maxWidth: 1199 }, { minHeight: 508, maxHeight: 667, minWidth: 768 }], sm: { maxHeight: 507, minWidth: 768 }, xs: { maxWidth: 767 } }, h = ["lg", "md", "sm", "xs"];
-  function g(i) {
-    for (var a = 0; a < h.length; a++) {
-      var d = h[a], l = u[d];
+  function g(a) {
+    for (var i = 0; i < h.length; i++) {
+      var d = h[i], l = u[d];
       Object.prototype.toString.call(l) !== "[object Array]" && (l = [l]);
       for (var b = 0; b < l.length; b++)
-        i({ rule: l[b], size: d });
+        a({ rule: l[b], size: d });
     }
   }
-  function v() {
-    return (v = Object.assign ? Object.assign.bind() : function(i) {
-      for (var a = 1; a < arguments.length; a++) {
-        var d = arguments[a];
+  function y() {
+    return (y = Object.assign ? Object.assign.bind() : function(a) {
+      for (var i = 1; i < arguments.length; i++) {
+        var d = arguments[i];
         for (var l in d)
-          Object.prototype.hasOwnProperty.call(d, l) && (i[l] = d[l]);
+          Object.prototype.hasOwnProperty.call(d, l) && (a[l] = d[l]);
       }
-      return i;
+      return a;
     }).apply(this, arguments);
   }
-  function y(i) {
-    return function(a) {
-      if (Array.isArray(a))
-        return x(a);
-    }(i) || function(a) {
-      if (typeof Symbol < "u" && a[Symbol.iterator] != null || a["@@iterator"] != null)
-        return Array.from(a);
-    }(i) || function(a, d) {
-      if (a) {
-        if (typeof a == "string")
-          return x(a, d);
-        var l = Object.prototype.toString.call(a).slice(8, -1);
-        if (l === "Object" && a.constructor && (l = a.constructor.name), l === "Map" || l === "Set")
-          return Array.from(a);
+  function v(a) {
+    return function(i) {
+      if (Array.isArray(i))
+        return x(i);
+    }(a) || function(i) {
+      if (typeof Symbol < "u" && i[Symbol.iterator] != null || i["@@iterator"] != null)
+        return Array.from(i);
+    }(a) || function(i, d) {
+      if (i) {
+        if (typeof i == "string")
+          return x(i, d);
+        var l = Object.prototype.toString.call(i).slice(8, -1);
+        if (l === "Object" && i.constructor && (l = i.constructor.name), l === "Map" || l === "Set")
+          return Array.from(i);
         if (l === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(l))
-          return x(a, d);
+          return x(i, d);
       }
-    }(i) || function() {
+    }(a) || function() {
       throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
     }();
   }
-  function x(i, a) {
-    (a == null || a > i.length) && (a = i.length);
-    for (var d = 0, l = new Array(a); d < a; d++)
-      l[d] = i[d];
+  function x(a, i) {
+    (i == null || i > a.length) && (i = a.length);
+    for (var d = 0, l = new Array(i); d < i; d++)
+      l[d] = a[d];
     return l;
   }
-  var S, m, N, O, H, R = {}, T = [], I = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var S, m, N, O, D, M = {}, T = [], I = [], K = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (K) {
     var U = document.createElement("a");
     U.href = "https://smooch.io/live-web-chat/?utm_source=widget", U.text = "Powered by Zendesk Sunshine", s(function() {
@@ -182,45 +182,45 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     });
   }
   function me() {
-    var i = document.createElement("link");
-    i.rel = "stylesheet", i.type = "text/css", i.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(i);
+    var a = document.createElement("link");
+    a.rel = "stylesheet", a.type = "text/css", a.href = "https://cdn.smooch.io/smooch.5.5.5.css", document.body.appendChild(a);
   }
-  function ge(i) {
-    var a;
+  function ge(a) {
+    var i;
     window.__onWebMessengerFrameReady__ = function() {
-    }, S = i, N || (a = m, g(function(G) {
+    }, S = a, N || (i = m, g(function(G) {
       var be = G.rule, we = G.size;
       p.a.register(f(be), function() {
-        a.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
+        i.contentWindow.postMessage({ type: "sizeChange", value: we }, "".concat(location.protocol, "//").concat(location.host));
       });
     }));
     for (var d = k[0], l = 0; l < k.length; d = k[++l])
-      R[d] = S[d];
+      M[d] = S[d];
     if (I) {
-      for (var b = I[0], M = 0; M < I.length; b = I[++M]) {
+      for (var b = I[0], R = 0; R < I.length; b = I[++R]) {
         var _;
-        (_ = S).on.apply(_, y(b.args));
+        (_ = S).on.apply(_, v(b.args));
       }
       I = void 0;
     }
-    if (H) {
-      var J, j = (J = S).init.apply(J, y(H));
-      H = void 0;
-      for (var D = T[0], V = 0; V < T.length; D = T[++V])
-        j = D.type === "then" ? j.then(D.next) : j.catch(D.next);
+    if (D) {
+      var J, j = (J = S).init.apply(J, v(D));
+      D = void 0;
+      for (var H = T[0], V = 0; V < T.length; H = T[++V])
+        j = H.type === "then" ? j.then(H.next) : j.catch(H.next);
       T = [];
     }
   }
-  var Z = function(i) {
-    return i.contentWindow && i.contentWindow.document;
+  var Z = function(a) {
+    return a.contentWindow && a.contentWindow.document;
   };
-  function ve() {
+  function ye() {
     if (!m) {
-      var i = null, a = !1;
+      var a = null, i = !1;
       (m = document.createElement("iframe")).id = "web-messenger-container", m.frameBorder = 0, m.allowFullscreen = !0, m.allowTransparency = !0, m.scrolling = "no", m.className = o.a.iframe;
       var d = function() {
-        a = !0, clearInterval(i), delete m.onload;
-        var l = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, b = l ? 'nonce="'.concat(l, '"') : "", M = `
+        i = !0, clearInterval(a), delete m.onload;
+        var l = window.__webpack_nonce__ !== void 0 ? window.__webpack_nonce__ : null, b = l ? 'nonce="'.concat(l, '"') : "", R = `
                     <!DOCTYPE html>
                     <html>
                         <head>
@@ -234,31 +234,31 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     </html>
                     `);
         if ("srcdoc" in m)
-          m.srcdoc = M;
+          m.srcdoc = R;
         else {
           var _ = Z(m);
-          _.open(), _.write(M), _.close();
+          _.open(), _.write(R), _.close();
         }
       };
-      i = setInterval(function() {
+      a = setInterval(function() {
         var l = Z(m);
-        a || !l || l.readyState !== "complete" && l.readyState !== "interactive" || d();
+        i || !l || l.readyState !== "complete" && l.readyState !== "interactive" || d();
       }, 1e3), m.onload = function() {
-        a || d();
+        i || d();
       };
     }
     N ? O && (O.appendChild(m), O = void 0) : document.body.appendChild(m);
   }
-  var ye = { VERSION: "5.5.5", on: function() {
+  var ve = { VERSION: "5.5.5", on: function() {
     I || (I = []);
-    for (var i = arguments.length, a = new Array(i), d = 0; d < i; d++)
-      a[d] = arguments[d];
-    I.push({ args: a });
+    for (var a = arguments.length, i = new Array(a), d = 0; d < a; d++)
+      i[d] = arguments[d];
+    I.push({ args: i });
   }, init: function() {
-    for (var i = arguments.length, a = new Array(i), d = 0; d < i; d++)
-      a[d] = arguments[d];
-    H = a, N = a.length > 0 && !!a[0].embedded, K || he || s(function() {
-      me(), ve();
+    for (var a = arguments.length, i = new Array(a), d = 0; d < a; d++)
+      i[d] = arguments[d];
+    D = i, N = i.length > 0 && !!i[0].embedded, K || he || s(function() {
+      me(), ye();
     });
     var l = { then: function(b) {
       return T.push({ type: "then", next: b }), l;
@@ -266,29 +266,29 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       return T.push({ type: "catch", next: b }), l;
     } };
     return l;
-  }, render: function(i) {
-    m ? i.appendChild(m) : O = i;
+  }, render: function(a) {
+    m ? a.appendChild(m) : O = a;
   }, destroy: function() {
-    S && (S.destroy(), m.remove ? m.remove() : m.parentNode.removeChild(m), g(function(i) {
-      var a = i.rule;
-      p.a.unregister(f(a));
+    S && (S.destroy(), m.remove ? m.remove() : m.parentNode.removeChild(m), g(function(a) {
+      var i = a.rule;
+      p.a.unregister(f(i));
     }), X());
   } };
   function X() {
     if (!document.getElementById("web-messenger-container")) {
       S = void 0, m = void 0, window.__onWebMessengerFrameReady__ = ge;
-      for (var i = k[0], a = 0; a < k.length; i = k[++a])
-        R[i] && delete R[i];
-      v(R, ye);
+      for (var a = k[0], i = 0; i < k.length; a = k[++i])
+        M[a] && delete M[a];
+      y(M, ve);
     }
   }
-  X(), t.default = R;
+  X(), t.default = M;
 }]);
 const A = {
   brandColor: "65758e",
   conversationColor: "0099ff",
   actionColor: "0099ff"
-}, Se = "zd-chatbot-web", Ce = "1.0.10", Ie = "module", Te = {
+}, Se = "zd-chatbot-web", Ce = "1.0.11", Ie = "module", Te = {
   dev: "vite",
   build: "tsc && vite build",
   test: "vitest run",
@@ -345,13 +345,13 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, Y = (e) => {
   const t = `disable-auto-translate:${e}`;
   return localStorage.getItem(t) === "true";
-}, Re = (e) => {
-  const t = `is-locale-sent-to-server:${e}`;
-  return localStorage.getItem(t) === "true";
 }, Me = (e) => {
   const t = `is-locale-sent-to-server:${e}`;
+  return localStorage.getItem(t) === "true";
+}, Re = (e) => {
+  const t = `is-locale-sent-to-server:${e}`;
   localStorage.setItem(t, "true");
-}, E = () => {
+}, B = () => {
   const e = localStorage.getItem("lio-api-key");
   return e ? e === "" ? null : e : null;
 }, W = () => {
@@ -369,19 +369,19 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, q = (e) => localStorage.setItem("lio-chatbot-disable-translate-feature", e ? "true" : "false"), ee = () => {
   const e = localStorage.getItem("lio-chatbot-disable-translate-feature");
   return e && e === "true";
-}, He = () => {
+}, De = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request");
-}, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", De = "http://local.golinguist.com/read,http://local.golinguist.com/write", $e = (e, t) => {
-  const r = `${ae}/oauth2/token`, n = De.replace(",", " "), o = new XMLHttpRequest();
+}, ie = "aws_oauth_url", He = "aws_oauth_scopes (comma separated)", $e = (e, t) => {
+  const r = `${ie}/oauth2/token`, n = He.replace(",", " "), o = new XMLHttpRequest();
   o.open("POST", `${r}`, !1), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   const s = `grant_type=client_credentials&client_id=${e}&client_secret=${t}&scope=${encodeURIComponent(n)}`;
   o.send(s), o.status === 200 ? (se(o.responseText, s), q(!1)) : (console.error(o.responseText), q(!0));
-}, ie = () => {
-  const e = `${ae}/oauth2/token`, t = new XMLHttpRequest();
+}, ae = () => {
+  const e = `${ie}/oauth2/token`, t = new XMLHttpRequest();
   t.open("POST", `${e}`, !1), t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   const r = localStorage.getItem("lio-access-token-request");
   r !== "" && (t.send(r), t.status === 200 ? (se(t.responseText), q(!1)) : (console.error(t.responseText), q(!0)));
-}, ce = "https://pbbxp1o6qg.execute-api.us-east-2.amazonaws.com/dev", B = "en-us", le = () => {
+}, ce = "https://dev-agw.golinguist.com", E = "en-us", le = () => {
   let e;
   try {
     return e = window.initSync ? window.initSync() : void 0, e;
@@ -394,8 +394,8 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     text: e
   };
   try {
-    re() && ie();
-    const n = W(), o = E(), s = le();
+    re() && ae();
+    const n = W(), o = B(), s = le();
     return t.open("POST", `${ce}/linguistnow/resources/locale/detectLocale/`, !1), t.setRequestHeader("x-api-key", `${o}`), t.setRequestHeader("Authorization", `Bearer ${n}`), t.setRequestHeader("X-Request-ID", `${s}`), t.setRequestHeader("Content-Type", "application/json"), t.send(JSON.stringify(r)), t.status === 200 ? JSON.parse(t.responseText).detectedLanguage : null;
   } catch {
     return null;
@@ -415,8 +415,8 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
     userTypeId: 3
   };
   try {
-    re() && ie();
-    const o = W(), s = E(), f = le(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
+    re() && ae();
+    const o = W(), s = B(), f = le(), c = new XMLHttpRequest(), p = `${ce}/linguistnow/resources/v1/translate/`;
     if (c.open("POST", p, !1), c.setRequestHeader("x-api-key", `${s}`), c.setRequestHeader("Authorization", `Bearer ${o}`), c.setRequestHeader("X-Request-ID", `${f}`), c.setRequestHeader("Content-Type", "application/json"), c.send(JSON.stringify(n)), c.status === 200) {
       const u = JSON.parse(c.responseText);
       return console.debug(`Running LIO Translate API: ${e}`), u.translatedText;
@@ -425,7 +425,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   } catch {
     return null;
   }
-}, de = (e) => e.toLocaleLowerCase() !== B, fe = () => {
+}, de = (e) => e.toLocaleLowerCase() !== E, fe = () => {
   if (typeof Intl < "u")
     try {
       return Intl.NumberFormat().resolvedOptions().locale.toLocaleLowerCase();
@@ -436,7 +436,7 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, pe = (e) => {
   let t = fe();
   return de(t) || (t = ue(e)), t;
-}, Ee = (e) => {
+}, Be = (e) => {
   const t = e == null ? void 0 : e.toLocaleLowerCase().replace("_", "-").split("-");
   if (t) {
     const r = t[0];
@@ -454,13 +454,13 @@ const C = (e, t) => `${t}:${e}`, Ae = (e, t) => {
   if (o)
     return o;
   const s = localStorage.getItem("user-locale");
-  return s != null && s !== B && (o = z(e, B, s), o) ? (F(n, e, o), o) : null;
+  return s != null && s !== E && (o = z(e, E, s), o) ? (F(n, e, o), o) : null;
 }, te = (e, t, r) => {
   const n = C(e.source.id, w.Translation);
-  if (!Re(n)) {
+  if (!Me(n)) {
     const s = `lang: ${t}`;
     r = `${r}
-${s}`, Me(n);
+${s}`, Re(n);
   }
   return r;
 }, ne = (e, t, r) => {
@@ -471,7 +471,7 @@ ${s}`, Me(n);
     const o = localStorage.getItem("user-locale"), s = pe(r.text);
     s != null && o !== s && (n = z(t, s, o), n && (F(e, t, n), r.text = n));
   }
-}, Be = {
+}, Ee = {
   beforeSend(e, t) {
     if (ee()) {
       if (e.type === "text") {
@@ -486,7 +486,7 @@ ${s}`, Me(n);
       if (o !== null && o.length > 0) {
         let s = qe();
         if (s || (s = pe(e.text), Le(s)), s != null && de(s)) {
-          let c = z(o, s, B);
+          let c = z(o, s, E);
           c != null && (c = te(e, s, c), e.text = c, F(C(t.conversation.id, w.Translation), c, o));
         }
       }
@@ -511,9 +511,9 @@ ${s}`, Me(n);
             }
         } else if (o) {
           let p = !1, u = !1, h = !1;
-          const g = e.displayName === "Automated Response", v = C(t.conversation.id, w.Agent);
-          let y = e;
-          !g && y.metadata != null && (p = y.metadata["__zendesk_msg.source_type"] !== null && y.metadata["__zendesk_msg.source_type"] === "sunco_web", u = y.metadata["__zendesk_msg.agent.id"] !== null && y.metadata["__zendesk_msg.agent.id"] === "__trigger", h = u && p), g || h ? ne(v, r, e) : s && (Q(v), ne(v, r, e));
+          const g = e.displayName === "Automated Response", y = C(t.conversation.id, w.Agent);
+          let v = e;
+          !g && v.metadata != null && (p = v.metadata["__zendesk_msg.source_type"] !== null && v.metadata["__zendesk_msg.source_type"] === "sunco_web", u = v.metadata["__zendesk_msg.agent.id"] !== null && v.metadata["__zendesk_msg.agent.id"] === "__trigger", h = u && p), g || h ? ne(y, r, e) : s && (Q(y), ne(y, r, e));
         } else {
           const p = P(C(t.conversation.id, w.Translation), e.text);
           p && (e.text = p);
@@ -528,11 +528,11 @@ ${s}`, Me(n);
             h && (u.title = h);
             const g = L(u.description, t.conversation.id, w.Carousel);
             g && (u.description = g);
-            for (const v of u.actions) {
-              const y = L(v.text, t.conversation.id, w.Carousel);
-              y && (v.text = y);
-              const x = localStorage.getItem("user-locale"), S = Ee(x);
-              S && (v.uri = v.uri.replace("en-us", S));
+            for (const y of u.actions) {
+              const v = L(y.text, t.conversation.id, w.Carousel);
+              v && (y.text = v);
+              const x = localStorage.getItem("user-locale"), S = Be(x);
+              S && (y.uri = y.uri.replace("en-us", S));
             }
           }
           return p;
@@ -554,10 +554,10 @@ ${s}`, Me(n);
         return e;
     }
   }
-}, Ne = () => xe, Ue = Ne(), je = Ue.default, Fe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
+}, Ne = () => xe, Ue = Ne(), je = Ue.default, Pe = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
   const s = {
     integrationId: e,
-    delegate: Be,
+    delegate: Ee,
     canUserSeeConversationList: !1,
     imageUploadEnabled: !1,
     prechatCapture: {
@@ -578,8 +578,31 @@ ${s}`, Me(n);
       actionColor: A.actionColor
     }
   };
-  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), He(), $e(r, n), Oe(t), E() === null || E() === "" || W() === null ? (console.error(`Failed to initialize OAuth2 of ZD ChatBot plugin version: ${$.version}`), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key`)), je.init(s);
+  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${$.version}`), De(), $e(r, n), Oe(t), B() === null || B() === "" || W() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Missing api key, clientId or clientSecret`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${$.version}. Invalid api key or oAuth2 token`)), je.init(s);
+}, Fe = () => {
+  const t = `
+        <div style="font-family: Arial, sans-serif; padding: 20px;">
+            <h2 style="color: #333;">${`Initializing ZD ChatBot plugin version: ${$.version}`}</h2>
+            <table border="1" style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <th style="padding: 10px;">Name</th>
+                    <th style="padding: 10px;">Age</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">John</td>
+                    <td style="padding: 10px;">30</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Doe</td>
+                    <td style="padding: 10px;">35</td>
+                </tr>
+            </table>
+        </div>
+    `;
+  window.alert(t);
 };
+window.lioChatBotDebug = Fe;
 export {
-  Fe as initLIOChatBot
+  Pe as initLIOChatBot,
+  Fe as lioChatBotDebug
 };
