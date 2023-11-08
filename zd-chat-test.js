@@ -174,7 +174,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       l[u] = i[u];
     return l;
   }
-  var C, m, $, O, D, M = {}, T = [], I = [], X = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
+  var C, m, $, O, H, M = {}, T = [], I = [], X = /lebo|awle|pide|obo|rawli|dsbo/i.test(navigator.userAgent), he = /PhantomJS/.test(navigator.userAgent) && !0, k = ["init", "login", "on", "off", "logout", "sendMessage", "triggerPostback", "createConversation", "updateConversation", "updateUser", "getDisplayedConversation", "getConversationById", "getConversations", "getMoreConversations", "hasMoreConversations", "getUser", "open", "close", "isOpened", "loadConversation", "setDelegate", "markAllAsRead", "showNotificationChannelPrompt", "setPredefinedMessage", "startTyping", "stopTyping"];
   if (X) {
     var N = document.createElement("a");
     N.href = "https://smooch.io/live-web-chat/?utm_source=widget", N.text = "Powered by Zendesk Sunshine", s(function() {
@@ -203,11 +203,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }
       I = void 0;
     }
-    if (D) {
-      var J, j = (J = C).init.apply(J, b(D));
-      D = void 0;
-      for (var H = T[0], G = 0; G < T.length; H = T[++G])
-        j = H.type === "then" ? j.then(H.next) : j.catch(H.next);
+    if (H) {
+      var J, j = (J = C).init.apply(J, b(H));
+      H = void 0;
+      for (var D = T[0], G = 0; G < T.length; D = T[++G])
+        j = D.type === "then" ? j.then(D.next) : j.catch(D.next);
       T = [];
     }
   }
@@ -257,7 +257,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, init: function() {
     for (var i = arguments.length, a = new Array(i), u = 0; u < i; u++)
       a[u] = arguments[u];
-    D = a, $ = a.length > 0 && !!a[0].embedded, X || he || s(function() {
+    H = a, $ = a.length > 0 && !!a[0].embedded, X || he || s(function() {
       me(), ve();
     });
     var l = { then: function(w) {
@@ -369,7 +369,7 @@ const S = (e, t) => `${t}:${e}`, Ae = (e, t) => {
 }, q = (e) => localStorage.setItem("lio-chatbot-disable-translate-feature", e ? "true" : "false"), te = () => {
   const e = localStorage.getItem("lio-chatbot-disable-translate-feature");
   return e && e === "true";
-}, De = () => localStorage.getItem("lio-debug-conversationId"), He = () => {
+}, He = () => localStorage.getItem("lio-debug-conversationId"), De = () => {
   localStorage.removeItem("user-locale"), localStorage.removeItem("lio-chatbot-token"), localStorage.removeItem("lio-chatbot-token-expiration"), localStorage.removeItem("lio-access-token-request"), localStorage.removeItem("lio-debug-conversationId");
 }, ae = "https://lio-oauth2-localhost.auth.us-east-2.amazoncognito.com", Be = "http://local.golinguist.com/read,http://local.golinguist.com/write", Ee = (e, t) => {
   const o = `${ae}/oauth2/token`, n = Be.replace(",", " "), r = new XMLHttpRequest();
@@ -574,9 +574,9 @@ ${s}`, Re(n);
       actionColor: A.actionColor
     }
   };
-  r && (s.soundNotificationEnabled = r.soundNotificationEnabled ?? !0, s.businessName = r.businessName ?? null, s.businessIconUrl = r.businessIconUrl ?? null, s.backgroundImageUrl = r.backgroundImageUrl ?? null, r.customColors && (s.customColors.brandColor = r.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = r.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = r.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${F.version}`), He(), Ee(o, n), Oe(t), E() === null || E() === "" || z() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Missing api key, clientId or clientSecret`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Invalid api key or oAuth2 token`)), Fe.init(s);
+  r && (s.soundNotificationEnabled = r.soundNotificationEnabled ?? !0, s.businessName = r.businessName ?? null, s.businessIconUrl = r.businessIconUrl ?? null, s.backgroundImageUrl = r.backgroundImageUrl ?? null, r.customColors && (s.customColors.brandColor = r.customColors.brandColor ?? A.brandColor, s.customColors.conversationColor = r.customColors.conversationColor ?? A.conversationColor, s.customColors.actionColor = r.customColors.actionColor ?? A.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${F.version}`), De(), Ee(o, n), Oe(t), E() === null || E() === "" || z() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Missing api key, clientId or clientSecret`), q(!0)) : ue("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Invalid api key or oAuth2 token`)), Fe.init(s);
 }, We = () => {
-  const e = De();
+  const e = He();
   if (e) {
     const t = B(S(e, y.Agent));
     if (console.debug("AnswerBot Translations"), t)
@@ -588,7 +588,8 @@ ${s}`, Re(n);
         console.debug(n);
   }
 };
-window.lioDebugModeViewLogs = We;
+window.debugModeViewLogs = We;
 export {
+  We as debugModeViewLogs,
   Pe as initLIOChatBot
 };
