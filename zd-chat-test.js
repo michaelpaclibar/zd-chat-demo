@@ -305,7 +305,7 @@ const _ = {
   smooch: "^5.3.3",
   terser: "^5.16.3",
   "vite-require": "^0.2.3"
-}, P = {
+}, F = {
   name: Ce,
   private: !0,
   version: Ie,
@@ -320,7 +320,7 @@ const b = (e, t) => `${t}:${e}`, Le = (e, t) => {
 }, D = (e) => {
   const t = localStorage.getItem(e);
   return t ? new Map(JSON.parse(t)) : null;
-}, F = (e, t, r) => {
+}, P = (e, t, r) => {
   const n = b(
     e,
     "translation"
@@ -452,7 +452,7 @@ const b = (e, t) => `${t}:${e}`, Le = (e, t) => {
   if (o)
     return o;
   const s = localStorage.getItem("user-locale");
-  return s != null && s !== E && (o = K(e, E, s), o) ? (F(n, e, o), o) : null;
+  return s != null && s !== E && (o = K(e, E, s), o) ? (P(n, e, o), o) : null;
 }, oe = (e, t, r) => {
   const n = b(e.source.id, g.Translation);
   if (!Re(n)) {
@@ -467,7 +467,7 @@ ${s}`, De(n);
     r.text = n;
   else {
     const o = localStorage.getItem("user-locale"), s = he(r.text);
-    s != null && o !== s && (n = K(t, s, o), n && (F(e, t, n), r.text = n));
+    s != null && o !== s && (n = K(t, s, o), n && (P(e, t, n), r.text = n));
   }
 }, Ue = {
   beforeSend(e, t) {
@@ -485,7 +485,7 @@ ${s}`, De(n);
         let s = Me();
         if (s || (s = he(e.text), qe(s)), s != null && fe(s)) {
           let c = K(o, s, E);
-          c != null && (c = oe(e, s, c), e.text = c, F(b(t.conversation.id, g.Translation), c, o));
+          c != null && (c = oe(e, s, c), e.text = c, P(b(t.conversation.id, g.Translation), c, o));
         }
       }
     }
@@ -552,7 +552,7 @@ ${s}`, De(n);
         return e;
     }
   }
-}, je = () => xe, Pe = je(), Fe = Pe.default, ze = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
+}, je = () => xe, Fe = je(), Pe = Fe.default, ze = ({ integrationId: e, apiKey: t, clientId: r, clientSecret: n, chatbotOptions: o }) => {
   const s = {
     integrationId: e,
     delegate: Ue,
@@ -576,29 +576,31 @@ ${s}`, De(n);
       actionColor: _.actionColor
     }
   };
-  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? _.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? _.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? _.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${P.version}`), $e(), Ee(r, n), Oe(t), B() === null || B() === "" || z() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${P.version}. Missing api key, clientId or clientSecret`), q(!0)) : de("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${P.version}. Invalid api key or oAuth2 token`)), Fe.init(s);
+  o && (s.soundNotificationEnabled = o.soundNotificationEnabled ?? !0, s.businessName = o.businessName ?? null, s.businessIconUrl = o.businessIconUrl ?? null, s.backgroundImageUrl = o.backgroundImageUrl ?? null, o.customColors && (s.customColors.brandColor = o.customColors.brandColor ?? _.brandColor, s.customColors.conversationColor = o.customColors.conversationColor ?? _.conversationColor, s.customColors.actionColor = o.customColors.actionColor ?? _.actionColor)), console.info(`Initializing ZD ChatBot plugin version: ${F.version}`), $e(), Ee(r, n), Oe(t), B() === null || B() === "" || z() === null ? (console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Missing api key, clientId or clientSecret`), q(!0)) : de("hello") === null && (q(!0), console.error(`Failed to initialize ZD ChatBot plugin version: ${F.version}. Invalid api key or oAuth2 token`)), Pe.init(s);
 }, We = () => {
   const e = He();
-  if (console.info(`LIO ChatBot Debug - Display Logs
-`), e) {
+  if (console.info("LIO ChatBot Debug - Display Logs"), console.info("-----------------------------------"), e) {
     const t = b(e, g.AnswerBot), r = b(e, g.Agent), n = D(b(t, g.Translation)), o = D(b(r, g.Translation));
     if (o) {
       console.info("ChatBot - Messages");
       for (const c of o)
         console.info(`Before: ${c[0]}
+
 After: ${c[1]}`);
     }
-    if (n) {
+    if (console.info("-----------------------------------"), n) {
       console.info("ChatBot - Prompts");
       for (const c of n)
         console.info(`Before: ${c[0]}
+
 After: ${c[1]}`);
     }
-    console.info("============");
+    console.info("-----------------------------------");
     const s = b(e, g.Translation), l = D(b(s, g.Translation));
-    if (l && (console.info("Customer Messages"), l))
+    if (l && (console.info("Customer Messages: (First message always include lang: {detected language} metadata"), l))
       for (const c of l)
         console.info(`Before: ${c[0]}
+
 After: ${c[1]}`);
   }
 };
